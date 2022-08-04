@@ -1,0 +1,22 @@
+.container {
+    margin: 0;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.progressbar-text {
+    text-align: center;
+    min-height: 14vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size:2rem;
+    font-family:$font-primary-light;
+    span{
+        font-family:$font-primary-light;
+        font-size: 14px;
+        letter-spacing: 0.048rem;
+        color:var(--write);
+    }
+}

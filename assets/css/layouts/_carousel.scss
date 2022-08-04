@@ -1,0 +1,126 @@
+#test {
+
+    .carousel {
+        @include flex-center-center;
+        width: auto;
+        background-color: var(--body-darker);
+        @include border-top;
+        padding: 2rem;
+
+        .splide {
+            &__track {
+                width: 100%;
+                height: 100%;
+            }
+
+            &__slide {
+                min-height: 80vh;
+                font-family: $font-primary-light;
+                display: flex;
+            }
+
+            &__arrows--ltr {
+                border: 1px solid var(--border-color);
+                background-color: var(--section-background);
+                position: absolute;
+                border-radius: 48px;
+                width: 12%;
+                top: 2rem;
+                right: 2rem;
+                height: 8vh;
+                margin: auto;
+                @include flex-around-center;
+                transition: 0.48s ease-in;
+
+                &:hover {
+                    border-color: var(--border-color);
+                    background-color: var(--section-background);
+                }
+            }
+
+            &__arrow {
+                position: relative;
+                transform: unset;
+                top: unset;
+                width: 36px;
+                height: 36px;
+                background-color: var(--body-background);
+                border: 1px solid var(--border-color);
+                transition: 0.48s ease-in;
+
+                &:hover {
+                    border-color: var(--text-canari);
+                    svg {
+                        fill: var(--write);
+                    }
+                }
+
+                &--prev {
+                    left: unset;
+                }
+
+                &--next {
+                    right: unset;
+                }
+
+                svg {
+                    fill: var(--border-color);
+                    transition: 0.32s ease;
+                }
+            }
+
+            &__pagination {
+                bottom: 2rem;
+                height: 8vh;
+                width: 12%;
+                @include flex-evenly-center;
+                margin: auto;
+                &__page{
+                    background-color: var(--section-background);
+                }
+                &__page.is-active{
+                    background-color: var(--border-color);
+                }
+            }
+
+            &__header {
+                position: absolute;
+                left: 2rem;
+                top: 2rem;
+                height: 8vh;
+                @include flex-start-center;
+                font-family: $font-secondary;
+                color: var(--write);
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width:800px) {
+
+    #test{
+        .carousel{
+            .splide{
+                &__arrows--ltr{
+                    width: 28%;
+                    top: unset;
+                    right: unset;
+                    bottom: 2rem;
+                    height: 6vh;
+                }
+                &__pagination{
+                    width: 36%;
+                }
+                &__arrow{
+                    &--prev,&--next{
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+}

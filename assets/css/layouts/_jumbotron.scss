@@ -1,0 +1,77 @@
+.jumbotron{
+    @include margin-border-side;
+    .flap{
+        // background-image: url('https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/backgrounds/ian-dooley.jpg');
+        background-image: url('https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/backgrounds/daniela-cuevas.jpg');
+        background-blend-mode: screen;
+        @include bg-center-cover;
+        background-color: #ECE8D9b4;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-height: 72vh;
+        &__left{
+            @include align-center;
+            z-index: 1;
+            .large-heading{
+                height: 72vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                padding: 4rem;
+                margin:auto;
+            }
+        }
+        h2{
+            font-family: $font-primary;
+            font-weight: normal;
+            color: var(--write);
+        }
+
+    }
+
+}
+
+
+#absolute-box{
+    position: absolute;
+    min-height: 72vh;
+    display: flex;
+    align-items: end;
+    z-index: 0;
+    svg{
+        circle{
+            animation: circleEffect 6s infinite ease-in;
+            transform-origin: center;
+        }
+    }
+}
+
+
+#test .box{
+    width: 48px;
+    height: 48px;
+    background-color: red;
+}
+
+@media screen and (max-width:1600px) {
+    
+
+
+}
+
+
+@media screen and (max-width:780px) {
+    
+    .jumbotron{
+        @include no-margin-side;
+        .flap{
+            grid-template-columns: 1fr;
+            &__left{
+                .large-heading{
+                    padding: 2rem;
+                }
+            }
+        }
+    }
+
+}

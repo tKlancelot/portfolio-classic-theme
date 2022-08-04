@@ -1,0 +1,56 @@
+/* card projet */
+
+.project-card {
+    margin: auto;
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+
+    &__header {
+        // border: 2px solid red;
+        height: 40vh;
+        min-height: 40vh;
+        display: flex;
+        width: 100%;
+        position: relative;
+        @include textured-background;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            position: relative;
+            display: flex;
+            height: auto;
+            box-sizing: border-box;
+            object-fit: cover;
+        }
+    }
+
+    &__body,
+    &__footer {
+        height: 6.4vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+
+    &__body {
+        align-items: center;
+        h3 {
+            color: var(--text-canari);
+            font-size: 22px;
+            font-family: $font-primary-light;
+            font-weight: 100;
+        }
+    }
+
+    &__footer,
+    &__footer a {
+        color: var(--write);
+        font-family: $font-primary-light;
+        font-style: italic;
+    }
+}

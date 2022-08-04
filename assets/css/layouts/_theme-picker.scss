@@ -1,0 +1,31 @@
+#theme-picker {
+position: fixed;
+    z-index: 999;
+    border: 3px double var(--border-color);
+    margin: 2%;
+    height: auto;
+    padding: 2rem;
+    background: var(--body-darker);
+    border-radius: 32px;
+    bottom: 0;
+    width: 16%;
+    box-shadow: 1px 1px 2px 0px var(--body-darker), -1px -1px 2px 0px var(--body-darker);
+    h3{
+        font-family: $font-primary-light;
+        color:var(--write);
+        font-weight: 500;
+    }
+    input,select,option{
+        font-family: $font-primary-light;
+        color:var(--write);
+        background-color: var(--body-darker);
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        input,select{
+            min-height: 2.8vh;
+            margin:0.5rem 0;
+        }
+    }
+}

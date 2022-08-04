@@ -1,0 +1,105 @@
+// wordpress button
+
+.wp-block-button__link {
+    border: 2px solid var(--border-color);
+    background-color: transparent;
+    border-radius: unset;
+    color: var(--write);
+    padding: 1rem;
+    min-width: 160px;
+    transition: 0.48s ease-in;
+    display: flex;
+    align-items: center;
+
+    svg {
+        width: 24%;
+        display: flex;
+        align-items: center;
+    }
+
+    path,
+    svg {
+        transition: 0.48s ease-in;
+    }
+
+    &:hover {
+        background-color: var(--body-background);
+
+        svg path {
+            fill: #fff;
+        }
+    }
+}
+
+
+#test {
+    .cta {
+        font-family: $font-primary-light;
+        background-color: var(--body-darker);
+        border: 1px solid var(--border-color);
+        width: fit-content;
+        padding: 1.92rem;
+        color: var(--write);
+        font-size: 16px;
+        text-transform: uppercase;
+        border-radius: 48px;
+        font-weight: 400;
+        letter-spacing: 0.036rem;
+        transition: 0.48s ease-in all;
+        @include flex-center-center;
+        cursor: pointer;
+        z-index: 100;
+        &:hover {
+            background-color: var(--section-background);
+            color: var(--write);
+            svg path {
+                stroke: var(--write);
+            }
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+
+            path {
+                stroke: var(--write);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1600px) {
+
+    .wp-block-button__link {
+        font-size: 16px;
+        padding: 0.75rem;
+        min-width: 140px;
+    }
+
+    #test{
+        .cta{
+            padding: 1.56rem;
+            font-size: 15px;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 1200px){
+
+    #test .cta {
+        padding: 1.2rem;
+        font-size: 14px;
+    }
+
+}
+
+
+@media screen and (max-width:780px) {
+
+    .wp-block-button__link {
+        font-size: 14px;
+    }
+
+}

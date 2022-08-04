@@ -1,0 +1,127 @@
+@mixin align-justify-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin align-center {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+@mixin flex-center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-center-start {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@mixin flex-end-center {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@mixin flex-end-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+@mixin flex-evenly-center {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@mixin flex-around-center {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin flex-evenly-start {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+@mixin flex-around-start {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+@mixin flex-start-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+@mixin flex-start-center {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin flex-between-start {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+@mixin bg-center-cover {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin bg-center-auto-repeat {
+    background-position: center;
+    background-size: auto;
+    background-repeat: repeat;
+}
+
+@mixin margin-border-side {
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    margin: auto 8%;
+}
+
+@mixin no-margin-side {
+    border-left: unset;
+    border-right: unset;
+    margin: initial;
+}
+
+@mixin font-roboto-item {
+    font-family: $font-primary-light;
+    font-size: 13.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.032rem;
+    transition: 0.32se ease-in;
+}
+
+@mixin border-top {
+    border-top: 1px solid var(--border-color);
+}
+
+@mixin textured-background {
+    background-color: var(--section-background);
+    background-image: url('https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png');
+    background-size: 1%;
+    background-blend-mode: color-dodge;
+}
+
+@mixin textured-background-dark {
+    background-color: var(--body-darker);
+    background-image: url('https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png');
+    background-size: 1%;
+    background-blend-mode: color-dodge;
+}

@@ -1,0 +1,38 @@
+@keyframes circleEffect {
+    from{
+        transform: scale(0.72);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0.72);
+    }
+}
+
+
+@keyframes circleBorder {
+    from{
+        border-color: var(--border-color);
+    }
+    50%{
+        border-color: var(--text-canari);
+    }
+    to{
+        border-color: var(--border-color);
+    }
+
+}
+
+
+@keyframes scrollDown {
+    from{
+        transform: initial;
+    }
+    50%{
+        transform: translate(0px, 100%);
+    }
+    to{
+        transform: initial;
+    }
+}

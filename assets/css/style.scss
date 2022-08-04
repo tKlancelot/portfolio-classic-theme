@@ -1,0 +1,48 @@
+/*
+Theme Name: TarikTheme
+Author: Tarik Louatah
+Author URI: https://tarik-louatah.net
+Description: Theme basique avec un blog 
+Tags: blog, sidebar, responsive
+Version: 1.0
+Requires PHP: 7.0
+Text Domain: TarikTheme
+*/
+
+// @import '../css/themes/dark-theme.css';
+
+// utils
+
+@import 'utils/typography';
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'utils/global';
+@import 'utils/animations';
+@import 'utils/splide-slide';
+
+// components
+
+@import 'components/headings';
+@import 'components/buttons';
+@import 'components/tooltips';
+@import 'components/cards';
+@import 'components/progress-bar';
+
+// layouts 
+
+@import 'layouts/jumbotron';
+@import 'layouts/header';
+@import 'layouts/footer';
+@import 'layouts/presentation';
+@import 'layouts/intersection';
+@import 'layouts/carousel';
+@import 'layouts/stats';
+@import 'layouts/large-text-banner';
+@import 'layouts/contact';
+@import 'layouts/theme-picker';
+
+// pages
+
+@import 'pages/frontpage';
+@import 'pages/testpage';
+

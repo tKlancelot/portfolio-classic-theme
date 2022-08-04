@@ -1,0 +1,67 @@
+.footer {
+    height: 12vh;
+    @include border-top;
+    @include flex-center-start;
+
+    &__header {
+        position: absolute;
+        width: 100%;
+        display: flex;
+
+        .frame {
+            border: 3px double var(--border-color);
+            background-color: var(--body-darker);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            margin: auto;
+            transform: translate(0, -50%);
+            color: var(--write);
+            display: flex;
+
+            svg {
+                transition: 0.32s ease-in;
+                cursor: pointer;
+                margin: auto;
+                path{
+                    stroke:var(--write);
+                }
+
+                &:hover {
+                    path {
+                        stroke: var(--text-canari) !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &__body {
+        margin: auto;
+
+        p {
+            color: var(--write);
+            font-family: $font-primary-light;
+            font-size: 14px;
+            letter-spacing: 0.024rem;
+        }
+    }
+}
+
+@media screen and (max-width:1600px) {
+    .footer {
+        p {
+            font-size: 13px;
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+    footer {
+        @include no-margin-side;
+
+        p {
+            font-size: 12px;
+        }
+    }
+}

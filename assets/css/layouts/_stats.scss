@@ -1,0 +1,48 @@
+#test {
+
+    .stats {
+        display:block;
+        background-color: var(--section-background);
+        @include border-top;
+        &__body {
+            min-height: 40vh;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            place-content: center;
+            place-items: center;
+        }
+        &__header{
+            color: var(--write);
+            .section-heading{
+                margin:2rem;
+            }
+        }
+    }
+    #first,#second,#third{
+        svg{
+            path:nth-child(2){
+                stroke:var(--text-canari);
+            }
+        }
+        .progressbar-text{
+            color:var(--text-canari)!important;
+        }
+    }
+}
+
+
+
+@media screen and (max-width:800px) {
+    
+    #test{
+
+        .stats{
+            &__body{
+                min-height: 112vh;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(3,1fr);
+            }
+        }
+    }
+
+}

@@ -1,0 +1,139 @@
+// use of contact form 7 -> overwriting classes
+
+.contact-form {
+    @include border-top;
+    @include textured-background-dark;
+    min-height: 72vh;
+    display: grid;
+    place-content: space-evenly;
+    place-items: center;
+    grid-template-rows: 0.2fr 0.7fr;
+
+    &__header {
+        .section-heading {
+            color: var(--write);
+        }
+    }
+
+    &__body {
+
+        .input-box,
+        .input-box--double,
+        .input-box--submit {
+            margin: 1rem auto;
+
+            input,
+            textarea {
+                background-color: var(--section-background);
+                font-family: $font-primary-light;
+                border: 1px solid var(--border-color);
+                padding: 0.5rem;
+                font-size: 16px;
+                width: 100%;
+                color: var(--write);
+            }
+
+        }
+
+        .input-box {
+            &--double {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 1rem;
+
+                br {
+                    display: none;
+                }
+            }
+
+            &--submit {
+                @include flex-end-center;
+                flex-direction: column;
+
+                input {
+                    cursor: pointer;
+                    width: 20%;
+                    border-radius: 32px;
+                    padding: 1rem;
+                    transition: 0.32s ease-in;
+                    text-transform: capitalize;
+
+                    &:hover {
+                        background-color: var(--section-background);
+                        border-color: var(--write);
+                        color: var(--write);
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+.wpcf7 form.sent .wpcf7-response-output,
+.wpcf7-not-valid-tip,
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+    border: unset;
+    font-size: 16px;
+    font-family: $font-primary-light;
+    letter-spacing: 0.032rem;
+    color: var(--text-canari);
+}
+
+.wpcf7-not-valid-tip {
+    color: var(--write);
+    margin: 1rem auto;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+    color: var(--text-canari);
+}
+
+
+@media screen and (max-width:1600px) {
+
+    .contact-form {
+        grid-template-rows: 0.3fr 0.7fr;
+
+        &__body {
+            >div {
+                width: 80%;
+                margin: auto;
+            }
+
+            .input-box {
+                &--submit {
+                    input {
+                        width: 24%;
+                    }
+                }
+            }
+        }
+    }
+
+    .wpcf7 form.sent .wpcf7-response-output,
+    .wpcf7-not-valid-tip,
+    .wpcf7 form.invalid .wpcf7-response-output,
+    .wpcf7 form.unaccepted .wpcf7-response-output,
+    .wpcf7 form.payment-required .wpcf7-response-output {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width:800px) {
+
+    .contact-form {
+        &__body {
+            .input-box--submit {
+                input {
+                    width: 32%;
+                }
+            }
+        }
+    }
+
+}
