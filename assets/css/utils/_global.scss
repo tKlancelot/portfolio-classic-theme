@@ -7,6 +7,7 @@ body,
     scroll-behavior: smooth;
 }
 
+
 img {
     image-rendering: -webkit-optimize-contrast;
 }
@@ -24,12 +25,6 @@ footer {
     background-color: var(--body-darker);
 }
 
-section,
-footer,
-header {
-    // @include margin-border-side;
-}
-
 p,
 ul,
 li,
@@ -45,7 +40,6 @@ li {
 }
 
 a {
-    // color: var(--write);
     text-decoration: none;
     transition: 0.48s ease-in;
 }

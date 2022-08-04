@@ -21,7 +21,7 @@
 
             &__arrows--ltr {
                 border: 1px solid var(--border-color);
-                background-color: var(--section-background);
+                background-color: var(--body-darker);
                 position: absolute;
                 border-radius: 48px;
                 width: 12%;
@@ -44,7 +44,7 @@
                 top: unset;
                 width: 36px;
                 height: 36px;
-                background-color: var(--body-background);
+                background-color: var(--body-darker);
                 border: 1px solid var(--border-color);
                 transition: 0.48s ease-in;
 

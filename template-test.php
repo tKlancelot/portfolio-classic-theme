@@ -9,10 +9,16 @@
     get_header();
 ?>
 
-<link id="themeStylesheet" rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/themes/dark-theme.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<link id="themeStylesheet" rel="stylesheet"
+    href="<?php echo get_template_directory_uri();?>/assets/css/themes/dark-theme.css">
 <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/themes/purple-theme.css"> -->
 
 <main id="test">
+
+    <div id="rjs_cursor" class="rjs-cursor">
+        <div class="rjs-cursor-icon"></div>
+    </div>
     <!-- <section class="section">
         <p class="test-tooltip">text in tooltip</p>
     </section> -->
@@ -71,18 +77,23 @@
     <section id="about" class="large-text-banner" data-spy>
         <div class="large-text-banner__header">
             <h2 class="section-heading">À propos de moi</h2>
-            <hr/>
+            <hr />
         </div>
         <div class="large-text-banner__body">
-            <p class="g-text-triggered">Suite à des études de langues à l'université et une expérience de huit ans dans le commerce de grande distribution, 
-            je décide d'entreprendre, il y a maintenant 4 ans de cela, une révolution dans ma carrière. Je découvre alors le développement web et
-            je me prends de passion pour les nouvelles technologies et en particulier pour l'intégration. J'en ferai très rapidement mon métier
-            actuel. 
+            <p class="g-text-triggered">Suite à des études de langues à l'université et une expérience de huit ans dans
+                le commerce de grande distribution,
+                je décide d'entreprendre, il y a maintenant 4 ans de cela, une révolution dans ma carrière. Je découvre
+                alors le développement web et
+                je me prends de passion pour les nouvelles technologies et en particulier pour l'intégration. J'en ferai
+                très rapidement mon métier
+                actuel.
             </p>
-            <p class="g-text-triggered">Dès lors, je constate que toute expérience professionnelle vécue auparavant a vocation à être recyclée. Ces expériences deviendront 
+            <p class="g-text-triggered">Dès lors, je constate que toute expérience professionnelle vécue auparavant a
+                vocation à être recyclée. Ces expériences deviendront
                 des composantes permettant le développement de mon portefeuille de compétences actuel.
             </p>
-            <p class="g-text-triggered">Mon objectif : développer des sites beaux et bien construits. Mais ... pas que ! Rester en veille face à l'évolution rapide des technologies
+            <p class="g-text-triggered">Mon objectif : développer des sites beaux et bien construits. Mais ... pas que !
+                Rester en veille face à l'évolution rapide des technologies
                 du web, afin de proposer des sites et des applications de qualité, durables et dans l'ère du temps !
             </p>
         </div>
@@ -148,7 +159,7 @@
 
 
 
-    <section id="stats" class="stats" data-spy> 
+    <section id="stats" class="stats" data-spy>
         <!-- <div class="stats__header">
             <h2 class="section-heading">Stats</h2>
         </div> -->
@@ -430,9 +441,9 @@
                                                     arguments[1] : void 0;
                                                 ! function (a, b) {
                                                     if (!(a instanceof b))
-                                                    throw new TypeError(
+                                                        throw new TypeError(
                                                             "Cannot call a class as a function"
-                                                            )
+                                                        )
                                                 }(this, a), this._currentState =
                                                     b, this._configured = !1,
                                                     this._filters = [], this
@@ -445,7 +456,7 @@
                                             return b = a, (c = [{
                                                     key: "_applyFilter",
                                                     value: function (
-                                                    a) {
+                                                        a) {
                                                         var b = !0,
                                                             c = !1,
                                                             d =
@@ -457,25 +468,26 @@
                                                                     ._filters[
                                                                         Symbol
                                                                         .iterator
-                                                                        ]
+                                                                    ]
                                                                     (); !
                                                                 (b = (e =
                                                                         f
                                                                         .next()
-                                                                        )
+                                                                    )
                                                                     .done
-                                                                    ); b = !
+                                                                ); b = !
                                                                 0) {
                                                                 var g =
                                                                     e
                                                                     .value[
                                                                         a
-                                                                        ];
+                                                                    ];
                                                                 g && g(
-                                                                    this)
+                                                                    this
+                                                                    )
                                                             }
                                                         } catch (
-                                                        a) {
+                                                            a) {
                                                             c = !0,
                                                                 d =
                                                                 a
@@ -488,7 +500,8 @@
                                                                     .return()
                                                             } finally {
                                                                 if (
-                                                                    c)
+                                                                    c
+                                                                    )
                                                                     throw d
                                                             }
                                                         }
@@ -608,7 +621,7 @@
                                                                 k ||
                                                                 this
                                                                 .get()
-                                                                ),
+                                                            ),
                                                             this
                                                             ._originalState =
                                                             this
@@ -619,7 +632,7 @@
                                                                 s ||
                                                                 this
                                                                 .get()
-                                                                );
+                                                            );
                                                         var u = this
                                                             ._currentState;
                                                         this._targetState =
@@ -627,7 +640,7 @@
                                                                 u, {},
                                                                 this
                                                                 ._targetState
-                                                                ),
+                                                            ),
                                                             this
                                                             ._easing =
                                                             t(u, j);
@@ -642,22 +655,23 @@
                                                             v[w]
                                                             .doesApply(
                                                                 this
-                                                                ) &&
+                                                            ) &&
                                                             this
                                                             ._filters
                                                             .push(v[
-                                                                w]);
+                                                                w
+                                                                ]);
                                                         return this
                                                             ._applyFilter(
                                                                 "tweenCreated"
-                                                                ),
+                                                            ),
                                                             this
                                                             ._promise =
                                                             new n(
                                                                 function (
                                                                     a,
                                                                     c
-                                                                    ) {
+                                                                ) {
                                                                     b._resolve =
                                                                         a,
                                                                         b
@@ -676,12 +690,12 @@
                                                         return g({},
                                                             this
                                                             ._currentState
-                                                            )
+                                                        )
                                                     }
                                                 }, {
                                                     key: "set",
                                                     value: function (
-                                                    a) {
+                                                        a) {
                                                         this._currentState =
                                                             a
                                                     }
@@ -690,7 +704,7 @@
                                                     value: function () {
                                                         if (this
                                                             ._isPlaying
-                                                            ) return this
+                                                        ) return this
                                                             ._pausedAtTime =
                                                             a
                                                             .now(),
@@ -698,7 +712,8 @@
                                                             ._isPlaying = !
                                                             1,
                                                             u(
-                                                                this),
+                                                                this
+                                                                ),
                                                             this
                                                     }
                                                 }, {
@@ -707,11 +722,11 @@
                                                         if (null ===
                                                             this
                                                             ._timestamp
-                                                            ) return this
+                                                        ) return this
                                                             .tween();
                                                         if (this
                                                             ._isPlaying
-                                                            ) return this
+                                                        ) return this
                                                             ._promise;
                                                         var b = a
                                                             .now();
@@ -725,7 +740,7 @@
                                                                 this
                                                                 ._pausedAtTime =
                                                                 null
-                                                                ),
+                                                            ),
                                                             this
                                                             ._isPlaying = !
                                                             0,
@@ -740,11 +755,11 @@
                                                                             a,
                                                                             1e3 /
                                                                             60
-                                                                            ),
+                                                                        ),
                                                                         s()
-                                                                        )
+                                                                    )
                                                                 }()
-                                                                ) :
+                                                            ) :
                                                             (this
                                                                 ._previous =
                                                                 o, o
@@ -752,14 +767,14 @@
                                                                 this,
                                                                 o =
                                                                 this
-                                                                ),
+                                                            ),
                                                             this
                                                             ._promise
                                                     }
                                                 }, {
                                                     key: "seek",
                                                     value: function (
-                                                    b) {
+                                                        b) {
                                                         b = Math
                                                             .max(b,
                                                                 0);
@@ -778,9 +793,9 @@
                                                                 ._isPlaying ||
                                                                 r(this,
                                                                     c
-                                                                    ),
+                                                                ),
                                                                 this
-                                                                )
+                                                            )
                                                     }
                                                 }, {
                                                     key: "stop",
@@ -792,7 +807,7 @@
                                                             void 0 !==
                                                             arguments[
                                                                 0
-                                                                ] &&
+                                                            ] &&
                                                             arguments[
                                                                 0],
                                                             b = this
@@ -807,42 +822,43 @@
                                                             ._targetState;
                                                         if (this
                                                             ._isPlaying
-                                                            ) return this
+                                                        ) return this
                                                             ._isPlaying = !
                                                             1,
                                                             u(
-                                                                this),
+                                                                this
+                                                                ),
                                                             a ?
                                                             (this
                                                                 ._applyFilter(
                                                                     "beforeTween"
-                                                                    ),
+                                                                ),
                                                                 q(1, c,
                                                                     e,
                                                                     f,
                                                                     1,
                                                                     0,
                                                                     d
-                                                                    ),
+                                                                ),
                                                                 this
                                                                 ._applyFilter(
                                                                     "afterTween"
-                                                                    ),
+                                                                ),
                                                                 this
                                                                 ._applyFilter(
                                                                     "afterTweenEnd"
-                                                                    ),
+                                                                ),
                                                                 this
                                                                 ._resolve(
                                                                     c,
                                                                     b
-                                                                    )
-                                                                ) :
+                                                                )
+                                                            ) :
                                                             this
                                                             ._reject(
                                                                 c,
                                                                 b
-                                                                ),
+                                                            ),
                                                             this
                                                     }
                                                 }, {
@@ -854,7 +870,7 @@
                                                 }, {
                                                     key: "setScheduleFunction",
                                                     value: function (
-                                                    b) {
+                                                        b) {
                                                         a.setScheduleFunction(
                                                             b)
                                                     }
@@ -1012,7 +1028,8 @@
                                     v = function (a) {
                                         return 0 === a ? 0 : 1 === a ? 1 : (a /=
                                             .5) < 1 ? .5 * Math.pow(2, 10 * (a -
-                                            1)) : .5 * (2 - Math.pow(2, -10 * --a))
+                                            1)) : .5 * (2 - Math.pow(2, -10 * --
+                                            a))
                                     },
                                     w = function (a) {
                                         return -(Math.sqrt(1 - a * a) - 1)
@@ -1193,11 +1210,11 @@
                                         if (Symbol.iterator in Object(a) ||
                                             "[object Arguments]" === Object
                                             .prototype.toString.call(a))
-                                        return Array.from(a)
+                                            return Array.from(a)
                                     }(a) || function () {
                                         throw new TypeError(
                                             "Invalid attempt to spread non-iterable instance"
-                                            )
+                                        )
                                     }()
                                 }
 
@@ -1215,7 +1232,7 @@
                                     var c = b.get(a);
                                     if (!c) throw new TypeError(
                                         "attempted to get private field on non-instance"
-                                        );
+                                    );
                                     return c.get ? c.get.call(a) : c.value
                                 }
 
@@ -1248,7 +1265,7 @@
                                                 if (f = o(e) - a, q(f) < b)
                                                     return e;
                                                 if (g = p(e), q(g) < 1e-6)
-                                            break;
+                                                    break;
                                                 e -= f / g
                                             }
                                             if ((e = a) < (c = 0)) return c;
@@ -1293,7 +1310,8 @@
                                         return "rgb(".concat((b = a, 3 === (b = b
                                                 .replace(/#/, "")).length &&
                                             (b = (b = b.split(""))[0] + b[
-                                                0] + b[1] + b[1] + b[2] + b[
+                                                    0] + b[1] + b[1] + b[
+                                                2] + b[
                                                     2]), [d(b.substr(0, 2)),
                                                 d(b.substr(2, 2)), d(b
                                                     .substr(4, 2))
@@ -1346,8 +1364,8 @@
                                         var c = function (c) {
                                             D(a[c]).forEach(function (d, e) {
                                                 return a[b[c]
-                                                        .chunkNames[e]
-                                                        ] = +d
+                                                    .chunkNames[e]
+                                                ] = +d
                                             }), delete a[c]
                                         };
                                         for (var d in b) c(d)
@@ -1435,9 +1453,9 @@
                                         function a() {
                                             ! function (a, b) {
                                                 if (!(a instanceof b))
-                                                throw new TypeError(
+                                                    throw new TypeError(
                                                         "Cannot call a class as a function"
-                                                        )
+                                                    )
                                             }(this, a), R.set(this, {
                                                 writable: !0,
                                                 value: []
@@ -1487,7 +1505,7 @@
                                                     return m(this, R)
                                                         .forEach(
                                                             function (
-                                                            a) {
+                                                                a) {
                                                                 return a
                                                                     .tween()
                                                             }), this
@@ -1498,7 +1516,7 @@
                                                     return m(this, R)
                                                         .forEach(
                                                             function (
-                                                            a) {
+                                                                a) {
                                                                 return a
                                                                     .pause()
                                                             }), this
@@ -1509,7 +1527,7 @@
                                                     return m(this, R)
                                                         .forEach(
                                                             function (
-                                                            a) {
+                                                                a) {
                                                                 return a
                                                                     .resume()
                                                             }), this
@@ -1520,11 +1538,11 @@
                                                     return m(this, R)
                                                         .forEach(
                                                             function (
-                                                            b) {
+                                                                b) {
                                                                 return b
                                                                     .stop(
                                                                         a
-                                                                        )
+                                                                    )
                                                             }), this
                                                 }
                                             }, {
@@ -1814,7 +1832,7 @@
                                             .text.style = c.text.style);
                                     var f, g = this._createSvgView(this._opts);
                                     if (!(f = e.isString(b) ? document.querySelector(b) : b))
-                                    throw new Error("Container does not exist: " + b);
+                                        throw new Error("Container does not exist: " + b);
                                     this._container = f, this._container.appendChild(g.svg), this
                                         ._opts.warnings && this._warnContainerAspectRatio(this
                                             ._container), this._opts.svgStyle && e.setStyles(g.svg,
@@ -1855,7 +1873,7 @@
                             }, g.prototype.value = function () {
                                 if (null === this._progressPath) throw new Error(f);
                                 return void 0 === this._progressPath ? 0 : this._progressPath
-                                .value()
+                                    .value()
                             }, g.prototype.setText = function (a) {
                                 if (null === this._progressPath) throw new Error(f);
                                 null === this.text && (this.text = this._createTextContainer(this
@@ -2057,16 +2075,22 @@
                 duration: 2000,
                 trailColor: '#ccc4',
                 easing: 'linear',
-                from: { color: '#ffd581', width: 2 },
-                to: { color: '#ffd581', width: 2 },
-                step: function(state, circle) {
+                from: {
+                    color: '#ffd581',
+                    width: 2
+                },
+                to: {
+                    color: '#ffd581',
+                    width: 2
+                },
+                step: function (state, circle) {
                     circle.path.setAttribute('stroke', state.color);
                     circle.path.setAttribute('stroke-width', state.width);
                     var value = Math.round(circle.value() * 100);
                     if (value === 0) {
-                    circle.setText('');
+                        circle.setText('');
                     } else {
-                    circle.setText(value + '<br/><span>clients satisfaits</span>');
+                        circle.setText(value + '<br/><span>clients satisfaits</span>');
                     }
                 }
             });
@@ -2078,16 +2102,22 @@
                 duration: 2000,
                 trailColor: '#ccc4',
                 easing: 'linear',
-                from: { color: '#ffd581', width: 2 },
-                to: { color: '#ffd581', width: 2 },
-                step: function(state, circle) {
+                from: {
+                    color: '#ffd581',
+                    width: 2
+                },
+                to: {
+                    color: '#ffd581',
+                    width: 2
+                },
+                step: function (state, circle) {
                     circle.path.setAttribute('stroke', state.color);
                     circle.path.setAttribute('stroke-width', state.width);
                     var value = Math.round(circle.value() * 100);
                     if (value === 0) {
-                    circle.setText('');
+                        circle.setText('');
                     } else {
-                    circle.setText(value + '<br/><span>projets terminés</span>');
+                        circle.setText(value + '<br/><span>projets terminés</span>');
                     }
                 }
             });
@@ -2099,16 +2129,22 @@
                 duration: 2000,
                 trailColor: '#ccc4',
                 easing: 'linear',
-                from: { color: '#ffd581', width: 2 },
-                to: { color: '#ffd581', width: 2 },
-                step: function(state, circle) {
+                from: {
+                    color: '#ffd581',
+                    width: 2
+                },
+                to: {
+                    color: '#ffd581',
+                    width: 2
+                },
+                step: function (state, circle) {
                     circle.path.setAttribute('stroke', state.color);
                     circle.path.setAttribute('stroke-width', state.width);
                     var value = Math.round(circle.value() * 10);
                     if (value === 0) {
-                    circle.setText('');
+                        circle.setText('');
                     } else {
-                    circle.setText(value + '<br/><span>années d\'expérience</span>');
+                        circle.setText(value + '<br/><span>années d\'expérience</span>');
                     }
                 }
             });
@@ -2122,19 +2158,18 @@
                 threshold: 0.75
             };
 
-            let observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.intersectionRatio >= config.threshold) {
-                    bar.animate(0.48);  // Number from 0.0 to 1.0
-                    barTwo.animate(0.16);  // Number from 0.0 to 1.0
-                    barThree.animate(0.5);  // Number from 0.0 to 1.0
-                    // entry.target.classList.add("active");
-                }
-            });
+            let observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.intersectionRatio >= config.threshold) {
+                        bar.animate(0.48); // Number from 0.0 to 1.0
+                        barTwo.animate(0.16); // Number from 0.0 to 1.0
+                        barThree.animate(0.5); // Number from 0.0 to 1.0
+                        // entry.target.classList.add("active");
+                    }
+                });
             }, config);
 
             observer.observe(statContainer);
-
         </script>
     </section>
 
@@ -2147,24 +2182,66 @@
         </div>
     </section>
 
-    <div id="theme-picker">
-        <h3>Theme picker</h3>
+    <div id="theme-picker" class="theme-picker">
+        <div class="theme-picker__heading">
+            <h3>Theme picker</h3>
+            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 -1.5299e-07L4.5 8M4.5 8L8 4.93985M4.5 8L0.999998 4.93976" stroke="white" />
+            </svg>
+        </div>
         <form action="./" method="post">
-            <select name="themeSelect" id="themeSelect">
+            <!-- <select name="themeSelect" id="themeSelect">
                 <option value="dark-theme">dark theme</option>
                 <option value="purple-theme">purple theme</option>
-                <option value="light-theme">light theme</option>
-            </select>
+            </select> -->
+
+
+            <fieldset id="themeSelect">
+                <!-- <legend>Select a theme:</legend> -->
+
+                <div>
+
+                    <label for="dark-theme" class="form-control">
+                        <input type="radio" id="" name="themeSelect" value="dark-theme" checked>
+                        Dark theme
+                    </label>
+                </div>
+
+                <div>
+                    <label for="purple-theme" class="form-control">
+                        <input type="radio" id="" name="themeSelect" value="purple-theme">
+                        Purple theme
+                    </label>
+                </div>
+
+            </fieldset>
             <!-- <input type="submit" value="pick this theme"> -->
         </form>
     </div>
     <script>
-        const themeSelect = document.getElementById('themeSelect');
+        // const themeSelect = document.querySelectorAll('themeSelect input');
         const themeStylesheet = document.getElementById('themeStylesheet');
 
-        themeSelect.addEventListener('change',function(){
-            themeStylesheet.setAttribute('href','<?php echo get_template_directory_uri();?>/assets/css/themes/'+ this.value + '.css');
-        });
+        var rad = document.querySelectorAll('#themeSelect input');
+        var prev = null;
+        for (var i = 0; i < rad.length; i++) {
+            rad[i].addEventListener('change', function () {
+                (prev) ? console.log(prev.value): null;
+                if (this !== prev) {
+                    prev = this;
+                }
+                themeStylesheet.setAttribute('href',
+                    '<?php echo get_template_directory_uri();?>/assets/css/themes/' + this.value + '.css');
+            });
+        }
+
+        const toggleArrow = document.querySelector('.theme-picker__heading svg');
+
+        toggleArrow.addEventListener('click', function () {
+            let toggleBox = this.parentElement.parentElement.children[1];
+            jQuery(toggleBox).slideToggle();
+            jQuery(this.parentElement.parentElement).toggleClass('small-window', 1000, "easeOutSine");
+        })
     </script>
 
 </main>
@@ -2214,19 +2291,19 @@ get_footer();
     gsap.from("#test .absolute-circle-frame__right .circle-one", {
         duration: 3.2,
         y: 50,
-        x:50,
-        scale:0.72,
-        yoyo:true,
-        repeat:-1
+        x: 50,
+        scale: 0.72,
+        yoyo: true,
+        repeat: -1
     });
 
     gsap.from("#test .absolute-circle-frame__left .circle-one", {
         duration: 3.2,
         y: -40,
-        x:-40,
-        scale:0.80,
-        yoyo:true,
-        repeat:-1
+        x: -40,
+        scale: 0.80,
+        yoyo: true,
+        repeat: -1
     });
 
 
@@ -2272,12 +2349,10 @@ get_footer();
 </script>
 
 <script>
-
     const scrollFunction = () => {
         if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 80) {
             jQuery("#header").addClass('navbar-fixed');
-        } 
-        else {
+        } else {
             jQuery("#header").removeClass('navbar-fixed');
         }
     }
@@ -2297,7 +2372,7 @@ get_footer();
     //             e.classList.add('active');
     //         })
     //     });
-    
+
     // }
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -2317,33 +2392,32 @@ get_footer();
         });
 
         splide.mount();
-        window.onscroll = function() {scrollFunction()};
+        window.onscroll = function () {
+            scrollFunction()
+        };
         // handleNavLinks();
 
     });
 </script>
 
 <script>
-
     const threshold = 0.6;
 
-    const activate = function(elem){
+    const activate = function (elem) {
         const id = elem.getAttribute('id');
         const anchor = document.querySelector(`a[href='#${id}']`);
-        if(anchor === null)
-        {
+        if (anchor === null) {
             return null;
         }
         anchor.parentElement.parentElement
-        .querySelectorAll('.special-active')
-        .forEach(node => node.classList.remove('special-active'));
+            .querySelectorAll('.special-active')
+            .forEach(node => node.classList.remove('special-active'));
         anchor.parentElement.classList.add('special-active')
     }
 
-    const callback = function(entries,observer){
-        entries.forEach(function(entry){
-            if(entry.intersectionRatio > threshold)
-            {
+    const callback = function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.intersectionRatio > threshold) {
                 activate(entry.target);
             }
         })
@@ -2352,13 +2426,71 @@ get_footer();
 
     const spies = document.querySelectorAll('[data-spy]');
 
-    if(spies.length > 0)
-    {
-        const observer = new IntersectionObserver(callback,{
-            threshold : threshold
+    if (spies.length > 0) {
+        const observer = new IntersectionObserver(callback, {
+            threshold: threshold
         })
-        spies.forEach(function(spy){
+        spies.forEach(function (spy) {
             observer.observe(spy);
         })
     }
+</script>
+
+<script>
+    var rjs_cursor = document.getElementById("rjs_cursor"); //Getting the cursor
+    var body = document.querySelector("body"); //Get the body element
+
+    //Functions for showing and hiding the cursor
+    //They are referenced the 
+    function rjs_show_cursor(e) { //Function to show/hide the cursor
+        if (rjs_cursor.classList.contains('rjs_cursor_hidden')) {
+            rjs_cursor.classList.remove('rjs_cursor_hidden');
+        }
+        rjs_cursor.classList.add('rjs_cursor_visible');
+    }
+
+    function rjs_hide_cursor(e) {
+        if (rjs_cursor.classList.contains('rjs_cursor_visible')) {
+            rjs_cursor.classList.remove('rjs_cursor_visible');
+        }
+        rjs_cursor.classList.add('rjs_cursor_hidden');
+    }
+
+
+    function rjs_mousemove(e) { //Function to correctly position the cursor
+        rjs_show_cursor(); //Toggle show/hide
+
+        var rjs_cursor_width = rjs_cursor.offsetWidth * 0.5;
+        var rjs_cursor_height = rjs_cursor.offsetHeight * 0.5;
+
+        var rjs_cursor_x = e.clientX - rjs_cursor_width; //x-coordinate
+        var rjs_cursor_y = e.clientY - rjs_cursor_height; //y-coordinate
+        var rjs_cursor_pos = `translate(${rjs_cursor_x}px, ${rjs_cursor_y}px)`;
+        rjs_cursor.style.transform = rjs_cursor_pos;
+    }
+
+
+    //Eventlisteners
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        window.addEventListener('mousemove', rjs_mousemove); //Attach an event listener
+        body.addEventListener('mouseleave', rjs_hide_cursor);
+
+    })
+
+    //Hover behaviour
+    function rjs_hover_cursor(e) {
+        rjs_cursor.classList.add('rjs_cursor_hover');
+    }
+
+    function rjs_unhover_cursor(e) {
+        rjs_cursor.classList.remove('rjs_cursor_hover');
+    }
+
+
+    document.querySelectorAll('a, #footer .frame svg,.splide__arrow,.cta,button').forEach(item => {
+        item.addEventListener('mouseover', rjs_hover_cursor);
+        item.addEventListener('mouseleave', rjs_unhover_cursor);
+    })
 </script>

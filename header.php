@@ -9,7 +9,7 @@
       ?>
   </head>
 
-  <script>
+  <!-- <script>
     jQuery(window).on('mousewheel DOMMouseScroll', function(e) {
       var dir,
       amt = 100;
@@ -26,7 +26,10 @@
       },500, 'linear');
   })
 
-  </script>
+  </script> -->
+
+
+
 
   <header id="header"> 
 
