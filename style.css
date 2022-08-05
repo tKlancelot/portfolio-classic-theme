@@ -690,7 +690,7 @@ a {
   display: block; }
   #header #navigation {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: auto;
     height: 12vh;
     width: 100%;
@@ -747,6 +747,37 @@ a {
       font-size: 15px;
       letter-spacing: 0.048rem;
       font-variant: all-small-caps; }
+  #header #portrait {
+    display: flex;
+    position: absolute;
+    border: 3px double var(--border-color);
+    width: 10vw;
+    height: 10vw;
+    z-index: 999;
+    overflow: hidden;
+    top: 3.2%;
+    border-radius: 50%;
+    right: 2%;
+    display: none; }
+    #header #portrait img {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      object-fit: cover;
+      object-position: -14px 10px;
+      /* border: 3px double var(--border-color); */
+      aspect-ratio: 1/1;
+      position: relative;
+      /* z-index: 999; */
+      /* border-radius: 24%; */
+      background: var(--body-darker);
+      filter: grayscale(0.92) sepia(0.6) brightness(1.24) opacity(1) saturate(0.2);
+      left: 0;
+      top: 0;
+      /* zoom: 2; */
+      box-sizing: border-box;
+      transform: scale(2);
+      transform-origin: center; }
 
 #header.navbar-fixed {
   border-left: unset;
@@ -1169,8 +1200,8 @@ a {
     background-color: var(--body-background);
     margin: 0;
     font: inherit;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     border: 2px double var(--border-color);
     border-radius: 50%;
     transform: translateY(-0.075em);
@@ -1192,7 +1223,7 @@ a {
     outline-offset: max(2px, 0.04em); }
 
 #theme-picker.small-window {
-  opacity: 0.56; }
+  opacity: 0.44; }
   #theme-picker.small-window .theme-picker__heading svg {
     transform: rotate(-180deg); }
 
@@ -1204,6 +1235,8 @@ a {
       font-size: 15px;
       line-height: 1; }
     #theme-picker input[type="radio"] {
+      width: 24px;
+      height: 24px;
       border: 1.5px double var(--border-color); }
     #theme-picker input[type="radio"]::before {
       width: 10px;
@@ -1221,7 +1254,9 @@ a {
       font-size: medium; }
 
   #theme-picker.small-window {
-    width: 38%; } }
+    width: 38%; }
+    #theme-picker.small-window svg {
+      display: none; } }
 body {
   background-color: var(--body-background); }
 
@@ -1260,16 +1295,14 @@ body {
   flex-direction: column;
   width: 100%;
   background-color: var(--section-background);
-  z-index: 10;
-  height: 76vh; }
+  z-index: 10; }
   #test .section__body .flap {
     display: grid;
     grid-template-columns: 0.54fr 0.46fr;
     min-height: 100%;
-    grid-gap: 1rem;
     width: 100%; }
     #test .section__body .flap__left {
-      height: 100%;
+      height: 76vh;
       display: grid;
       grid-template-rows: 0.6fr 0.4fr;
       padding: 3.2rem; }
@@ -1284,7 +1317,8 @@ body {
         flex-direction: column; }
     #test .section__body .flap__right {
       display: flex;
-      justify-content: flex-end; }
+      justify-content: flex-end;
+      height: 76vh; }
       #test .section__body .flap__right__content {
         display: flex;
         align-items: center;
@@ -1292,15 +1326,15 @@ body {
         overflow: hidden;
         width: 100%; }
         #test .section__body .flap__right__content img {
-          width: auto;
+          width: 100%;
           height: 100%;
           object-fit: cover;
           aspect-ratio: 1/1;
           margin: auto auto 0;
-          object-position: 0px -50px;
-          filter: grayscale(0.92) sepia(0.6) brightness(1.24) opacity(1) saturate(0.2);
           overflow: hidden;
-          transform-origin: right; }
+          transform-origin: right;
+          filter: grayscale(1) saturate(0.5) contrast(0.75);
+          clip-path: polygon(12% 0, 100% 0%, 100% 100%, 0 100%); }
 #test .section__header {
   display: flex;
   width: 100%;
@@ -1416,6 +1450,9 @@ body {
           width: auto;
           height: auto;
           object-position: 0px -60px; }
+      #test .section__body .flap__left {
+        grid-template-rows: auto auto;
+        padding: 2.4rem; }
 
   #test .absolute-circle-frame {
     display: none; }
@@ -1425,7 +1462,7 @@ body {
 
   #test #phone-curves {
     display: flex;
-    height: 100%;
+    height: 108vh;
     position: absolute;
     align-items: flex-end;
     width: 100%; }

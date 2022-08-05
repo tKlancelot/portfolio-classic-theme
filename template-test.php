@@ -66,8 +66,8 @@
                 </div>
                 <div class="flap__right">
                     <div class="flap__right__content">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/portrait/portrait-detoure.png"
-                            alt="portrait tarik">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/ian-dooley.jpg"
+                            alt="background 3d">
                     </div>
                 </div>
             </div>
@@ -88,10 +88,10 @@
                 très rapidement mon métier
                 actuel.
             </p>
-            <p class="g-text-triggered">Dès lors, je constate que toute expérience professionnelle vécue auparavant a
+            <!-- <p class="g-text-triggered">Dès lors, je constate que toute expérience professionnelle vécue auparavant a
                 vocation à être recyclée. Ces expériences deviendront
                 des composantes permettant le développement de mon portefeuille de compétences actuel.
-            </p>
+            </p> -->
             <p class="g-text-triggered">Mon objectif : développer des sites beaux et bien construits. Mais ... pas que !
                 Rester en veille face à l'évolution rapide des technologies
                 du web, afin de proposer des sites et des applications de qualité, durables et dans l'ère du temps !
@@ -2218,31 +2218,7 @@
             <!-- <input type="submit" value="pick this theme"> -->
         </form>
     </div>
-    <script>
-        // const themeSelect = document.querySelectorAll('themeSelect input');
-        const themeStylesheet = document.getElementById('themeStylesheet');
 
-        var rad = document.querySelectorAll('#themeSelect input');
-        var prev = null;
-        for (var i = 0; i < rad.length; i++) {
-            rad[i].addEventListener('change', function () {
-                (prev) ? console.log(prev.value): null;
-                if (this !== prev) {
-                    prev = this;
-                }
-                themeStylesheet.setAttribute('href',
-                    '<?php echo get_template_directory_uri();?>/assets/css/themes/' + this.value + '.css');
-            });
-        }
-
-        const toggleArrow = document.querySelector('.theme-picker__heading svg');
-
-        toggleArrow.addEventListener('click', function () {
-            let toggleBox = this.parentElement.parentElement.children[1];
-            jQuery(toggleBox).slideToggle();
-            jQuery(this.parentElement.parentElement).toggleClass('small-window', 1000, "easeOutSine");
-        })
-    </script>
 
 </main>
 
@@ -2493,4 +2469,41 @@ get_footer();
         item.addEventListener('mouseover', rjs_hover_cursor);
         item.addEventListener('mouseleave', rjs_unhover_cursor);
     })
+</script>
+
+<script>
+    // const themeSelect = document.querySelectorAll('themeSelect input');
+    const themeStylesheet = document.getElementById('themeStylesheet');
+
+    var rad = document.querySelectorAll('#themeSelect input');
+    var prev = null;
+    for (var i = 0; i < rad.length; i++) {
+        rad[i].addEventListener('change', function () {
+            (prev) ? console.log(prev.value): null;
+            if (this !== prev) {
+                prev = this;
+            }
+            themeStylesheet.setAttribute('href',
+                '<?php echo get_template_directory_uri();?>/assets/css/themes/' + this.value + '.css');
+        });
+    }
+
+    const toggleArrow = document.querySelector('.theme-picker__heading');
+
+    const initThemeSwitcherStatus = () => {
+        let toggleBox = toggleArrow.parentElement.children[1];
+        jQuery(toggleBox).hide();
+        jQuery(toggleArrow.parentElement).addClass('small-window');
+
+    }
+
+    initThemeSwitcherStatus();
+
+    toggleArrow.addEventListener('click', function () {
+        let toggleBox = this.parentElement.children[1];
+        jQuery(toggleBox).slideToggle();
+        jQuery(this.parentElement).toggleClass('small-window', 1000, "easeOutSine");
+    })
+
+
 </script>

@@ -34,11 +34,14 @@
   <header id="header"> 
 
       <nav id="navigation">
+        <div id="portrait">
+            <img src="<?php echo get_template_directory_uri();?>/assets/portrait/portrait-detoure.png" alt="portrait tarik">
+        </div>
         <?php
-        if(function_exists('the_custom_logo'))
-        {
-          the_custom_logo();
-        }
+        // if(function_exists('the_custom_logo'))
+        // {
+        //   the_custom_logo();
+        // }
         ?>
         <?php
           wp_nav_menu(array(
