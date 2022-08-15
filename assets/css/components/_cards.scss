@@ -8,22 +8,21 @@
     grid-template-rows: auto auto auto;
 
     &__header {
-        // border: 2px solid red;
-        height: 40vh;
-        min-height: 40vh;
         display: flex;
         width: 100%;
         position: relative;
-        @include textured-background;
+        background-color: var(--section-background);
         overflow: hidden;
-
+        height: 40vh;  
         img {
-            width: 100%;
+            max-width: 100%;
+            height: 100%;
             position: relative;
             display: flex;
-            height: auto;
             box-sizing: border-box;
             object-fit: cover;
+            width: auto;
+            margin: auto;
         }
     }
 
@@ -39,6 +38,7 @@
 
     &__body {
         align-items: center;
+
         h3 {
             color: var(--text-canari);
             font-size: 22px;
@@ -53,4 +53,78 @@
         font-family: $font-primary-light;
         font-style: italic;
     }
+}
+
+/* card skills */
+
+.skill-card {
+    height: 100%;
+    display: none;
+    &__content {
+        width: 64%;
+        background-color: var(--body-darker);
+        border: 1px solid var(--border-color);
+        margin: auto;
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        transition: 0.4 ease-in all;
+
+        &__header {
+            text-align: center;
+            display: flex;
+            height: 30vh;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &__body {
+            height: 28vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            font-family: $font-primary-light;
+
+            h3 {
+                margin: 0.75rem 0 0;
+                text-transform: uppercase;
+                font-size: 12.5px;
+                letter-spacing: 0.080rem;
+            }
+
+            hr {
+                margin: 0.25rem 0 1rem;
+                border: unset;
+                border-bottom: 1px solid var(--underline-color);
+            }
+
+            p {
+                font-family: $font-primary-light;
+                font-size: 14px;
+                line-height: 1.32rem;
+            }
+        }
+    }
+}
+
+.skill-card.active {
+    display: flex;
+}
+
+@media screen and (max-width:1600px) {
+
+    .skill-card__content__body p {
+        font-size: 12.5px;
+    }
+
+}
+
+@media screen and (max-width: 800px){
+    
+    .skill-card__content__body p {
+        font-size: 11.5px;
+    }
+
 }

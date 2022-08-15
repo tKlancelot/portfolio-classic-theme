@@ -1,3 +1,2344 @@
-console.log("script chargé");
+const scrollFunction = () => {
+    if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 80) {
+        jQuery("#header").addClass('navbar-fixed');
+    } else {
+        jQuery("#header").removeClass('navbar-fixed');
+    }
+}
 
-// jQuery('p').css('border','4px solid red');
+const disableLinks = () => {
+    let allCategoryLinks = document.querySelectorAll('.project-card__footer a');
+    allCategoryLinks.forEach((e) => {
+        e.style.pointerEvents = 'none';
+    })
+}
+
+/****************************** */
+/****   gsap animations    **** */
+/****************************** */
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+gsap.from(".g-text", {
+    scrollTrigger: ".g-text",
+    opacity: 0,
+    duration: 2.4,
+    // scale: 0.5,
+    y: -50,
+    stagger: (0.6)
+});
+
+gsap.from(".g-text-triggered", {
+    scrollTrigger: ".large-text-banner__body",
+    opacity: 0,
+    duration: 2.4,
+    // scale: 0.5,
+    y: -60,
+    stagger: (0.6)
+});
+
+gsap.from(".flap .flap__right img", {
+    // scrollTrigger:".g-text",
+    // stagger:(0.6)
+    opacity: 0,
+    duration: 2.4,
+    // scale: 0.48,
+    x: 250,
+
+});
+
+gsap.from(".gsap-background", {
+    duration: 2.4,
+    y: 0,
+    x: 0,
+    opacity:0.1,
+    scale: 0.92
+});
+
+
+//WITH Timelines (cleaner, more versatile)
+var tl = gsap.timeline({
+    // repeat: 2, 
+    // repeatDelay: 1
+});
+tl.from("#one", {
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    scale: 0.1,
+    ease: "Power2.easeOut"
+});
+tl.to("#one", {
+    x: 0,
+    duration: 1,
+    ease: "Power2.easeOut"
+});
+tl.from("#three", {
+    x: 100,
+    opacity: 0,
+    duration: 1,
+    scale: 0.1
+});
+tl.from("#two", {
+    y: -50,
+    opacity: 0,
+    duration: 1,
+    scale: 0.1
+});
+tl.pause();
+// tl.resume();
+tl.play();
+
+
+/************************************* */
+/****   gsap animations mobile    **** */
+/************************************* */
+
+const handleMobileGsapAnimation = () => {
+
+    gsap.from(".skill-card:nth-child(1)", {
+        scrollTrigger: ".skill-card:nth-child(1)",
+        opacity: 0,
+        duration: 3,
+        scale: 0.40,
+        y: -100
+    });
+    gsap.from(".skill-card:nth-child(2)", {
+        scrollTrigger: ".skill-card:nth-child(2)",
+        opacity: 0,
+        duration: 2.4,
+        scale: 0.56,
+        y: -80
+    });
+    gsap.from(".skill-card:nth-child(3)", {
+        scrollTrigger: ".skill-card:nth-child(3)",
+        opacity: 0,
+        duration: 3,
+        scale: 0.40,
+        y: -100
+    });
+    gsap.from(".skill-card:nth-child(4)", {
+        scrollTrigger: ".skill-card:nth-child(4)",
+        opacity: 0,
+        duration: 2.4,
+        scale: 0.56,
+        y: -80
+    });
+
+}
+
+
+
+
+/****************************** */
+/******   splide slide   ****** */
+/****************************** */
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    var splide = new Splide('.splide', {
+        type: 'loop',
+        perPage: 3,
+        gap: '3.2rem',
+        breakpoints: {
+            800: {
+                perPage: 1,
+                pagination: false
+            },
+        }
+    });
+
+    splide.mount();
+    disableLinks();
+    window.onscroll = function () {
+        scrollFunction();
+    };
+    if(window.matchMedia("(max-width:800px)").matches)
+    {
+        handleMobileGsapAnimation();
+    }
+
+});
+
+! function (a) {
+    if ("object" == typeof exports && "undefined" != typeof module) module.exports = a();
+    else if ("function" == typeof define && define.amd) define([], a);
+    else {
+        var b;
+        b = "undefined" != typeof window ? window : "undefined" != typeof global ? global : "undefined" !=
+            typeof self ? self : this, b.ProgressBar = a()
+    }
+}(function () {
+    var a;
+    return function () {
+        function a(b, c, d) {
+            function e(g, h) {
+                if (!c[g]) {
+                    if (!b[g]) {
+                        var i = "function" == typeof require && require;
+                        if (!h && i) return i(g, !0);
+                        if (f) return f(g, !0);
+                        var j = new Error("Cannot find module '" + g + "'");
+                        throw j.code = "MODULE_NOT_FOUND", j
+                    }
+                    var k = c[g] = {
+                        exports: {}
+                    };
+                    b[g][0].call(k.exports, function (a) {
+                        return e(b[g][1][a] || a)
+                    }, k, k.exports, a, b, c, d)
+                }
+                return c[g].exports
+            }
+            for (var f = "function" == typeof require && require, g = 0; g < d.length; g++) e(d[g]);
+            return e
+        }
+        return a
+    }()({
+        1: [function (b, c, d) {
+            ! function (b, e) {
+                "object" == typeof d && "object" == typeof c ? c.exports = e() :
+                    "function" == typeof a && a.amd ? a("shifty", [], e) : "object" ==
+                    typeof d ? d.shifty = e() : b.shifty = e()
+            }(window, function () {
+                return function (a) {
+                    function b(d) {
+                        if (c[d]) return c[d].exports;
+                        var e = c[d] = {
+                            i: d,
+                            l: !1,
+                            exports: {}
+                        };
+                        return a[d].call(e.exports, e, e.exports, b), e.l = !0,
+                            e.exports
+                    }
+                    var c = {};
+                    return b.m = a, b.c = c, b.d = function (a, c, d) {
+                        b.o(a, c) || Object.defineProperty(a, c, {
+                            enumerable: !0,
+                            get: d
+                        })
+                    }, b.r = function (a) {
+                        "undefined" != typeof Symbol && Symbol
+                            .toStringTag && Object.defineProperty(a, Symbol
+                                .toStringTag, {
+                                    value: "Module"
+                                }), Object.defineProperty(a, "__esModule", {
+                                value: !0
+                            })
+                    }, b.t = function (a, c) {
+                        if (1 & c && (a = b(a)), 8 & c) return a;
+                        if (4 & c && "object" == typeof a && a && a
+                            .__esModule) return a;
+                        var d = Object.create(null);
+                        if (b.r(d), Object.defineProperty(d, "default", {
+                                enumerable: !0,
+                                value: a
+                            }), 2 & c && "string" != typeof a)
+                            for (var e in a) b.d(d, e, function (b) {
+                                return a[b]
+                            }.bind(null, e));
+                        return d
+                    }, b.n = function (a) {
+                        var c = a && a.__esModule ? function () {
+                            return a.default
+                        } : function () {
+                            return a
+                        };
+                        return b.d(c, "a", c), c
+                    }, b.o = function (a, b) {
+                        return Object.prototype.hasOwnProperty.call(a, b)
+                    }, b.p = "", b(b.s = 3)
+                }([function (a, b, c) {
+                    "use strict";
+                    (function (a) {
+                        function d(a, b) {
+                            for (var c = 0; c < b.length; c++) {
+                                var d = b[c];
+                                d.enumerable = d.enumerable || !1, d
+                                    .configurable = !0, "value" in
+                                    d && (d.writable = !0), Object
+                                    .defineProperty(a, d.key, d)
+                            }
+                        }
+
+                        function e(a) {
+                            return (e = "function" ==
+                                typeof Symbol && "symbol" ==
+                                typeof Symbol.iterator ?
+                                function (a) {
+                                    return typeof a
+                                } : function (a) {
+                                    return a && "function" ==
+                                        typeof Symbol && a
+                                        .constructor ===
+                                        Symbol && a !== Symbol
+                                        .prototype ? "symbol" :
+                                        typeof a
+                                })(a)
+                        }
+
+                        function f(a, b) {
+                            var c = Object.keys(a);
+                            if (Object.getOwnPropertySymbols) {
+                                var d = Object
+                                    .getOwnPropertySymbols(a);
+                                b && (d = d.filter(function (b) {
+                                    return Object
+                                        .getOwnPropertyDescriptor(
+                                            a, b)
+                                        .enumerable
+                                })), c.push.apply(c, d)
+                            }
+                            return c
+                        }
+
+                        function g(a) {
+                            for (var b = 1; b < arguments
+                                .length; b++) {
+                                var c = null != arguments[b] ?
+                                    arguments[b] : {};
+                                b % 2 ? f(Object(c), !0).forEach(
+                                        function (b) {
+                                            h(a, b, c[b])
+                                        }) : Object
+                                    .getOwnPropertyDescriptors ?
+                                    Object.defineProperties(a,
+                                        Object
+                                        .getOwnPropertyDescriptors(
+                                            c)) : f(Object(c))
+                                    .forEach(function (b) {
+                                        Object.defineProperty(a,
+                                            b, Object
+                                            .getOwnPropertyDescriptor(
+                                                c, b))
+                                    })
+                            }
+                            return a
+                        }
+
+                        function h(a, b, c) {
+                            return b in a ? Object.defineProperty(a,
+                                b, {
+                                    value: c,
+                                    enumerable: !0,
+                                    configurable: !0,
+                                    writable: !0
+                                }) : a[b] = c, a
+                        }
+
+                        function i() {
+                            var a = arguments.length > 0 &&
+                                void 0 !== arguments[0] ? arguments[
+                                    0] : {},
+                                b = new v,
+                                c = b.tween(a);
+                            return c.tweenable = b, c
+                        }
+                        c.d(b, "e", function () {
+                            return q
+                        }), c.d(b, "c", function () {
+                            return s
+                        }), c.d(b, "b", function () {
+                            return t
+                        }), c.d(b, "a", function () {
+                            return v
+                        }), c.d(b, "d", function () {
+                            return i
+                        });
+                        var j = c(1),
+                            k = "undefined" != typeof window ?
+                            window : a,
+                            l = k.requestAnimationFrame || k
+                            .webkitRequestAnimationFrame || k
+                            .oRequestAnimationFrame || k
+                            .msRequestAnimationFrame || k
+                            .mozCancelRequestAnimationFrame && k
+                            .mozRequestAnimationFrame || setTimeout,
+                            m = function () {},
+                            n = null,
+                            o = null,
+                            p = g({}, j),
+                            q = function (a, b, c, d, e, f, g) {
+                                var h = a < f ? 0 : (a - f) / e;
+                                for (var i in b) {
+                                    var j = g[i],
+                                        k = j.call ? j : p[j],
+                                        l = c[i];
+                                    b[i] = l + (d[i] - l) * k(h)
+                                }
+                                return b
+                            },
+                            r = function (a, b) {
+                                var c = a._attachment,
+                                    d = a._currentState,
+                                    e = a._delay,
+                                    f = a._easing,
+                                    g = a._originalState,
+                                    h = a._duration,
+                                    i = a._step,
+                                    j = a._targetState,
+                                    k = a._timestamp,
+                                    l = k + e + h,
+                                    m = b > l ? l : b,
+                                    n = h - (l - m);
+                                m >= l ? (i(j, c, n), a.stop(!0)) :
+                                    (a._applyFilter("beforeTween"),
+                                        m < k + e ? (m = 1, h = 1,
+                                            k = 1) : k += e, q(m, d,
+                                            g, j, h, k, f), a
+                                        ._applyFilter("afterTween"),
+                                        i(d, c, n))
+                            },
+                            s = function () {
+                                for (var a = v.now(), b = n; b;) {
+                                    var c = b._next;
+                                    r(b, a), b = c
+                                }
+                            },
+                            t = function (a) {
+                                var b = arguments.length > 1 &&
+                                    void 0 !== arguments[1] ?
+                                    arguments[1] : "linear",
+                                    c = {},
+                                    d = e(b);
+                                if ("string" === d || "function" ===
+                                    d)
+                                    for (var f in a) c[f] = b;
+                                else
+                                    for (var g in a) c[g] = b[g] ||
+                                        "linear";
+                                return c
+                            },
+                            u = function (a) {
+                                if (a === n)(n = a._next) ? n
+                                    ._previous = null : o = null;
+                                else if (a === o)(o = a._previous) ?
+                                    o._next = null : n = null;
+                                else {
+                                    var b = a._previous,
+                                        c = a._next;
+                                    b._next = c, c._previous = b
+                                }
+                                a._previous = a._next = null
+                            },
+                            v = function () {
+                                function a() {
+                                    var b = arguments.length > 0 &&
+                                        void 0 !== arguments[0] ?
+                                        arguments[0] : {},
+                                        c = arguments.length > 1 &&
+                                        void 0 !== arguments[1] ?
+                                        arguments[1] : void 0;
+                                    ! function (a, b) {
+                                        if (!(a instanceof b))
+                                            throw new TypeError(
+                                                "Cannot call a class as a function"
+                                            )
+                                    }(this, a), this._currentState =
+                                        b, this._configured = !1,
+                                        this._filters = [], this
+                                        ._timestamp = null, this
+                                        ._next = null, this
+                                        ._previous = null, c && this
+                                        .setConfig(c)
+                                }
+                                var b, c, e;
+                                return b = a, (c = [{
+                                        key: "_applyFilter",
+                                        value: function (
+                                            a) {
+                                            var b = !0,
+                                                c = !1,
+                                                d =
+                                                void 0;
+                                            try {
+                                                for (var e,
+                                                        f =
+                                                        this
+                                                        ._filters[
+                                                            Symbol
+                                                            .iterator
+                                                        ]
+                                                        (); !
+                                                    (b = (e =
+                                                            f
+                                                            .next()
+                                                        )
+                                                        .done
+                                                    ); b = !
+                                                    0) {
+                                                    var g =
+                                                        e
+                                                        .value[
+                                                            a
+                                                        ];
+                                                    g && g(
+                                                        this
+                                                    )
+                                                }
+                                            } catch (
+                                                a) {
+                                                c = !0,
+                                                    d =
+                                                    a
+                                            } finally {
+                                                try {
+                                                    b || null ==
+                                                        f
+                                                        .return ||
+                                                        f
+                                                        .return()
+                                                } finally {
+                                                    if (
+                                                        c
+                                                    )
+                                                        throw d
+                                                }
+                                            }
+                                        }
+                                    }, {
+                                        key: "tween",
+                                        value: function () {
+                                            var b =
+                                                arguments
+                                                .length >
+                                                0 &&
+                                                void 0 !==
+                                                arguments[
+                                                    0] ?
+                                                arguments[
+                                                    0] :
+                                                void 0,
+                                                c = this
+                                                ._attachment,
+                                                d = this
+                                                ._configured;
+                                            return !b &&
+                                                d ||
+                                                this
+                                                .setConfig(
+                                                    b),
+                                                this
+                                                ._pausedAtTime =
+                                                null,
+                                                this
+                                                ._timestamp =
+                                                a.now(),
+                                                this
+                                                ._start(
+                                                    this
+                                                    .get(),
+                                                    c),
+                                                this
+                                                .resume()
+                                        }
+                                    }, {
+                                        key: "setConfig",
+                                        value: function () {
+                                            var b =
+                                                this,
+                                                c =
+                                                arguments
+                                                .length >
+                                                0 &&
+                                                void 0 !==
+                                                arguments[
+                                                    0] ?
+                                                arguments[
+                                                    0] : {},
+                                                d = c
+                                                .attachment,
+                                                e = c
+                                                .delay,
+                                                f =
+                                                void 0 ===
+                                                e ? 0 :
+                                                e,
+                                                h = c
+                                                .duration,
+                                                i =
+                                                void 0 ===
+                                                h ?
+                                                500 : h,
+                                                j = c
+                                                .easing,
+                                                k = c
+                                                .from,
+                                                l = c
+                                                .promise,
+                                                n =
+                                                void 0 ===
+                                                l ?
+                                                Promise :
+                                                l,
+                                                o = c
+                                                .start,
+                                                p =
+                                                void 0 ===
+                                                o ? m :
+                                                o,
+                                                q = c
+                                                .step,
+                                                r =
+                                                void 0 ===
+                                                q ? m :
+                                                q,
+                                                s = c
+                                                .to;
+                                            this._configured = !
+                                                0, this
+                                                ._attachment =
+                                                d, this
+                                                ._isPlaying = !
+                                                1, this
+                                                ._pausedAtTime =
+                                                null,
+                                                this
+                                                ._scheduleId =
+                                                null,
+                                                this
+                                                ._delay =
+                                                f, this
+                                                ._start =
+                                                p, this
+                                                ._step =
+                                                r, this
+                                                ._duration =
+                                                i, this
+                                                ._currentState =
+                                                g({},
+                                                    k ||
+                                                    this
+                                                    .get()
+                                                ),
+                                                this
+                                                ._originalState =
+                                                this
+                                                .get(),
+                                                this
+                                                ._targetState =
+                                                g({},
+                                                    s ||
+                                                    this
+                                                    .get()
+                                                );
+                                            var u = this
+                                                ._currentState;
+                                            this._targetState =
+                                                g({},
+                                                    u, {},
+                                                    this
+                                                    ._targetState
+                                                ),
+                                                this
+                                                ._easing =
+                                                t(u, j);
+                                            var v = a
+                                                .filters;
+                                            for (var w in
+                                                    this
+                                                    ._filters
+                                                    .length =
+                                                    0,
+                                                    v)
+                                                v[w]
+                                                .doesApply(
+                                                    this
+                                                ) &&
+                                                this
+                                                ._filters
+                                                .push(v[
+                                                    w
+                                                ]);
+                                            return this
+                                                ._applyFilter(
+                                                    "tweenCreated"
+                                                ),
+                                                this
+                                                ._promise =
+                                                new n(
+                                                    function (
+                                                        a,
+                                                        c
+                                                    ) {
+                                                        b._resolve =
+                                                            a,
+                                                            b
+                                                            ._reject =
+                                                            c
+                                                    }),
+                                                this
+                                                ._promise
+                                                .catch(
+                                                    m),
+                                                this
+                                        }
+                                    }, {
+                                        key: "get",
+                                        value: function () {
+                                            return g({},
+                                                this
+                                                ._currentState
+                                            )
+                                        }
+                                    }, {
+                                        key: "set",
+                                        value: function (
+                                            a) {
+                                            this._currentState =
+                                                a
+                                        }
+                                    }, {
+                                        key: "pause",
+                                        value: function () {
+                                            if (this
+                                                ._isPlaying
+                                            ) return this
+                                                ._pausedAtTime =
+                                                a
+                                                .now(),
+                                                this
+                                                ._isPlaying = !
+                                                1,
+                                                u(
+                                                    this
+                                                ),
+                                                this
+                                        }
+                                    }, {
+                                        key: "resume",
+                                        value: function () {
+                                            if (null ===
+                                                this
+                                                ._timestamp
+                                            ) return this
+                                                .tween();
+                                            if (this
+                                                ._isPlaying
+                                            ) return this
+                                                ._promise;
+                                            var b = a
+                                                .now();
+                                            return this
+                                                ._pausedAtTime &&
+                                                (this
+                                                    ._timestamp +=
+                                                    b -
+                                                    this
+                                                    ._pausedAtTime,
+                                                    this
+                                                    ._pausedAtTime =
+                                                    null
+                                                ),
+                                                this
+                                                ._isPlaying = !
+                                                0,
+                                                null ===
+                                                n ? (n =
+                                                    this,
+                                                    o =
+                                                    this,
+                                                    function a() {
+                                                        n && (l.call(
+                                                                k,
+                                                                a,
+                                                                1e3 /
+                                                                60
+                                                            ),
+                                                            s()
+                                                        )
+                                                    }()
+                                                ) :
+                                                (this
+                                                    ._previous =
+                                                    o, o
+                                                    ._next =
+                                                    this,
+                                                    o =
+                                                    this
+                                                ),
+                                                this
+                                                ._promise
+                                        }
+                                    }, {
+                                        key: "seek",
+                                        value: function (
+                                            b) {
+                                            b = Math
+                                                .max(b,
+                                                    0);
+                                            var c = a
+                                                .now();
+                                            return this
+                                                ._timestamp +
+                                                b ===
+                                                0 ?
+                                                this : (
+                                                    this
+                                                    ._timestamp =
+                                                    c -
+                                                    b,
+                                                    this
+                                                    ._isPlaying ||
+                                                    r(this,
+                                                        c
+                                                    ),
+                                                    this
+                                                )
+                                        }
+                                    }, {
+                                        key: "stop",
+                                        value: function () {
+                                            var a =
+                                                arguments
+                                                .length >
+                                                0 &&
+                                                void 0 !==
+                                                arguments[
+                                                    0
+                                                ] &&
+                                                arguments[
+                                                    0],
+                                                b = this
+                                                ._attachment,
+                                                c = this
+                                                ._currentState,
+                                                d = this
+                                                ._easing,
+                                                e = this
+                                                ._originalState,
+                                                f = this
+                                                ._targetState;
+                                            if (this
+                                                ._isPlaying
+                                            ) return this
+                                                ._isPlaying = !
+                                                1,
+                                                u(
+                                                    this
+                                                ),
+                                                a ?
+                                                (this
+                                                    ._applyFilter(
+                                                        "beforeTween"
+                                                    ),
+                                                    q(1, c,
+                                                        e,
+                                                        f,
+                                                        1,
+                                                        0,
+                                                        d
+                                                    ),
+                                                    this
+                                                    ._applyFilter(
+                                                        "afterTween"
+                                                    ),
+                                                    this
+                                                    ._applyFilter(
+                                                        "afterTweenEnd"
+                                                    ),
+                                                    this
+                                                    ._resolve(
+                                                        c,
+                                                        b
+                                                    )
+                                                ) :
+                                                this
+                                                ._reject(
+                                                    c,
+                                                    b
+                                                ),
+                                                this
+                                        }
+                                    }, {
+                                        key: "isPlaying",
+                                        value: function () {
+                                            return this
+                                                ._isPlaying
+                                        }
+                                    }, {
+                                        key: "setScheduleFunction",
+                                        value: function (
+                                            b) {
+                                            a.setScheduleFunction(
+                                                b)
+                                        }
+                                    }, {
+                                        key: "dispose",
+                                        value: function () {
+                                            for (var a in
+                                                    this)
+                                                delete this[
+                                                    a]
+                                        }
+                                    }]) && d(b.prototype, c), e &&
+                                    d(b, e), a
+                            }();
+                        v.setScheduleFunction = function (a) {
+                                return l = a
+                            }, v.formulas = p, v.filters = {}, v
+                            .now = Date.now || function () {
+                                return +new Date
+                            }
+                    }).call(this, c(2))
+                }, function (a, b, c) {
+                    "use strict";
+                    c.r(b), c.d(b, "linear", function () {
+                        return d
+                    }), c.d(b, "easeInQuad", function () {
+                        return e
+                    }), c.d(b, "easeOutQuad", function () {
+                        return f
+                    }), c.d(b, "easeInOutQuad", function () {
+                        return g
+                    }), c.d(b, "easeInCubic", function () {
+                        return h
+                    }), c.d(b, "easeOutCubic", function () {
+                        return i
+                    }), c.d(b, "easeInOutCubic", function () {
+                        return j
+                    }), c.d(b, "easeInQuart", function () {
+                        return k
+                    }), c.d(b, "easeOutQuart", function () {
+                        return l
+                    }), c.d(b, "easeInOutQuart", function () {
+                        return m
+                    }), c.d(b, "easeInQuint", function () {
+                        return n
+                    }), c.d(b, "easeOutQuint", function () {
+                        return o
+                    }), c.d(b, "easeInOutQuint", function () {
+                        return p
+                    }), c.d(b, "easeInSine", function () {
+                        return q
+                    }), c.d(b, "easeOutSine", function () {
+                        return r
+                    }), c.d(b, "easeInOutSine", function () {
+                        return s
+                    }), c.d(b, "easeInExpo", function () {
+                        return t
+                    }), c.d(b, "easeOutExpo", function () {
+                        return u
+                    }), c.d(b, "easeInOutExpo", function () {
+                        return v
+                    }), c.d(b, "easeInCirc", function () {
+                        return w
+                    }), c.d(b, "easeOutCirc", function () {
+                        return x
+                    }), c.d(b, "easeInOutCirc", function () {
+                        return y
+                    }), c.d(b, "easeOutBounce", function () {
+                        return z
+                    }), c.d(b, "easeInBack", function () {
+                        return A
+                    }), c.d(b, "easeOutBack", function () {
+                        return B
+                    }), c.d(b, "easeInOutBack", function () {
+                        return C
+                    }), c.d(b, "elastic", function () {
+                        return D
+                    }), c.d(b, "swingFromTo", function () {
+                        return E
+                    }), c.d(b, "swingFrom", function () {
+                        return F
+                    }), c.d(b, "swingTo", function () {
+                        return G
+                    }), c.d(b, "bounce", function () {
+                        return H
+                    }), c.d(b, "bouncePast", function () {
+                        return I
+                    }), c.d(b, "easeFromTo", function () {
+                        return J
+                    }), c.d(b, "easeFrom", function () {
+                        return K
+                    }), c.d(b, "easeTo", function () {
+                        return L
+                    });
+                    var d = function (a) {
+                            return a
+                        },
+                        e = function (a) {
+                            return Math.pow(a, 2)
+                        },
+                        f = function (a) {
+                            return -(Math.pow(a - 1, 2) - 1)
+                        },
+                        g = function (a) {
+                            return (a /= .5) < 1 ? .5 * Math.pow(a, 2) :
+                                -.5 * ((a -= 2) * a - 2)
+                        },
+                        h = function (a) {
+                            return Math.pow(a, 3)
+                        },
+                        i = function (a) {
+                            return Math.pow(a - 1, 3) + 1
+                        },
+                        j = function (a) {
+                            return (a /= .5) < 1 ? .5 * Math.pow(a, 3) :
+                                .5 * (Math.pow(a - 2, 3) + 2)
+                        },
+                        k = function (a) {
+                            return Math.pow(a, 4)
+                        },
+                        l = function (a) {
+                            return -(Math.pow(a - 1, 4) - 1)
+                        },
+                        m = function (a) {
+                            return (a /= .5) < 1 ? .5 * Math.pow(a, 4) :
+                                -.5 * ((a -= 2) * Math.pow(a, 3) - 2)
+                        },
+                        n = function (a) {
+                            return Math.pow(a, 5)
+                        },
+                        o = function (a) {
+                            return Math.pow(a - 1, 5) + 1
+                        },
+                        p = function (a) {
+                            return (a /= .5) < 1 ? .5 * Math.pow(a, 5) :
+                                .5 * (Math.pow(a - 2, 5) + 2)
+                        },
+                        q = function (a) {
+                            return 1 - Math.cos(a * (Math.PI / 2))
+                        },
+                        r = function (a) {
+                            return Math.sin(a * (Math.PI / 2))
+                        },
+                        s = function (a) {
+                            return -.5 * (Math.cos(Math.PI * a) - 1)
+                        },
+                        t = function (a) {
+                            return 0 === a ? 0 : Math.pow(2, 10 * (a -
+                                1))
+                        },
+                        u = function (a) {
+                            return 1 === a ? 1 : 1 - Math.pow(2, -10 *
+                                a)
+                        },
+                        v = function (a) {
+                            return 0 === a ? 0 : 1 === a ? 1 : (a /=
+                                .5) < 1 ? .5 * Math.pow(2, 10 * (a -
+                                1)) : .5 * (2 - Math.pow(2, -10 * --
+                                a))
+                        },
+                        w = function (a) {
+                            return -(Math.sqrt(1 - a * a) - 1)
+                        },
+                        x = function (a) {
+                            return Math.sqrt(1 - Math.pow(a - 1, 2))
+                        },
+                        y = function (a) {
+                            return (a /= .5) < 1 ? -.5 * (Math.sqrt(1 -
+                                a * a) - 1) : .5 * (Math.sqrt(1 - (
+                                a -= 2) * a) + 1)
+                        },
+                        z = function (a) {
+                            return a < 1 / 2.75 ? 7.5625 * a * a : a <
+                                2 / 2.75 ? 7.5625 * (a -= 1.5 / 2.75) *
+                                a + .75 : a < 2.5 / 2.75 ? 7.5625 * (
+                                    a -= 2.25 / 2.75) * a + .9375 :
+                                7.5625 * (a -= 2.625 / 2.75) * a +
+                                .984375
+                        },
+                        A = function (a) {
+                            var b = 1.70158;
+                            return a * a * ((b + 1) * a - b)
+                        },
+                        B = function (a) {
+                            var b = 1.70158;
+                            return (a -= 1) * a * ((b + 1) * a + b) + 1
+                        },
+                        C = function (a) {
+                            var b = 1.70158;
+                            return (a /= .5) < 1 ? a * a * ((1 + (b *=
+                                1.525)) * a - b) * .5 : .5 * ((a -=
+                                2) * a * ((1 + (b *= 1.525)) *
+                                a + b) + 2)
+                        },
+                        D = function (a) {
+                            return -1 * Math.pow(4, -8 * a) * Math.sin((
+                                6 * a - 1) * (2 * Math.PI) / 2) + 1
+                        },
+                        E = function (a) {
+                            var b = 1.70158;
+                            return (a /= .5) < 1 ? a * a * ((1 + (b *=
+                                1.525)) * a - b) * .5 : .5 * ((a -=
+                                2) * a * ((1 + (b *= 1.525)) *
+                                a + b) + 2)
+                        },
+                        F = function (a) {
+                            var b = 1.70158;
+                            return a * a * ((b + 1) * a - b)
+                        },
+                        G = function (a) {
+                            var b = 1.70158;
+                            return (a -= 1) * a * ((b + 1) * a + b) + 1
+                        },
+                        H = function (a) {
+                            return a < 1 / 2.75 ? 7.5625 * a * a : a <
+                                2 / 2.75 ? 7.5625 * (a -= 1.5 / 2.75) *
+                                a + .75 : a < 2.5 / 2.75 ? 7.5625 * (
+                                    a -= 2.25 / 2.75) * a + .9375 :
+                                7.5625 * (a -= 2.625 / 2.75) * a +
+                                .984375
+                        },
+                        I = function (a) {
+                            return a < 1 / 2.75 ? 7.5625 * a * a : a <
+                                2 / 2.75 ? 2 - (7.5625 * (a -= 1.5 /
+                                    2.75) * a + .75) : a < 2.5 / 2.75 ?
+                                2 - (7.5625 * (a -= 2.25 / 2.75) * a +
+                                    .9375) : 2 - (7.5625 * (a -= 2.625 /
+                                    2.75) * a + .984375)
+                        },
+                        J = function (a) {
+                            return (a /= .5) < 1 ? .5 * Math.pow(a, 4) :
+                                -.5 * ((a -= 2) * Math.pow(a, 3) - 2)
+                        },
+                        K = function (a) {
+                            return Math.pow(a, 4)
+                        },
+                        L = function (a) {
+                            return Math.pow(a, .25)
+                        }
+                }, function (a, b) {
+                    var c;
+                    c = function () {
+                        return this
+                    }();
+                    try {
+                        c = c || new Function("return this")()
+                    } catch (a) {
+                        "object" == typeof window && (c = window)
+                    }
+                    a.exports = c
+                }, function (a, b, c) {
+                    "use strict";
+
+                    function d(a) {
+                        return parseInt(a, 16)
+                    }
+
+                    function e(a) {
+                        var b = a._currentState;
+                        [b, a._originalState, a._targetState].forEach(
+                            B), a._tokenData = E(b)
+                    }
+
+                    function f(a) {
+                        var b = a._currentState,
+                            c = a._originalState,
+                            d = a._targetState,
+                            e = a._easing,
+                            f = a._tokenData;
+                        K(e, f), [b, c, d].forEach(function (a) {
+                            return F(a, f)
+                        })
+                    }
+
+                    function g(a) {
+                        var b = a._currentState,
+                            c = a._originalState,
+                            d = a._targetState,
+                            e = a._easing,
+                            f = a._tokenData;
+                        [b, c, d].forEach(function (a) {
+                            return J(a, f)
+                        }), L(e, f)
+                    }
+
+                    function h(a, b) {
+                        var c = Object.keys(a);
+                        if (Object.getOwnPropertySymbols) {
+                            var d = Object.getOwnPropertySymbols(a);
+                            b && (d = d.filter(function (b) {
+                                return Object
+                                    .getOwnPropertyDescriptor(
+                                        a, b).enumerable
+                            })), c.push.apply(c, d)
+                        }
+                        return c
+                    }
+
+                    function i(a) {
+                        for (var b = 1; b < arguments.length; b++) {
+                            var c = null != arguments[b] ? arguments[
+                                b] : {};
+                            b % 2 ? h(Object(c), !0).forEach(function (
+                                    b) {
+                                    j(a, b, c[b])
+                                }) : Object.getOwnPropertyDescriptors ?
+                                Object.defineProperties(a, Object
+                                    .getOwnPropertyDescriptors(c)) : h(
+                                    Object(c)).forEach(function (b) {
+                                    Object.defineProperty(a, b,
+                                        Object
+                                        .getOwnPropertyDescriptor(
+                                            c, b))
+                                })
+                        }
+                        return a
+                    }
+
+                    function j(a, b, c) {
+                        return b in a ? Object.defineProperty(a, b, {
+                            value: c,
+                            enumerable: !0,
+                            configurable: !0,
+                            writable: !0
+                        }) : a[b] = c, a
+                    }
+
+                    function k(a) {
+                        return function (a) {
+                            if (Array.isArray(a)) {
+                                for (var b = 0, c = new Array(a
+                                        .length); b < a.length; b++)
+                                    c[b] = a[b];
+                                return c
+                            }
+                        }(a) || function (a) {
+                            if (Symbol.iterator in Object(a) ||
+                                "[object Arguments]" === Object
+                                .prototype.toString.call(a))
+                                return Array.from(a)
+                        }(a) || function () {
+                            throw new TypeError(
+                                "Invalid attempt to spread non-iterable instance"
+                            )
+                        }()
+                    }
+
+                    function l(a, b) {
+                        for (var c = 0; c < b.length; c++) {
+                            var d = b[c];
+                            d.enumerable = d.enumerable || !1, d
+                                .configurable = !0, "value" in d && (d
+                                    .writable = !0), Object
+                                .defineProperty(a, d.key, d)
+                        }
+                    }
+
+                    function m(a, b) {
+                        var c = b.get(a);
+                        if (!c) throw new TypeError(
+                            "attempted to get private field on non-instance"
+                        );
+                        return c.get ? c.get.call(a) : c.value
+                    }
+
+                    function n(a, b, c, d, e, f) {
+                        var g, h, i = 0,
+                            j = 0,
+                            k = 0,
+                            l = 0,
+                            m = 0,
+                            n = 0,
+                            o = function (a) {
+                                return ((i * a + j) * a + k) * a
+                            },
+                            p = function (a) {
+                                return (3 * i * a + 2 * j) * a + k
+                            },
+                            q = function (a) {
+                                return a >= 0 ? a : 0 - a
+                            };
+                        return i = 1 - (k = 3 * b) - (j = 3 * (d - b) -
+                                k), l = 1 - (n = 3 * c) - (m = 3 * (e -
+                                c) - n), g = a, h = function (a) {
+                                return 1 / (200 * a)
+                            }(f),
+                            function (a) {
+                                return ((l * a + m) * a + n) * a
+                            }(function (a, b) {
+                                var c, d, e, f, g, h;
+                                for (e = a, h = 0; h < 8; h++) {
+                                    if (f = o(e) - a, q(f) < b)
+                                        return e;
+                                    if (g = p(e), q(g) < 1e-6)
+                                        break;
+                                    e -= f / g
+                                }
+                                if ((e = a) < (c = 0)) return c;
+                                if (e > (d = 1)) return d;
+                                for (; c < d;) {
+                                    if (f = o(e), q(f - a) < b)
+                                        return e;
+                                    a > f ? c = e : d = e, e = .5 *
+                                        (d - c) + c
+                                }
+                                return e
+                            }(g, h))
+                    }
+                    c.r(b);
+                    var o = {};
+                    c.r(o), c.d(o, "doesApply", function () {
+                        return M
+                    }), c.d(o, "tweenCreated", function () {
+                        return e
+                    }), c.d(o, "beforeTween", function () {
+                        return f
+                    }), c.d(o, "afterTween", function () {
+                        return g
+                    });
+                    var p, q, r = c(0),
+                        s = /(\d|-|\.)/,
+                        t = /([^\-0-9.]+)/g,
+                        u = /[0-9.-]+/g,
+                        v = (p = u.source, q = /,\s*/.source,
+                            new RegExp("rgb\\(".concat(p).concat(q)
+                                .concat(p).concat(q).concat(p, "\\)"),
+                                "g")),
+                        w = /^.*\(/,
+                        x = /#([0-9]|[a-f]){3,6}/gi,
+                        y = function (a, b) {
+                            return a.map(function (a, c) {
+                                return "_".concat(b, "_")
+                                    .concat(c)
+                            })
+                        },
+                        z = function (a) {
+                            return "rgb(".concat((b = a, 3 === (b = b
+                                    .replace(/#/, "")).length &&
+                                (b = (b = b.split(""))[0] + b[
+                                    0] + b[1] + b[1] + b[
+                                    2] + b[
+                                    2]), [d(b.substr(0, 2)),
+                                    d(b.substr(2, 2)), d(b
+                                        .substr(4, 2))
+                                ]).join(","), ")");
+                            var b
+                        },
+                        A = function (a, b, c) {
+                            var d = b.match(a),
+                                e = b.replace(a, "VAL");
+                            return d && d.forEach(function (a) {
+                                return e = e.replace("VAL", c(
+                                    a))
+                            }), e
+                        },
+                        B = function (a) {
+                            for (var b in a) {
+                                var c = a[b];
+                                "string" == typeof c && c.match(x) && (
+                                    a[b] = A(x, c, z))
+                            }
+                        },
+                        C = function (a) {
+                            var b = a.match(u).map(Math.floor);
+                            return "".concat(a.match(w)[0]).concat(b
+                                .join(","), ")")
+                        },
+                        D = function (a) {
+                            return a.match(u)
+                        },
+                        E = function (a) {
+                            var b, c, d = {};
+                            for (var e in a) {
+                                var f = a[e];
+                                "string" == typeof f && (d[e] = {
+                                    formatString: (b = f, c =
+                                        void 0, c = b.match(
+                                            t), c ? (1 === c
+                                            .length || b
+                                            .charAt(0)
+                                            .match(s)) && c
+                                        .unshift("") : c = [
+                                            "", ""
+                                        ], c.join("VAL")),
+                                    chunkNames: y(D(f), e)
+                                })
+                            }
+                            return d
+                        },
+                        F = function (a, b) {
+                            var c = function (c) {
+                                D(a[c]).forEach(function (d, e) {
+                                    return a[b[c]
+                                        .chunkNames[e]
+                                    ] = +d
+                                }), delete a[c]
+                            };
+                            for (var d in b) c(d)
+                        },
+                        G = function (a, b) {
+                            var c = {};
+                            return b.forEach(function (b) {
+                                c[b] = a[b], delete a[b]
+                            }), c
+                        },
+                        H = function (a, b) {
+                            return b.map(function (b) {
+                                return a[b]
+                            })
+                        },
+                        I = function (a, b) {
+                            return b.forEach(function (b) {
+                                return a = a.replace("VAL", +b
+                                    .toFixed(4))
+                            }), a
+                        },
+                        J = function (a, b) {
+                            for (var c in b) {
+                                var d = b[c],
+                                    e = d.chunkNames,
+                                    f = d.formatString,
+                                    g = I(f, H(G(a, e), e));
+                                a[c] = A(v, g, C)
+                            }
+                        },
+                        K = function (a, b) {
+                            var c = function (c) {
+                                var d = b[c].chunkNames,
+                                    e = a[c];
+                                if ("string" == typeof e) {
+                                    var f = e.split(" "),
+                                        g = f[f.length - 1];
+                                    d.forEach(function (b, c) {
+                                        return a[b] = f[
+                                            c] || g
+                                    })
+                                } else d.forEach(function (b) {
+                                    return a[b] = e
+                                });
+                                delete a[c]
+                            };
+                            for (var d in b) c(d)
+                        },
+                        L = function (a, b) {
+                            for (var c in b) {
+                                var d = b[c].chunkNames,
+                                    e = a[d[0]];
+                                a[c] = "string" == typeof e ? d.map(
+                                    function (b) {
+                                        var c = a[b];
+                                        return delete a[b], c
+                                    }).join(" ") : e
+                            }
+                        },
+                        M = function (a) {
+                            var b = a._currentState;
+                            return Object.keys(b).some(function (a) {
+                                return "string" == typeof b[a]
+                            })
+                        },
+                        N = new r.a,
+                        O = r.a.filters,
+                        P = function (a, b, c, d) {
+                            var e = arguments.length > 4 && void 0 !==
+                                arguments[4] ? arguments[4] : 0,
+                                f = i({}, a),
+                                g = Object(r.b)(a, d);
+                            for (var h in N._filters.length = 0, N
+                                    .set({}), N._currentState = f, N
+                                    ._originalState = a, N
+                                    ._targetState = b, N._easing = g, O)
+                                O[h].doesApply(N) && N._filters.push(O[
+                                    h]);
+                            N._applyFilter("tweenCreated"), N
+                                ._applyFilter("beforeTween");
+                            var j = Object(r.e)(c, f, a, b, 1, e, g);
+                            return N._applyFilter("afterTween"), j
+                        },
+                        Q = function () {
+                            function a() {
+                                ! function (a, b) {
+                                    if (!(a instanceof b))
+                                        throw new TypeError(
+                                            "Cannot call a class as a function"
+                                        )
+                                }(this, a), R.set(this, {
+                                    writable: !0,
+                                    value: []
+                                });
+                                for (var b = arguments.length, c =
+                                        new Array(b), d = 0; d < b; d++)
+                                    c[d] = arguments[d];
+                                c.forEach(this.add.bind(this))
+                            }
+                            var b, c, d;
+                            return b = a, (c = [{
+                                    key: "add",
+                                    value: function (a) {
+                                        return m(this, R)
+                                            .push(a), a
+                                    }
+                                }, {
+                                    key: "remove",
+                                    value: function (a) {
+                                        var b = m(this, R)
+                                            .indexOf(a);
+                                        return ~b && m(this,
+                                            R).splice(b,
+                                            1), a
+                                    }
+                                }, {
+                                    key: "empty",
+                                    value: function () {
+                                        return this
+                                            .tweenables.map(
+                                                this.remove
+                                                .bind(this))
+                                    }
+                                }, {
+                                    key: "isPlaying",
+                                    value: function () {
+                                        return m(this, R)
+                                            .some(function (
+                                                a) {
+                                                return a
+                                                    .isPlaying()
+                                            })
+                                    }
+                                }, {
+                                    key: "play",
+                                    value: function () {
+                                        return m(this, R)
+                                            .forEach(
+                                                function (
+                                                    a) {
+                                                    return a
+                                                        .tween()
+                                                }), this
+                                    }
+                                }, {
+                                    key: "pause",
+                                    value: function () {
+                                        return m(this, R)
+                                            .forEach(
+                                                function (
+                                                    a) {
+                                                    return a
+                                                        .pause()
+                                                }), this
+                                    }
+                                }, {
+                                    key: "resume",
+                                    value: function () {
+                                        return m(this, R)
+                                            .forEach(
+                                                function (
+                                                    a) {
+                                                    return a
+                                                        .resume()
+                                                }), this
+                                    }
+                                }, {
+                                    key: "stop",
+                                    value: function (a) {
+                                        return m(this, R)
+                                            .forEach(
+                                                function (
+                                                    b) {
+                                                    return b
+                                                        .stop(
+                                                            a
+                                                        )
+                                                }), this
+                                    }
+                                }, {
+                                    key: "tweenables",
+                                    get: function () {
+                                        return k(m(this, R))
+                                    }
+                                }, {
+                                    key: "promises",
+                                    get: function () {
+                                        return m(this, R)
+                                            .map(function (
+                                                a) {
+                                                return a
+                                                    ._promise
+                                            })
+                                    }
+                                }]) && l(b.prototype, c), d && l(b, d),
+                                a
+                        }(),
+                        R = new WeakMap,
+                        S = function (a, b, c, d, e) {
+                            var f = function (a, b, c, d) {
+                                return function (e) {
+                                    return n(e, a, b, c, d, 1)
+                                }
+                            }(b, c, d, e);
+                            return f.displayName = a, f.x1 = b, f.y1 =
+                                c, f.x2 = d, f.y2 = e, r.a.formulas[a] =
+                                f
+                        },
+                        T = function (a) {
+                            return delete r.a.formulas[a]
+                        };
+                    c.d(b, "processTweens", function () {
+                        return r.c
+                    }), c.d(b, "Tweenable", function () {
+                        return r.a
+                    }), c.d(b, "tween", function () {
+                        return r.d
+                    }), c.d(b, "interpolate", function () {
+                        return P
+                    }), c.d(b, "Scene", function () {
+                        return Q
+                    }), c.d(b, "setBezierFunction", function () {
+                        return S
+                    }), c.d(b, "unsetBezierFunction", function () {
+                        return T
+                    }), r.a.filters.token = o
+                }])
+            })
+        }, {}],
+        2: [function (a, b, c) {
+            var d = a("./shape"),
+                e = a("./utils"),
+                f = function (a, b) {
+                    this._pathTemplate =
+                        "M 50,50 m 0,-{radius} a {radius},{radius} 0 1 1 0,{2radius} a {radius},{radius} 0 1 1 0,-{2radius}",
+                        this.containerAspectRatio = 1, d.apply(this, arguments)
+                };
+            f.prototype = new d, f.prototype.constructor = f, f.prototype._pathString =
+                function (a) {
+                    var b = a.strokeWidth;
+                    a.trailWidth && a.trailWidth > a.strokeWidth && (b = a.trailWidth);
+                    var c = 50 - b / 2;
+                    return e.render(this._pathTemplate, {
+                        radius: c,
+                        "2radius": 2 * c
+                    })
+                }, f.prototype._trailString = function (a) {
+                    return this._pathString(a)
+                }, b.exports = f
+        }, {
+            "./shape": 7,
+            "./utils": 9
+        }],
+        3: [function (a, b, c) {
+            var d = a("./shape"),
+                e = a("./utils"),
+                f = function (a, b) {
+                    this._pathTemplate = b.vertical ? "M {center},100 L {center},0" :
+                        "M 0,{center} L 100,{center}", d.apply(this, arguments)
+                };
+            f.prototype = new d, f.prototype.constructor = f, f.prototype
+                ._initializeSvg = function (a, b) {
+                    var c = b.vertical ? "0 0 " + b.strokeWidth + " 100" : "0 0 100 " +
+                        b.strokeWidth;
+                    a.setAttribute("viewBox", c), a.setAttribute("preserveAspectRatio",
+                        "none")
+                }, f.prototype._pathString = function (a) {
+                    return e.render(this._pathTemplate, {
+                        center: a.strokeWidth / 2
+                    })
+                }, f.prototype._trailString = function (a) {
+                    return this._pathString(a)
+                }, b.exports = f
+        }, {
+            "./shape": 7,
+            "./utils": 9
+        }],
+        4: [function (a, b, c) {
+            b.exports = {
+                Line: a("./line"),
+                Circle: a("./circle"),
+                SemiCircle: a("./semicircle"),
+                Square: a("./square"),
+                Path: a("./path"),
+                Shape: a("./shape"),
+                utils: a("./utils")
+            }
+        }, {
+            "./circle": 2,
+            "./line": 3,
+            "./path": 5,
+            "./semicircle": 6,
+            "./shape": 7,
+            "./square": 8,
+            "./utils": 9
+        }],
+        5: [function (a, b, c) {
+            var d = a("shifty"),
+                e = a("./utils"),
+                f = d.Tweenable,
+                g = {
+                    easeIn: "easeInCubic",
+                    easeOut: "easeOutCubic",
+                    easeInOut: "easeInOutCubic"
+                },
+                h = function a(b, c) {
+                    if (!(this instanceof a)) throw new Error(
+                        "Constructor was called without new keyword");
+                    c = e.extend({
+                        delay: 0,
+                        duration: 800,
+                        easing: "linear",
+                        from: {},
+                        to: {},
+                        step: function () {}
+                    }, c);
+                    var d;
+                    d = e.isString(b) ? document.querySelector(b) : b, this.path = d,
+                        this._opts = c, this._tweenable = null;
+                    var f = this.path.getTotalLength();
+                    this.path.style.strokeDasharray = f + " " + f, this.set(0)
+                };
+            h.prototype.value = function () {
+                var a = this._getComputedDashOffset(),
+                    b = this.path.getTotalLength(),
+                    c = 1 - a / b;
+                return parseFloat(c.toFixed(6), 10)
+            }, h.prototype.set = function (a) {
+                this.stop(), this.path.style.strokeDashoffset = this
+                    ._progressToOffset(a);
+                var b = this._opts.step;
+                if (e.isFunction(b)) {
+                    var c = this._easing(this._opts.easing);
+                    b(this._calculateTo(a, c), this._opts.shape || this, this._opts
+                        .attachment)
+                }
+            }, h.prototype.stop = function () {
+                this._stopTween(), this.path.style.strokeDashoffset = this
+                    ._getComputedDashOffset()
+            }, h.prototype.animate = function (a, b, c) {
+                b = b || {}, e.isFunction(b) && (c = b, b = {});
+                var d = e.extend({}, b),
+                    g = e.extend({}, this._opts);
+                b = e.extend(g, b);
+                var h = this._easing(b.easing),
+                    i = this._resolveFromAndTo(a, h, d);
+                this.stop(), this.path.getBoundingClientRect();
+                var j = this._getComputedDashOffset(),
+                    k = this._progressToOffset(a),
+                    l = this;
+                this._tweenable = new f, this._tweenable.tween({
+                    from: e.extend({
+                        offset: j
+                    }, i.from),
+                    to: e.extend({
+                        offset: k
+                    }, i.to),
+                    duration: b.duration,
+                    delay: b.delay,
+                    easing: h,
+                    step: function (a) {
+                        l.path.style.strokeDashoffset = a.offset;
+                        var c = b.shape || l;
+                        b.step(a, c, b.attachment)
+                    }
+                }).then(function (a) {
+                    e.isFunction(c) && c()
+                }).catch(function (a) {
+                    throw console.error("Error in tweening:", a), a
+                })
+            }, h.prototype._getComputedDashOffset = function () {
+                var a = window.getComputedStyle(this.path, null);
+                return parseFloat(a.getPropertyValue("stroke-dashoffset"), 10)
+            }, h.prototype._progressToOffset = function (a) {
+                var b = this.path.getTotalLength();
+                return b - a * b
+            }, h.prototype._resolveFromAndTo = function (a, b, c) {
+                return c.from && c.to ? {
+                    from: c.from,
+                    to: c.to
+                } : {
+                    from: this._calculateFrom(b),
+                    to: this._calculateTo(a, b)
+                }
+            }, h.prototype._calculateFrom = function (a) {
+                return d.interpolate(this._opts.from, this._opts.to, this.value(),
+                    a)
+            }, h.prototype._calculateTo = function (a, b) {
+                return d.interpolate(this._opts.from, this._opts.to, a, b)
+            }, h.prototype._stopTween = function () {
+                null !== this._tweenable && (this._tweenable.stop(!0), this
+                    ._tweenable = null)
+            }, h.prototype._easing = function (a) {
+                return g.hasOwnProperty(a) ? g[a] : a
+            }, b.exports = h
+        }, {
+            "./utils": 9,
+            shifty: 1
+        }],
+        6: [function (a, b, c) {
+            var d = a("./shape"),
+                e = a("./circle"),
+                f = a("./utils"),
+                g = function (a, b) {
+                    this._pathTemplate =
+                        "M 50,50 m -{radius},0 a {radius},{radius} 0 1 1 {2radius},0",
+                        this.containerAspectRatio = 2, d.apply(this, arguments)
+                };
+            g.prototype = new d, g.prototype.constructor = g, g.prototype
+                ._initializeSvg = function (a, b) {
+                    a.setAttribute("viewBox", "0 0 100 50")
+                }, g.prototype._initializeTextContainer = function (a, b, c) {
+                    a.text.style && (c.style.top = "auto", c.style.bottom = "0", a.text
+                        .alignToBottom ? f.setStyle(c, "transform",
+                            "translate(-50%, 0)") : f.setStyle(c, "transform",
+                            "translate(-50%, 50%)"))
+                }, g.prototype._pathString = e.prototype._pathString, g.prototype
+                ._trailString = e.prototype._trailString, b.exports = g
+        }, {
+            "./circle": 2,
+            "./shape": 7,
+            "./utils": 9
+        }],
+        7: [function (a, b, c) {
+            var d = a("./path"),
+                e = a("./utils"),
+                f = "Object is destroyed",
+                g = function a(b, c) {
+                    if (!(this instanceof a)) throw new Error(
+                        "Constructor was called without new keyword");
+                    if (0 !== arguments.length) {
+                        this._opts = e.extend({
+                                color: "#555",
+                                strokeWidth: 1,
+                                trailColor: null,
+                                trailWidth: null,
+                                fill: null,
+                                text: {
+                                    style: {
+                                        color: null,
+                                        position: "absolute",
+                                        left: "50%",
+                                        top: "50%",
+                                        padding: 0,
+                                        margin: 0,
+                                        transform: {
+                                            prefix: !0,
+                                            value: "translate(-50%, -50%)"
+                                        }
+                                    },
+                                    autoStyleContainer: !0,
+                                    alignToBottom: !0,
+                                    value: null,
+                                    className: "progressbar-text"
+                                },
+                                svgStyle: {
+                                    display: "block",
+                                    width: "100%"
+                                },
+                                warnings: !1
+                            }, c, !0), e.isObject(c) && void 0 !== c.svgStyle && (this
+                                ._opts.svgStyle = c.svgStyle), e.isObject(c) && e
+                            .isObject(c.text) && void 0 !== c.text.style && (this._opts
+                                .text.style = c.text.style);
+                        var f, g = this._createSvgView(this._opts);
+                        if (!(f = e.isString(b) ? document.querySelector(b) : b))
+                            throw new Error("Container does not exist: " + b);
+                        this._container = f, this._container.appendChild(g.svg), this
+                            ._opts.warnings && this._warnContainerAspectRatio(this
+                                ._container), this._opts.svgStyle && e.setStyles(g.svg,
+                                this._opts.svgStyle), this.svg = g.svg, this.path = g
+                            .path, this.trail = g.trail, this.text = null;
+                        var h = e.extend({
+                            attachment: void 0,
+                            shape: this
+                        }, this._opts);
+                        this._progressPath = new d(g.path, h), e.isObject(this._opts
+                                .text) && null !== this._opts.text.value && this
+                            .setText(this._opts.text.value)
+                    }
+                };
+            g.prototype.animate = function (a, b, c) {
+                    if (null === this._progressPath) throw new Error(f);
+                    this._progressPath.animate(a, b, c)
+                }, g.prototype.stop = function () {
+                    if (null === this._progressPath) throw new Error(f);
+                    void 0 !== this._progressPath && this._progressPath.stop()
+                }, g.prototype.pause = function () {
+                    if (null === this._progressPath) throw new Error(f);
+                    void 0 !== this._progressPath && this._progressPath._tweenable &&
+                        this._progressPath._tweenable.pause()
+                }, g.prototype.resume = function () {
+                    if (null === this._progressPath) throw new Error(f);
+                    void 0 !== this._progressPath && this._progressPath._tweenable &&
+                        this._progressPath._tweenable.resume()
+                }, g.prototype.destroy = function () {
+                    if (null === this._progressPath) throw new Error(f);
+                    this.stop(), this.svg.parentNode.removeChild(this.svg), this.svg =
+                        null, this.path = null, this.trail = null, this._progressPath =
+                        null, null !== this.text && (this.text.parentNode.removeChild(
+                            this.text), this.text = null)
+                }, g.prototype.set = function (a) {
+                    if (null === this._progressPath) throw new Error(f);
+                    this._progressPath.set(a)
+                }, g.prototype.value = function () {
+                    if (null === this._progressPath) throw new Error(f);
+                    return void 0 === this._progressPath ? 0 : this._progressPath
+                        .value()
+                }, g.prototype.setText = function (a) {
+                    if (null === this._progressPath) throw new Error(f);
+                    null === this.text && (this.text = this._createTextContainer(this
+                        ._opts, this._container), this._container.appendChild(
+                        this.text)), e.isObject(a) ? (e.removeChildren(this.text),
+                        this.text.appendChild(a)) : this.text.innerHTML = a
+                }, g.prototype._createSvgView = function (a) {
+                    var b = document.createElementNS("http://www.w3.org/2000/svg",
+                        "svg");
+                    this._initializeSvg(b, a);
+                    var c = null;
+                    (a.trailColor || a.trailWidth) && (c = this._createTrail(a), b
+                        .appendChild(c));
+                    var d = this._createPath(a);
+                    return b.appendChild(d), {
+                        svg: b,
+                        path: d,
+                        trail: c
+                    }
+                }, g.prototype._initializeSvg = function (a, b) {
+                    a.setAttribute("viewBox", "0 0 100 100")
+                }, g.prototype._createPath = function (a) {
+                    var b = this._pathString(a);
+                    return this._createPathElement(b, a)
+                }, g.prototype._createTrail = function (a) {
+                    var b = this._trailString(a),
+                        c = e.extend({}, a);
+                    return c.trailColor || (c.trailColor = "#eee"), c.trailWidth || (c
+                            .trailWidth = c.strokeWidth), c.color = c.trailColor, c
+                        .strokeWidth = c.trailWidth, c.fill = null, this
+                        ._createPathElement(b, c)
+                }, g.prototype._createPathElement = function (a, b) {
+                    var c = document.createElementNS("http://www.w3.org/2000/svg",
+                        "path");
+                    return c.setAttribute("d", a), c.setAttribute("stroke", b.color), c
+                        .setAttribute("stroke-width", b.strokeWidth), b.fill ? c
+                        .setAttribute("fill", b.fill) : c.setAttribute("fill-opacity",
+                            "0"), c
+                }, g.prototype._createTextContainer = function (a, b) {
+                    var c = document.createElement("div");
+                    c.className = a.text.className;
+                    var d = a.text.style;
+                    return d && (a.text.autoStyleContainer && (b.style.position =
+                            "relative"), e.setStyles(c, d), d.color || (c.style
+                            .color = a.color)), this._initializeTextContainer(a, b, c),
+                        c
+                }, g.prototype._initializeTextContainer = function (a, b, c) {}, g
+                .prototype._pathString = function (a) {
+                    throw new Error("Override this function for each progress bar")
+                }, g.prototype._trailString = function (a) {
+                    throw new Error("Override this function for each progress bar")
+                }, g.prototype._warnContainerAspectRatio = function (a) {
+                    if (this.containerAspectRatio) {
+                        var b = window.getComputedStyle(a, null),
+                            c = parseFloat(b.getPropertyValue("width"), 10),
+                            d = parseFloat(b.getPropertyValue("height"), 10);
+                        e.floatEquals(this.containerAspectRatio, c / d) || (console
+                            .warn("Incorrect aspect ratio of container", "#" + a.id,
+                                "detected:", b.getPropertyValue("width") +
+                                "(width)", "/", b.getPropertyValue("height") +
+                                "(height)", "=", c / d), console.warn(
+                                "Aspect ratio of should be", this
+                                .containerAspectRatio))
+                    }
+                }, b.exports = g
+        }, {
+            "./path": 5,
+            "./utils": 9
+        }],
+        8: [function (a, b, c) {
+            var d = a("./shape"),
+                e = a("./utils"),
+                f = function (a, b) {
+                    this._pathTemplate =
+                        "M 0,{halfOfStrokeWidth} L {width},{halfOfStrokeWidth} L {width},{width} L {halfOfStrokeWidth},{width} L {halfOfStrokeWidth},{strokeWidth}",
+                        this._trailTemplate =
+                        "M {startMargin},{halfOfStrokeWidth} L {width},{halfOfStrokeWidth} L {width},{width} L {halfOfStrokeWidth},{width} L {halfOfStrokeWidth},{halfOfStrokeWidth}",
+                        d.apply(this, arguments)
+                };
+            f.prototype = new d, f.prototype.constructor = f, f.prototype._pathString =
+                function (a) {
+                    var b = 100 - a.strokeWidth / 2;
+                    return e.render(this._pathTemplate, {
+                        width: b,
+                        strokeWidth: a.strokeWidth,
+                        halfOfStrokeWidth: a.strokeWidth / 2
+                    })
+                }, f.prototype._trailString = function (a) {
+                    var b = 100 - a.strokeWidth / 2;
+                    return e.render(this._trailTemplate, {
+                        width: b,
+                        strokeWidth: a.strokeWidth,
+                        halfOfStrokeWidth: a.strokeWidth / 2,
+                        startMargin: a.strokeWidth / 2 - a.trailWidth / 2
+                    })
+                }, b.exports = f
+        }, {
+            "./shape": 7,
+            "./utils": 9
+        }],
+        9: [function (a, b, c) {
+            function d(a, b, c) {
+                a = a || {}, b = b || {}, c = c || !1;
+                for (var e in b)
+                    if (b.hasOwnProperty(e)) {
+                        var f = a[e],
+                            g = b[e];
+                        c && l(f) && l(g) ? a[e] = d(f, g, c) : a[e] = g
+                    } return a
+            }
+
+            function e(a, b) {
+                var c = a;
+                for (var d in b)
+                    if (b.hasOwnProperty(d)) {
+                        var e = b[d],
+                            f = "\\{" + d + "\\}",
+                            g = new RegExp(f, "g");
+                        c = c.replace(g, e)
+                    } return c
+            }
+
+            function f(a, b, c) {
+                for (var d = a.style, e = 0; e < p.length; ++e) {
+                    d[p[e] + h(b)] = c
+                }
+                d[b] = c
+            }
+
+            function g(a, b) {
+                m(b, function (b, c) {
+                    null !== b && void 0 !== b && (l(b) && !0 === b.prefix ? f(
+                        a, c, b.value) : a.style[c] = b)
+                })
+            }
+
+            function h(a) {
+                return a.charAt(0).toUpperCase() + a.slice(1)
+            }
+
+            function i(a) {
+                return "string" == typeof a || a instanceof String
+            }
+
+            function j(a) {
+                return "function" == typeof a
+            }
+
+            function k(a) {
+                return "[object Array]" === Object.prototype.toString.call(a)
+            }
+
+            function l(a) {
+                return !k(a) && ("object" == typeof a && !!a)
+            }
+
+            function m(a, b) {
+                for (var c in a)
+                    if (a.hasOwnProperty(c)) {
+                        var d = a[c];
+                        b(d, c)
+                    }
+            }
+
+            function n(a, b) {
+                return Math.abs(a - b) < q
+            }
+
+            function o(a) {
+                for (; a.firstChild;) a.removeChild(a.firstChild)
+            }
+            var p = "Webkit Moz O ms".split(" "),
+                q = .001;
+            b.exports = {
+                extend: d,
+                render: e,
+                setStyle: f,
+                setStyles: g,
+                capitalize: h,
+                isString: i,
+                isFunction: j,
+                isObject: l,
+                forEachObject: m,
+                floatEquals: n,
+                removeChildren: o
+            }
+        }, {}]
+    }, {}, [4])(4)
+});
+
+
+// progressbar.js@1.0.0 version is used
+// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+
+var bar = new ProgressBar.Circle(first, {
+    color: '#ffd581',
+    strokeWidth: 1.25,
+    trailWidth: 1.25,
+    duration: 2000,
+    trailColor: '#ccc4',
+    easing: 'linear',
+    from: {
+        color: '#ffd581',
+        width: 1.25
+    },
+    to: {
+        color: '#ffd581',
+        width: 1.25
+    },
+    step: function (state, circle) {
+        circle.path.setAttribute('stroke', state.color);
+        circle.path.setAttribute('stroke-width', state.width);
+        var value = Math.round(circle.value() * 100);
+        if (value === 0) {
+            circle.setText('');
+        } else {
+            circle.setText(value + '<br/><span>clients satisfaits</span>');
+        }
+    }
+});
+
+var barTwo = new ProgressBar.Circle(second, {
+    color: '#ffd581',
+    strokeWidth: 1.25,
+    trailWidth: 1.25,
+    duration: 2000,
+    trailColor: '#ccc4',
+    easing: 'linear',
+    from: {
+        color: '#ffd581',
+        width: 1.25
+    },
+    to: {
+        color: '#ffd581',
+        width: 1.25
+    },
+    step: function (state, circle) {
+        circle.path.setAttribute('stroke', state.color);
+        circle.path.setAttribute('stroke-width', state.width);
+        var value = Math.round(circle.value() * 100);
+        if (value === 0) {
+            circle.setText('');
+        } else {
+            circle.setText(value + '<br/><span>projets terminés</span>');
+        }
+    }
+});
+
+var barThree = new ProgressBar.Circle(third, {
+    color: '#ffd581',
+    strokeWidth: 1.25,
+    trailWidth: 1.25,
+    duration: 2000,
+    trailColor: '#ccc4',
+    easing: 'linear',
+    from: {
+        color: '#ffd581',
+        width: 1.25
+    },
+    to: {
+        color: '#ffd581',
+        width: 1.25
+    },
+    step: function (state, circle) {
+        circle.path.setAttribute('stroke', state.color);
+        circle.path.setAttribute('stroke-width', state.width);
+        var value = Math.round(circle.value() * 10);
+        if (value === 0) {
+            circle.setText('');
+        } else {
+            circle.setText(value + '<br/><span>années d\'expérience</span>');
+        }
+    }
+});
+
+
+/****************************** */
+/*** intersection observer  *** */
+/****************************** */
+
+
+let statContainer = document.getElementById('stats');
+
+const config = {
+    root: null, // viewport
+    rootMargin: '0px',
+    threshold: 0.75
+};
+
+let observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.intersectionRatio >= config.threshold) {
+            bar.animate(0.48); // Number from 0.0 to 1.0
+            barTwo.animate(0.16); // Number from 0.0 to 1.0
+            barThree.animate(0.4); // Number from 0.0 to 1.0
+            // entry.target.classList.add("active");
+        }
+    });
+}, config);
+
+observer.observe(statContainer);
+
+const threshold = 0.6;
+
+const activate = function (elem) {
+    const id = elem.getAttribute('id');
+    const anchor = document.querySelector(`a[href='#${id}']`);
+    if (anchor === null) {
+        return null;
+    }
+    anchor.parentElement.parentElement
+        .querySelectorAll('.special-active')
+        .forEach(node => node.classList.remove('special-active'));
+    anchor.parentElement.classList.add('special-active')
+}
+
+const callback = function (entries, observer) {
+    entries.forEach(function (entry) {
+        if (entry.intersectionRatio > threshold) {
+            activate(entry.target);
+        }
+    })
+}
+
+const spies = document.querySelectorAll('[data-spy]');
+
+if (spies.length > 0) {
+    const observer = new IntersectionObserver(callback, {
+        threshold: threshold
+    })
+    spies.forEach(function (spy) {
+        observer.observe(spy);
+    })
+}
+
+
+/****************************** */
+/****   cursor animation   **** */
+/****************************** */
+
+
+var rjs_cursor = document.getElementById("rjs_cursor"); //Getting the cursor
+var body = document.querySelector("body"); //Get the body element
+
+//Functions for showing and hiding the cursor
+//They are referenced the 
+function rjs_show_cursor(e) { //Function to show/hide the cursor
+    if (rjs_cursor.classList.contains('rjs_cursor_hidden')) {
+        rjs_cursor.classList.remove('rjs_cursor_hidden');
+    }
+    rjs_cursor.classList.add('rjs_cursor_visible');
+}
+
+function rjs_hide_cursor(e) {
+    if (rjs_cursor.classList.contains('rjs_cursor_visible')) {
+        rjs_cursor.classList.remove('rjs_cursor_visible');
+    }
+    rjs_cursor.classList.add('rjs_cursor_hidden');
+}
+
+
+function rjs_mousemove(e) { //Function to correctly position the cursor
+    rjs_show_cursor(); //Toggle show/hide
+
+    var rjs_cursor_width = rjs_cursor.offsetWidth * 0.5;
+    var rjs_cursor_height = rjs_cursor.offsetHeight * 0.5;
+
+    var rjs_cursor_x = e.clientX - rjs_cursor_width; //x-coordinate
+    var rjs_cursor_y = e.clientY - rjs_cursor_height; //y-coordinate
+    var rjs_cursor_pos = `translate(${rjs_cursor_x}px, ${rjs_cursor_y}px)`;
+    rjs_cursor.style.transform = rjs_cursor_pos;
+}
+
+//Eventlisteners
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    window.addEventListener('mousemove', rjs_mousemove); //Attach an event listener
+    body.addEventListener('mouseleave', rjs_hide_cursor);
+    
+
+})
+
+//Hover behaviour
+
+function rjs_hover_cursor(e) {
+    rjs_cursor.classList.add('rjs_cursor_hover');
+}
+
+function rjs_unhover_cursor(e) {
+    rjs_cursor.classList.remove('rjs_cursor_hover');
+}
+
+
+document.querySelectorAll('a, #footer .frame svg,.splide__arrow,.cta,button,.activities__body__left ul li').forEach(item => {
+    item.addEventListener('mouseover', rjs_hover_cursor);
+    item.addEventListener('mouseleave', rjs_unhover_cursor);
+})
+
+
+// const themeSelect = document.querySelectorAll('themeSelect input');
+const themeStylesheet = document.getElementById('themeStylesheet');
+
+var rad = document.querySelectorAll('#themeSelect input');
+var prev = null;
+for (var i = 0; i < rad.length; i++) {
+    rad[i].addEventListener('change', function () {
+        (prev) ? console.log(prev.value): null;
+        if (this !== prev) {
+            prev = this;
+        }
+        themeStylesheet.setAttribute('href',
+            'https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/css/themes/' + this.value + '.css');
+    });
+}
+
+const toggleArrow = document.querySelector('.theme-picker__heading');
+
+const initThemeSwitcherStatus = () => {
+    let toggleBox = toggleArrow.parentElement.children[1];
+    jQuery(toggleBox).hide();
+    jQuery(toggleArrow.parentElement).addClass('small-window');
+
+}
+
+initThemeSwitcherStatus();
+
+toggleArrow.addEventListener('click', function () {
+    let toggleBox = this.parentElement.children[1];
+    jQuery(toggleBox).slideToggle();
+    jQuery(this.parentElement).toggleClass('small-window', 1000, "easeOutSine");
+
+    setTimeout(function(){
+        jQuery(toggleBox).slideToggle(500);
+        jQuery(toggleArrow.parentElement).addClass('small-window');
+    },3000)
+})
+
+/****************************** */
+/****** handle navtabs ******** */
+/****************************** */
+
+
+// lorsqu'on clique sur un onglet
+// si il a la classe active on lui enleve
+let tablinks = document.querySelectorAll('#activities .tabs li');
+tablinks.forEach((e) => {
+    e.addEventListener('click',function(){
+
+        if(window.matchMedia('max-width:800px')){
+            // pas d'interaction mais rendre visible toutes les cards 
+
+        }
+        let activeLink = document.querySelector('#activities .tabs li.active');
+        let activeContent = document.querySelector('#activities .skill-card.active');
+        let activePicture = document.querySelector('.activities__footer img.active');
+        activeLink.classList.remove('active');
+        activeContent.classList.remove('active');
+        activePicture.classList.remove('active');
+        if(e.classList.contains('active')){
+            e.classList.remove('active');
+        }
+        else
+        {
+            e.classList.add('active');
+        }
+        // on lit le data-id du link cliqué
+        let dataClicked = e.dataset.id;
+        console.log(dataClicked);
+        // on display l'element qui a la valeur de data-id
+        let contentToDisplay = document.querySelector('#activities .skill-card[data-id='+dataClicked+']');
+        let pictureToDisplay = document.querySelector('.activities__footer img[data-id='+dataClicked+']');
+        contentToDisplay.classList.add('active');
+        pictureToDisplay.classList.add('active');
+    })
+})

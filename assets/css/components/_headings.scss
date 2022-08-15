@@ -2,31 +2,33 @@
 
 // large page heading 
 
-.large-heading{
-    padding:1rem;
-    h1{
-        color:var(--write);
+.large-heading {
+    padding: 1rem;
+
+    h1 {
+        color: var(--write);
         font-weight: normal;
         font-size: 92px;
     }
+
 }
 
-.section-heading{
+.section-heading {
     font-size: 40px;
     font-weight: 500;
-    font-family: 'GTWalsheim Medium';
+    font-family: 'GTWalsheim Medium',sans-serif;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
 }
 
 
 @media screen and (max-width:1600px) {
-    
-    .large-heading h1{
+
+    .large-heading h1 {
         font-size: 68px;
     }
 
-    .section-heading{
+    .section-heading {
         font-size: 32px;
     }
 
@@ -34,12 +36,12 @@
 
 
 @media screen and (max-width:780px) {
-    
-    .large-heading h1{
+
+    .large-heading h1 {
         font-size: 54px;
     }
 
-    .section-heading{
+    .section-heading {
         font-size: 24px;
     }
 

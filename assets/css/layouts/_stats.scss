@@ -2,10 +2,10 @@
 
     .stats {
         display:block;
-        background-color: var(--section-background);
+        background-color: var(--body-darker);
         @include border-top;
         &__body {
-            min-height: 40vh;
+            min-height: 64vh;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             place-content: center;

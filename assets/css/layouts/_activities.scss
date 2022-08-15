@@ -1,0 +1,164 @@
+#activities {
+    @include textured-background-subtle;
+    @include border-top;
+    display: grid;
+    color: var(--write);
+    height: 88vh;
+    grid-template-rows: auto 1fr;
+}
+
+.activities {
+
+
+    &__body {
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr;
+
+        // min-height: 76vh;  
+        &__left {
+            display: flex;
+            padding: 2rem;
+
+            ul {
+                // border: 1px solid orange;
+                margin: auto;
+                height: auto;
+                width: 64%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+
+                li {
+                    width: 80%;
+                    margin: 1rem;
+                    background-color: var(--border-color);
+                    padding: 1.5rem;
+                    transition: 0.24s linear all;
+                    text-align: center;
+                    cursor: pointer;
+                    text-transform: capitalize;
+                    border: 1px solid var(--border-color);
+                    box-shadow: 1px 1px 2px 0px inset var(--body-darker), -1px -1px 2px 0px inset var(--body-darker), 1px 1px 1px 0px inset var(--body-darker), -1px -1px 1px 0px inset var(--body-darker);
+
+                    a {
+                        color: var(--write);
+                        font-family: $font-primary-light;
+                        font-variant: all-petite-caps;
+                        font-size: 18px;
+                        opacity: 0.44;
+                        letter-spacing: 0.024rem;
+                    }
+
+                    &:hover {
+                        outline-offset: 8px;
+                        outline: 1px solid var(--body-background);
+                        background-color: var(--body-background);
+                        transform: translate(-24px, 0px);
+
+                        a {
+                            color: var(--text-canari);
+                            opacity: 1;
+                        }
+                    }
+
+                    &:nth-child(2n) {
+                        margin: 1rem 1rem 1rem auto;
+                    }
+                }
+
+                li.active {
+                    background-color: var(--body-darker);
+                    box-shadow: unset;
+
+                    a {
+                        color: var(--write);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &__right {
+            .tab-content {
+                height: 100%;
+            }
+        }
+    }
+
+    &__header {
+        height: 16vh;
+        @include flex-center-center;
+
+        .section-heading {
+            text-align: center;
+        }
+    }
+
+    &__body,
+    &__header {
+        z-index: 1;
+    }
+
+    &__footer {
+        position: absolute;
+        height: 88vh;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.16) opacity(0.24);
+            transition: 0.48s ease-in all;
+            display: none;
+            // clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        }
+
+        img.active {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+
+    #test {
+        .activities {
+            height: auto;
+
+            &__body {
+                grid-template-columns: 1fr;
+
+                &__left {
+                    padding: 0rem;
+
+                    .tabs {
+                        display: none;
+                    }
+                }
+
+                &__right {
+                    .tab-content {
+                        .skill-card {
+                            display: block;
+                            height: auto;
+
+                            &__content {
+                                width: auto;
+                                margin: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__footer {
+                display: none;
+            }
+
+        }
+    }
+
+}

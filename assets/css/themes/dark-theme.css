@@ -1,8 +1,10 @@
 :root{
-    --write : #fffc;
-    --text-canari : #ffda6f;
+    --write : #fefefeb4;
+    --text-canari : #35e9f1;
     --border-color: #303030;
     --body-background : #3a3a3a;
     --section-background : #1d1d1d;
     --body-darker: #101010;
+    --background-transparent: #30303072;
+    --underline-color: #fefefe64;
 }

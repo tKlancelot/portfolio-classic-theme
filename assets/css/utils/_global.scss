@@ -10,13 +10,14 @@ body,
 
 img {
     image-rendering: -webkit-optimize-contrast;
+    object-fit: cover;
 }
 
 body {
-    background-image: url('https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/az-subtle.png');
-    background-size: 0.75%;
-    background-color: var(--body-background);
-    background-blend-mode: color-dodge;
+    @include textured-background-subtle;
+    max-width: 100vw;
+    overflow-x: hidden!important;
+
 }
 
 header,
@@ -64,6 +65,16 @@ a {
 
     section {
         @include no-margin-side;
+    }
+
+}
+
+@supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */ 
+
+    body {
+        max-width: 100vw!important;
+        overflow-x: hidden!important;
     }
 
 }

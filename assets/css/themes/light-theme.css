@@ -1,8 +1,9 @@
 :root{
-    --write : #4a4ac5;
-    --text-canari : #6f6fdb;
-    --border-color: #bfbfd3;
-    --body-background : #f4f4f4;
-    --section-background : #fafafa;
-    --body-darker: #f0f0ff;
+    --write : #31649F;
+    --body-background : #f2f9fa;
+    --body-darker: #E2F3F6;
+    --section-background : #f2f9fa;
+    --border-color: #B3C8DB;
+    --text-canari : #1090B1;
+    --background-transparent: #E2F3F672;
 }

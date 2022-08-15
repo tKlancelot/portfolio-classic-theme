@@ -12,7 +12,7 @@
         border-bottom: 1px solid var(--border-color);
 
         #menu-desktop-top-menu {
-            min-width: 36vw;
+            min-width: 48vw;
             display: flex;
             justify-content: space-evenly;
 
@@ -137,7 +137,7 @@
 
     #header {
         @include no-margin-side;
-
+        display: none;
         #navigation {
             width: 100%;
             justify-content: center;
@@ -174,8 +174,48 @@
     }
 
     #header.navbar-fixed {
+        width: auto;
+        right: 0;
         #navigation {
-            height: 4.4vh;
+            height: auto;
+            #menu-desktop-top-menu{
+                height: 100vh;
+                flex-direction: column;
+                li{
+                    display: flex;
+                    align-items: center;
+                    padding: 0.5rem;
+                    a{
+                        text-orientation: sideways;
+                        writing-mode: vertical-lr;
+                        height: fit-content;
+                    }
+                }
+                li.special-active{
+                    border-bottom: unset;
+                    a{
+                        color: var(--text-canari);
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */ 
+
+    #header.navbar-fixed {
+        #navigation {
+            #menu-desktop-top-menu{
+                li{
+                    width: auto;
+                    a{
+                        width: fit-content;
+                    }
+                }
+            }
         }
     }
 

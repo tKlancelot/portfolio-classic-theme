@@ -3,7 +3,7 @@
     .carousel {
         @include flex-center-center;
         width: auto;
-        background-color: var(--body-darker);
+        background-color: var(--section-background);
         @include border-top;
         padding: 2rem;
 

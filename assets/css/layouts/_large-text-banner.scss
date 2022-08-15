@@ -23,8 +23,8 @@
         hr {
             height: 0px;
             border: unset;
-            border-bottom: 1px solid var(--write);
-            width: 100%;
+            border-bottom: 1px solid var(--underline-color);
+            width: 32%;
         }
     }
 
@@ -60,11 +60,17 @@
             padding: 8px;
             display: flex;
             justify-content: center;
+            .container{
+                display: flex;
+                height: 36px;
+                background-color: var(--border-color);
+                width: 1px;
+            }
             #vertical-stroke{
                 background-color:var(--text-canari);
                 border-radius: 16px;
-                height: 20px;
                 width: 1px;
+                height: 18px;
                 animation: scrollDown 3s ease-in-out  infinite forwards;
             }
         }

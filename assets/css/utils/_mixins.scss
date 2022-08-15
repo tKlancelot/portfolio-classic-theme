@@ -48,6 +48,7 @@
 
 @mixin flex-evenly-start {
     display: flex;
+    display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
 }
@@ -115,13 +116,20 @@
 @mixin textured-background {
     background-color: var(--section-background);
     background-image: url('https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png');
-    background-size: 1%;
+    background-size: 0.25%;
     background-blend-mode: color-dodge;
 }
 
 @mixin textured-background-dark {
     background-color: var(--body-darker);
     background-image: url('https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png');
-    background-size: 1%;
+    background-size: 0.25%;
     background-blend-mode: color-dodge;
+}
+
+@mixin textured-background-subtle {
+    background-color: var(--section-background);
+    background-image: url('https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/az-subtle.png');
+    background-blend-mode: color-dodge;
+    background-size: 0.5%;
 }

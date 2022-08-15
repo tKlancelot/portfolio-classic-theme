@@ -24,24 +24,34 @@ function tarik_register_menus()
 
 add_action('init','tarik_register_menus');
 
+// ajouter un format d'image personnalisé
+
+function register_custom_image_size()
+{
+    add_image_size('custom-project-thumbnail',480,480,false);
+}
+
+add_action('init','register_custom_image_size');
 
 function tarik_register_styles()
 {
     $version = wp_get_theme()->get('Version');
     wp_enqueue_style('tarik-css',get_template_directory_uri()."/style.css",array(),$version,'all');
-    wp_enqueue_style('tarik-font-awesome',"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",array(),'6.1.1',false);
-    
+    wp_enqueue_style('tarik-font-awesome',get_template_directory_uri()."/assets/fontawesome/css/all.css",array(),'6.1.2','all');   
 }
 
 function tarik_register_scripts()
 {
-    wp_enqueue_script('main-js',get_template_directory_uri()."/js/main.js",array(),'1.0','all');
-    wp_enqueue_script('jquery',"https://code.jquery.com/jquery-3.6.0.slim.min.js",array(),'3.6.0',true);
-    wp_enqueue_script('jquery-progress-bar',"https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/0.6.1/progressbar.js",array(),'0.6.1',true);
-    wp_enqueue_script('gsap', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js",[],'3.10.4');
-    wp_enqueue_script('gsap-scroll-trigger', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js",[],'3.10.4');
-    wp_enqueue_script('splide-slide', "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js",[],'4.0.7');
+    $version = wp_get_theme()->get('Version');
+    wp_enqueue_script('main-script',get_template_directory_uri()."/js/main.js",[],$version,'all');
+    wp_enqueue_script('jquery',"https://code.jquery.com/jquery-3.6.0.slim.min.js",[],'3.6.0',false);
+    wp_enqueue_script('jquery-progress-bar',"https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/0.6.1/progressbar.js",[],'0.6.1',false);
+    wp_enqueue_script('gsap', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js",[],'3.10.4',false);
+    wp_enqueue_script('gsap-scroll-trigger', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js",[],'3.10.4',false);
+    wp_enqueue_script('splide-slide', "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js",[],'4.0.7',true);
 }
+
+
 
 
 add_action('wp_enqueue_scripts','tarik_register_styles');
