@@ -48,6 +48,8 @@ function tarik_register_scripts()
     wp_enqueue_script('jquery-progress-bar',"https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/0.6.1/progressbar.js",[],'0.6.1',false);
     wp_enqueue_script('gsap', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js",[],'3.10.4',false);
     wp_enqueue_script('gsap-scroll-trigger', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js",[],'3.10.4',false);
+    wp_enqueue_script('gsap-observer', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Observer.min.js",[],'3.10.4',false);
+    wp_enqueue_script('gsap-scrollTo', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js",[],'3.10.4',false);
     wp_enqueue_script('splide-slide', "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js",[],'4.0.7',true);
 }
 

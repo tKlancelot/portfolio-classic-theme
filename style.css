@@ -600,6 +600,8 @@ a {
         font-family: "Roboto Light", sans-serif;
         font-size: 14px;
         line-height: 1.32rem; }
+      .skill-card__content__body i {
+        color: var(--text-canari); }
 
 .skill-card.active {
   display: flex; }
@@ -761,7 +763,7 @@ a {
       .activities__body__left ul li {
         width: 80%;
         margin: 1rem;
-        background-color: var(--border-color);
+        background-color: var(--body-darker);
         padding: 1.5rem;
         transition: 0.24s linear all;
         text-align: center;
@@ -1314,6 +1316,57 @@ a {
 @media screen and (max-width: 800px) {
   .contact-form__body .input-box--submit input {
     width: 32%; } }
+#autoslide {
+  min-height: 80vh;
+  background-color: var(--body-darker); }
+
+.autoslide__body {
+  display: grid;
+  grid-template-rows: 1fr 1fr; }
+  .autoslide__body__top, .autoslide__body__bottom {
+    min-height: 40vh;
+    overflow-x: hidden;
+    width: 100%; }
+    .autoslide__body__top .scrolling-frame, .autoslide__body__bottom .scrolling-frame {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      place-items: center;
+      height: 100%;
+      width: 200%; }
+      .autoslide__body__top .scrolling-frame__item, .autoslide__body__bottom .scrolling-frame__item {
+        color: var(--write);
+        font-family: "Roboto Light", sans-serif;
+        width: 100%;
+        display: flex;
+        justify-content: center; }
+        .autoslide__body__top .scrolling-frame__item span, .autoslide__body__bottom .scrolling-frame__item span {
+          display: flex;
+          justify-content: center;
+          padding: 1rem;
+          border: 1px solid var(--border-color);
+          background-color: var(--section-background);
+          background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/az-subtle.png");
+          background-blend-mode: color-dodge;
+          background-size: 0.5%;
+          border-radius: 32px;
+          width: 60%;
+          margin: auto; }
+  .autoslide__body__bottom .scrolling-frame {
+    transform: translate(-50%, 0); }
+
+@media screen and (max-width: 780px) {
+  #autoslide {
+    min-height: 40vh; }
+
+  .autoslide__body__top, .autoslide__body__bottom {
+    min-height: 20vh; }
+  .autoslide__body .scrolling-frame {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr; }
+    .autoslide__body .scrolling-frame__item span {
+      padding: 0.5rem;
+      width: 56%;
+      font-size: 12.5px; } }
 .theme-picker {
   position: fixed;
   z-index: 999;

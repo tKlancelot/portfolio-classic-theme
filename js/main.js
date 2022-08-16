@@ -17,7 +17,12 @@ const disableLinks = () => {
 /****   gsap animations    **** */
 /****************************** */
 
+// import { Observer } from "gsap/Observer";
+// import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(Observer);
 
 
 gsap.from(".g-text", {
@@ -55,6 +60,26 @@ gsap.from(".gsap-background", {
     opacity:0.1,
     scale: 0.92
 });
+
+gsap.to('.autoslide__body__top .scrolling-frame',{
+    scrollTrigger:{
+        trigger:".autoslide__body__top .scrolling-frame",
+        toggleActions:'restart pause reverse pause',
+        scrub:8
+    },
+    duration:16,
+    x: '-50%'
+})
+gsap.to('.autoslide__body__bottom .scrolling-frame',{
+    scrollTrigger:{
+        trigger:".autoslide__body__bottom .scrolling-frame",
+        toggleActions:'restart pause reverse pause',
+        scrub:8,
+        // markers:true
+    },
+    duration:16,
+    x: '50%'
+})
 
 
 //WITH Timelines (cleaner, more versatile)

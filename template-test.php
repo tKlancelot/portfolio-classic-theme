@@ -143,7 +143,8 @@
                             </div>
                             <div class="skill-card__content__body">
                                 <h3><i class="fa-solid fa-plus"></i>&nbsp;conception graphique</h3><hr/>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis id maxime itaque quaerat, deserunt praesentium officiis tempora nobis! Quos, quasi aspernatur? Perspiciatis tempora nisi maxime adipisci sed excepturi maiores repellendus.</p>
+                                <p>Tout projet web part d'une maquette. Une <i>maquette</i> de site Web est tout bonnement une représentation graphique simplifiée mais précise de la façon dont notre site Web et ses éléments/parties seront agencées.</p>
+                                <p>Un développeur front doit être en mesure de produire ce document en réfléchissant à l'expérience de l'utilisateur mais en veillant également à la propreté et l'esthétique des graphismes.</p>
                             </div>
                         </div>
                     </div>
@@ -166,7 +167,8 @@
                             </div>
                             <div class="skill-card__content__body">
                                 <h3><i class="fa-solid fa-plus"></i>&nbsp;modélisation 3d</h3><hr/>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet sit inventore cumque a magnam alias porro quae modi repellat perspiciatis omnis animi pariatur voluptatum ex, corporis possimus hic quam eius.</p>
+                                <p>Rien de plus gratifiant que de voir un objet 3d prendre vie sous ses yeux au fil de différentes étapes de construction sur <i>Blender</i>. Ce gratuiciel légendaire permet de créer des objets, des scènes et des animations 3d.</p> 
+                                <p>À l'issu du processus, on obtient des objets 3d légers, avec peu de facettes, texturés et animés, nos lumières, nos caméras et tout cela constitue une scène 3d. On l'exportera au format gltf afin de pouvoir l'intégrer dans un navigateur grâce à la librairie javaScript <i>Three.js</i>.</p> 
                             </div>
                         </div>
                     </div>
@@ -183,6 +185,67 @@
                             </div>
                         </div>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="autoslide" class="autoslide">
+        <div class="autoslide__body">
+            <div class="autoslide__body__top">
+                <div class="scrolling-frame">
+                    <div class="scrolling-frame__item">
+                        <span>#intégrateur</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>#freelance</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>#rigoureux</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>#minutieux</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>#front-end</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>#html/css/js</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>React</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>Wordpress</span>
+                    </div>
+                </div>
+            </div>
+            <div class="autoslide__body__bottom">
+                <div class="scrolling-frame">
+                    <div class="scrolling-frame__item">
+                        <span>#Airtable</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>#Scrum</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>#Github</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>#Figma</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>#Blender</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>#DRY/BEM</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>#Code Refactoring</span>
+                    </div>
+                    <div class="scrolling-frame__item">
+                        <span>#Blender</span>
                     </div>
                 </div>
             </div>
