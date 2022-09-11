@@ -21,10 +21,8 @@
         @include flex-evenly-center;
         flex-direction: column;
         hr {
-            height: 0px;
-            border: unset;
-            border-bottom: 1px solid var(--underline-color);
             width: 32%;
+            @include linear-hr;
         }
     }
 

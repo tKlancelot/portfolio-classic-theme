@@ -35,7 +35,12 @@
                         border-radius: 32px;
                         width: 60%;
                         margin:auto;
-                        // text-transform: capitalize;
+                        text-transform: capitalize;
+                        &::before{
+                            content:'#';
+                            position: relative;
+                            color:var(--write);
+                        }
                     }
                 }
             }
@@ -55,22 +60,40 @@
 @media screen and (max-width:780px) {
 
     #autoslide{
-        min-height: 40vh;
+        min-height: 44vh;
     }
 
     .autoslide{
         &__body{
             &__top,&__bottom{
-                min-height: 20vh;
-            }
-            .scrolling-frame{
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: 1fr 1fr;
-                &__item{
-                    span{
-                        padding:0.5rem;
-                        width: 56%;
-                        font-size: 12.5px;
+                .scrolling-frame{
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: auto;
+                    width: 100%;
+                    transform: unset;
+                    &__item{
+                        span{
+                            font-size: 10.75px;
+                            padding: 0.64rem;
+                        }
+                    }
+                    &__item:nth-child(3),&__item:nth-child(7),
+                    &__item:nth-child(4),&__item:nth-child(8){
+                        display: flex;
+                        justify-content: flex-start;
+                        span{
+                            color: var(--text-canari)!important;
+                            margin:auto 2rem;
+                        }
+                    }
+                    &__item:nth-child(1),&__item:nth-child(5),
+                    &__item:nth-child(2),&__item:nth-child(6){
+                        display: flex;
+                        justify-content: flex-end;
+                        span{
+                            color: var(--text-canari)!important;
+                            margin:auto 1rem;
+                        }
                     }
                 }
             }

@@ -1,10 +1,12 @@
 :root{
     --write : #fefefeb4;
-    --text-canari : #35e9f1;
+    --text-canari : #e9c154;
+    --texture-overlay : #e9c154b4;
     --border-color: #303030;
     --body-background : #3a3a3a;
     --section-background : #1d1d1d;
     --body-darker: #101010;
+    --body-dark: #202020;
     --background-transparent: #30303072;
     --underline-color: #fefefe64;
 }

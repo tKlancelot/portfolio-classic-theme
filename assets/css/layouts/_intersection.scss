@@ -1,4 +1,15 @@
 .intersection{
-    min-height: 20vh;
-    // background-color: $secondary;
+    background-image:url('./assets/textures/black-thread.png');
+    min-height: 14vh;
+    background-color: var(--texture-overlay);
+    background-blend-mode: multiply;
+    background-position: top;
+}
+
+@media screen and (max-width:800px) {
+    
+    .intersection{
+        min-height: 7.2vh;
+    }
+
 }

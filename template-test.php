@@ -55,13 +55,13 @@
                             prêt à relever de nouveaux challenges !</h3>
                     </div>
                     <div class="flap__left__content">
-                        <button class="cta">Télécharger CV &emsp;
+                        <a href="<?php echo get_template_directory_uri();?>/assets/downloads/RESUME-A4.pdf" download="CV-TARIK" class="cta">Télécharger CV &emsp;
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M24 11.3065L12.4999 24M12.4999 24L1 11.3066M12.4999 24L12.4999 0.999999"
                                     stroke="white" stroke-linecap="square" />
                             </svg>
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="flap__right">
@@ -196,69 +196,71 @@
             <div class="autoslide__body__top">
                 <div class="scrolling-frame">
                     <div class="scrolling-frame__item">
-                        <span>#intégrateur</span>
+                        <span>intégrateur!</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>#freelance</span>
+                        <span>freelance</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>#rigoureux</span>
+                        <span>rigoureux</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>#minutieux</span>
+                        <span>minutieux</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>#front-end</span>
+                        <span>front-end</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>#html/css/js</span>
+                        <span>html/css/js</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>React</span>
+                        <span>react</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>Wordpress</span>
+                        <span>wordpress</span>
                     </div>
                 </div>
             </div>
             <div class="autoslide__body__bottom">
                 <div class="scrolling-frame">
                     <div class="scrolling-frame__item">
-                        <span>#Airtable</span>
+                        <span>airtable</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>#Scrum</span>
+                        <span>scrum</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>#Github</span>
+                        <span>github</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>#Figma</span>
+                        <span>figma</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>#Blender</span>
+                        <span>blender</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>#DRY/BEM</span>
+                        <span>DRY/BEM</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>#Code Refactoring</span>
+                        <span>code refactoring</span>
                     </div>
                     <div class="scrolling-frame__item">
-                        <span>#Blender</span>
+                        <span>trello</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="stats" class="stats" data-spy>
+    <section class="intersection"></section>
+
+    <!-- <section id="stats" class="stats" data-spy>
         <div class="stats__body">
             <div class="container" id="first"></div>
             <div class="container" id="second"></div>
             <div class="container" id="third"></div>
         </div>
-    </section>
+    </section> -->
 
     <!-- section carousel cards -->
 

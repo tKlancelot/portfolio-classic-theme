@@ -81,7 +81,7 @@
         }
 
         &__body {
-            height: 28vh;
+            height: 32vh;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -95,15 +95,15 @@
             }
 
             hr {
-                margin: 0.25rem 0 1rem;
-                border: unset;
-                border-bottom: 1px solid var(--underline-color);
+                margin: 0.2rem 0 1rem;
+                @include linear-hr;
             }
 
             p {
                 font-family: $font-primary-light;
                 font-size: 14px;
-                line-height: 1.32rem;
+                line-height: 1.4rem;
+                text-align: justify;
             }
             i{
                 color:var(--text-canari);
@@ -119,7 +119,16 @@
 @media screen and (max-width:1600px) {
 
     .skill-card__content__body p {
-        font-size: 12.5px;
+        font-size: 1vw;
+    }
+
+}
+
+@media screen and (max-width:1200px) {
+
+    .skill-card__content__body p {
+        font-size: 0.96vw;
+        line-height: 1.04rem;
     }
 
 }
@@ -128,6 +137,16 @@
     
     .skill-card__content__body p {
         font-size: 11.5px;
+        line-height: 1.32rem;
+    }
+
+    .project-card{
+        justify-content: center;
+        text-align: center;  
+        &__header,&__body,&__footer{
+            justify-content: center;
+            
+        }  
     }
 
 }

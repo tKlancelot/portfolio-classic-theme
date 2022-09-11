@@ -44,12 +44,10 @@ gsap.from(".g-text-triggered", {
 });
 
 gsap.from(".flap .flap__right img", {
-    // scrollTrigger:".g-text",
-    // stagger:(0.6)
     opacity: 0,
-    duration: 2.4,
-    // scale: 0.48,
-    x: 250,
+    duration: 6,
+    scale: 0.8,
+    y: 40,
 
 });
 
@@ -61,25 +59,6 @@ gsap.from(".gsap-background", {
     scale: 0.92
 });
 
-gsap.to('.autoslide__body__top .scrolling-frame',{
-    scrollTrigger:{
-        trigger:".autoslide__body__top .scrolling-frame",
-        toggleActions:'restart pause reverse pause',
-        scrub:8
-    },
-    duration:16,
-    x: '-50%'
-})
-gsap.to('.autoslide__body__bottom .scrolling-frame',{
-    scrollTrigger:{
-        trigger:".autoslide__body__bottom .scrolling-frame",
-        toggleActions:'restart pause reverse pause',
-        scrub:8,
-        // markers:true
-    },
-    duration:16,
-    x: '50%'
-})
 
 
 //WITH Timelines (cleaner, more versatile)
@@ -114,6 +93,37 @@ tl.from("#two", {
 tl.pause();
 // tl.resume();
 tl.play();
+
+const handleAutoSlideAnimation = () => {
+    gsap.to('.autoslide__body__top .scrolling-frame',{
+        scrollTrigger:{
+            trigger:".autoslide__body__top .scrolling-frame",
+            toggleActions:'restart pause reverse pause',
+            scrub:8
+        },
+        duration:16,
+        x: '-50%'
+    })
+    gsap.to('.autoslide__body__bottom .scrolling-frame',{
+        scrollTrigger:{
+            trigger:".autoslide__body__bottom .scrolling-frame",
+            toggleActions:'restart pause reverse pause',
+            scrub:8,
+            // markers:true
+        },
+        duration:16,
+        x: '50%'
+    })
+
+}
+
+
+if(window.matchMedia("(min-width:800px)").matches)
+{
+handleAutoSlideAnimation();
+}
+
+
 
 
 /************************************* */
@@ -2085,86 +2095,86 @@ document.addEventListener('DOMContentLoaded', function () {
 // progressbar.js@1.0.0 version is used
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 
-var bar = new ProgressBar.Circle(first, {
-    color: '#ffd581',
-    strokeWidth: 1.25,
-    trailWidth: 1.25,
-    duration: 2000,
-    trailColor: '#ccc4',
-    easing: 'linear',
-    from: {
-        color: '#ffd581',
-        width: 1.25
-    },
-    to: {
-        color: '#ffd581',
-        width: 1.25
-    },
-    step: function (state, circle) {
-        circle.path.setAttribute('stroke', state.color);
-        circle.path.setAttribute('stroke-width', state.width);
-        var value = Math.round(circle.value() * 100);
-        if (value === 0) {
-            circle.setText('');
-        } else {
-            circle.setText(value + '<br/><span>clients satisfaits</span>');
-        }
-    }
-});
+// var bar = new ProgressBar.Circle(first, {
+//     color: '#ffd581',
+//     strokeWidth: 1.25,
+//     trailWidth: 1.25,
+//     duration: 2000,
+//     trailColor: '#ccc4',
+//     easing: 'linear',
+//     from: {
+//         color: '#ffd581',
+//         width: 1.25
+//     },
+//     to: {
+//         color: '#ffd581',
+//         width: 1.25
+//     },
+//     step: function (state, circle) {
+//         circle.path.setAttribute('stroke', state.color);
+//         circle.path.setAttribute('stroke-width', state.width);
+//         var value = Math.round(circle.value() * 100);
+//         if (value === 0) {
+//             circle.setText('');
+//         } else {
+//             circle.setText(value + '<br/><span>clients satisfaits</span>');
+//         }
+//     }
+// });
 
-var barTwo = new ProgressBar.Circle(second, {
-    color: '#ffd581',
-    strokeWidth: 1.25,
-    trailWidth: 1.25,
-    duration: 2000,
-    trailColor: '#ccc4',
-    easing: 'linear',
-    from: {
-        color: '#ffd581',
-        width: 1.25
-    },
-    to: {
-        color: '#ffd581',
-        width: 1.25
-    },
-    step: function (state, circle) {
-        circle.path.setAttribute('stroke', state.color);
-        circle.path.setAttribute('stroke-width', state.width);
-        var value = Math.round(circle.value() * 100);
-        if (value === 0) {
-            circle.setText('');
-        } else {
-            circle.setText(value + '<br/><span>projets terminés</span>');
-        }
-    }
-});
+// var barTwo = new ProgressBar.Circle(second, {
+//     color: '#ffd581',
+//     strokeWidth: 1.25,
+//     trailWidth: 1.25,
+//     duration: 2000,
+//     trailColor: '#ccc4',
+//     easing: 'linear',
+//     from: {
+//         color: '#ffd581',
+//         width: 1.25
+//     },
+//     to: {
+//         color: '#ffd581',
+//         width: 1.25
+//     },
+//     step: function (state, circle) {
+//         circle.path.setAttribute('stroke', state.color);
+//         circle.path.setAttribute('stroke-width', state.width);
+//         var value = Math.round(circle.value() * 100);
+//         if (value === 0) {
+//             circle.setText('');
+//         } else {
+//             circle.setText(value + '<br/><span>projets terminés</span>');
+//         }
+//     }
+// });
 
-var barThree = new ProgressBar.Circle(third, {
-    color: '#ffd581',
-    strokeWidth: 1.25,
-    trailWidth: 1.25,
-    duration: 2000,
-    trailColor: '#ccc4',
-    easing: 'linear',
-    from: {
-        color: '#ffd581',
-        width: 1.25
-    },
-    to: {
-        color: '#ffd581',
-        width: 1.25
-    },
-    step: function (state, circle) {
-        circle.path.setAttribute('stroke', state.color);
-        circle.path.setAttribute('stroke-width', state.width);
-        var value = Math.round(circle.value() * 10);
-        if (value === 0) {
-            circle.setText('');
-        } else {
-            circle.setText(value + '<br/><span>années d\'expérience</span>');
-        }
-    }
-});
+// var barThree = new ProgressBar.Circle(third, {
+//     color: '#ffd581',
+//     strokeWidth: 1.25,
+//     trailWidth: 1.25,
+//     duration: 2000,
+//     trailColor: '#ccc4',
+//     easing: 'linear',
+//     from: {
+//         color: '#ffd581',
+//         width: 1.25
+//     },
+//     to: {
+//         color: '#ffd581',
+//         width: 1.25
+//     },
+//     step: function (state, circle) {
+//         circle.path.setAttribute('stroke', state.color);
+//         circle.path.setAttribute('stroke-width', state.width);
+//         var value = Math.round(circle.value() * 10);
+//         if (value === 0) {
+//             circle.setText('');
+//         } else {
+//             circle.setText(value + '<br/><span>années d\'expérience</span>');
+//         }
+//     }
+// });
 
 
 /****************************** */
@@ -2191,7 +2201,7 @@ let observer = new IntersectionObserver(function (entries) {
     });
 }, config);
 
-observer.observe(statContainer);
+// observer.observe(statContainer);
 
 const threshold = 0.6;
 

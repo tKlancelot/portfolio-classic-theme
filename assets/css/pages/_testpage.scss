@@ -149,7 +149,7 @@
     #test {
         .section {
             h1 {
-                font-size: 64px;
+                font-size: 5.2vw;;
                 margin: 2.4rem 0;
             }
 
@@ -166,7 +166,7 @@
         .section {
 
             h1 {
-                font-size: 52px;
+                font-size: 4.8vw;
                 margin: 2rem 0 2.8rem;
             }
 
@@ -177,12 +177,6 @@
             &__body {
                 .flap {
                     grid-template-columns: 1fr 1fr;
-
-                    &__right__content {
-                        img {
-                            width: 80%;
-                        }
-                    }
                 }
             }
         }
