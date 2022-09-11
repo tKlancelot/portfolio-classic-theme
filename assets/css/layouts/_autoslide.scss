@@ -1,5 +1,5 @@
 #autoslide {
-    min-height: 80vh;
+    min-height: 32vh;
     background-color: var(--body-darker);
 }
 
@@ -10,7 +10,7 @@
 
         &__top,
         &__bottom {
-            min-height: 40vh;
+            min-height: 16vh;
             overflow-x: hidden;
             width: 100%;
 

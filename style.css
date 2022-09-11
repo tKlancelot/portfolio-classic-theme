@@ -1065,7 +1065,7 @@ section, header, footer {
 
 .intersection {
   background-image: url("./assets/textures/black-thread.png");
-  min-height: 14vh;
+  min-height: 9.6vh;
   background-color: var(--texture-overlay);
   background-blend-mode: multiply;
   background-position: top; }
@@ -1353,14 +1353,14 @@ section, header, footer {
   .contact-form__body .input-box--submit input {
     width: 32%; } }
 #autoslide {
-  min-height: 80vh;
+  min-height: 32vh;
   background-color: var(--body-darker); }
 
 .autoslide__body {
   display: grid;
   grid-template-rows: 1fr 1fr; }
   .autoslide__body__top, .autoslide__body__bottom {
-    min-height: 40vh;
+    min-height: 16vh;
     overflow-x: hidden;
     width: 100%; }
     .autoslide__body__top .scrolling-frame, .autoslide__body__bottom .scrolling-frame {

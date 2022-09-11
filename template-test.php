@@ -252,7 +252,7 @@
         </div>
     </section>
 
-    <section class="intersection"></section>
+    <!-- <section class="intersection"></section> -->
 
     <!-- <section id="stats" class="stats" data-spy>
         <div class="stats__body">
