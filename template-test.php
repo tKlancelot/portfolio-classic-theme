@@ -10,19 +10,13 @@
 ?>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-<link id="themeStylesheet" rel="stylesheet"
-    href="<?php echo get_template_directory_uri();?>/assets/css/themes/dark-theme.css">
-<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/themes/purple-theme.css"> -->
+<link id="themeStylesheet" rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/themes/dark-theme.css">
 
 <main id="test">
 
     <div id="rjs_cursor" class="rjs-cursor">
         <div class="rjs-cursor-icon"></div>
     </div>
-    <!-- <section class="section">
-        <p class="test-tooltip">text in tooltip</p>
-    </section> -->
-
     <!-- section jumbotron -->
 
     <section id="jumbo" class="section banner" data-spy>
@@ -36,18 +30,6 @@
                         alt="phone curves">
                 </div>
                 <div class="flap__left">
-                    <!-- <div class="absolute-circle-frame">
-                        <div class="absolute-circle-frame__left">
-                            <div class="circle-one">
-                                <div class="circle-two"></div>
-                            </div>
-                        </div>
-                        <div class="absolute-circle-frame__right">
-                            <div class="circle-one">
-                                <div class="circle-two"></div>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="flap__left__heading">
                         <h2 class="g-text section-heading">Bonjour,</h2>
                         <h1 class="g-text">Je suis Tarik</h1>
@@ -253,14 +235,6 @@
     </section>
 
     <!-- <section class="intersection"></section> -->
-
-    <!-- <section id="stats" class="stats" data-spy>
-        <div class="stats__body">
-            <div class="container" id="first"></div>
-            <div class="container" id="second"></div>
-            <div class="container" id="third"></div>
-        </div>
-    </section> -->
 
     <!-- section carousel cards -->
 

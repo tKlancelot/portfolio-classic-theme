@@ -14,7 +14,7 @@ img {
 }
 
 body {
-    @include textured-background-subtle;
+    background-color: var(--section-background);
     max-width: 100vw;
     overflow-x: hidden!important;
 

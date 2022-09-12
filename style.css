@@ -51,9 +51,6 @@ img {
 
 body {
   background-color: var(--section-background);
-  background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/az-subtle.png");
-  background-blend-mode: color-dodge;
-  background-size: 0.5%;
   max-width: 100vw;
   overflow-x: hidden !important; }
 
@@ -1381,13 +1378,14 @@ section, header, footer {
           padding: 1rem;
           border: 1px solid var(--border-color);
           background-color: var(--section-background);
-          background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/az-subtle.png");
-          background-blend-mode: color-dodge;
-          background-size: 0.5%;
+          background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png");
+          background-blend-mode: color-burn;
+          background-size: 4%;
           border-radius: 32px;
           width: 60%;
           margin: auto;
-          text-transform: capitalize; }
+          text-transform: capitalize;
+          font-size: 0.94vw; }
           .autoslide__body__top .scrolling-frame__item span::before, .autoslide__body__bottom .scrolling-frame__item span::before {
             content: '#';
             position: relative;
@@ -1397,28 +1395,7 @@ section, header, footer {
 
 @media screen and (max-width: 780px) {
   #autoslide {
-    min-height: 44vh; }
-
-  .autoslide__body__top .scrolling-frame, .autoslide__body__bottom .scrolling-frame {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    width: 100%;
-    transform: unset; }
-    .autoslide__body__top .scrolling-frame__item span, .autoslide__body__bottom .scrolling-frame__item span {
-      font-size: 10.75px;
-      padding: 0.64rem; }
-    .autoslide__body__top .scrolling-frame__item:nth-child(3), .autoslide__body__top .scrolling-frame__item:nth-child(7), .autoslide__body__top .scrolling-frame__item:nth-child(4), .autoslide__body__top .scrolling-frame__item:nth-child(8), .autoslide__body__bottom .scrolling-frame__item:nth-child(3), .autoslide__body__bottom .scrolling-frame__item:nth-child(7), .autoslide__body__bottom .scrolling-frame__item:nth-child(4), .autoslide__body__bottom .scrolling-frame__item:nth-child(8) {
-      display: flex;
-      justify-content: flex-start; }
-      .autoslide__body__top .scrolling-frame__item:nth-child(3) span, .autoslide__body__top .scrolling-frame__item:nth-child(7) span, .autoslide__body__top .scrolling-frame__item:nth-child(4) span, .autoslide__body__top .scrolling-frame__item:nth-child(8) span, .autoslide__body__bottom .scrolling-frame__item:nth-child(3) span, .autoslide__body__bottom .scrolling-frame__item:nth-child(7) span, .autoslide__body__bottom .scrolling-frame__item:nth-child(4) span, .autoslide__body__bottom .scrolling-frame__item:nth-child(8) span {
-        color: var(--text-canari) !important;
-        margin: auto 2rem; }
-    .autoslide__body__top .scrolling-frame__item:nth-child(1), .autoslide__body__top .scrolling-frame__item:nth-child(5), .autoslide__body__top .scrolling-frame__item:nth-child(2), .autoslide__body__top .scrolling-frame__item:nth-child(6), .autoslide__body__bottom .scrolling-frame__item:nth-child(1), .autoslide__body__bottom .scrolling-frame__item:nth-child(5), .autoslide__body__bottom .scrolling-frame__item:nth-child(2), .autoslide__body__bottom .scrolling-frame__item:nth-child(6) {
-      display: flex;
-      justify-content: flex-end; }
-      .autoslide__body__top .scrolling-frame__item:nth-child(1) span, .autoslide__body__top .scrolling-frame__item:nth-child(5) span, .autoslide__body__top .scrolling-frame__item:nth-child(2) span, .autoslide__body__top .scrolling-frame__item:nth-child(6) span, .autoslide__body__bottom .scrolling-frame__item:nth-child(1) span, .autoslide__body__bottom .scrolling-frame__item:nth-child(5) span, .autoslide__body__bottom .scrolling-frame__item:nth-child(2) span, .autoslide__body__bottom .scrolling-frame__item:nth-child(6) span {
-        color: var(--text-canari) !important;
-        margin: auto 1rem; } }
+    display: none; } }
 .theme-picker {
   position: fixed;
   z-index: 999;
