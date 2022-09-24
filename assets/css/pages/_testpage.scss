@@ -1,5 +1,5 @@
 // $test-dark : #ECE8D9e4;
-
+$jumbo-height : 44vw;
 
 #test {
 
@@ -15,30 +15,32 @@
             transform-origin: left;
         }
 
-        h1 {
-            font-size: 76px;
-            letter-spacing: 0.072rem;
-            margin: 3.4rem 0;
+        h1{
+            display: flex;
+            margin: 3rem 0;
+            word-spacing: 1rem;
+        }
+
+        h1 span {
+            font-size: 4.4vw;
+            letter-spacing: 0.26vw;
+            font-family: 'GTWalsheim Bold',sans-serif;
         }
 
         h3 {
-            font-size: 17px;
+            font-size: 0.96vw;
             font-weight: 300;
             font-family: $font-primary-light;
             letter-spacing: 0.032rem;
             color: var(--write);
             width: 72%;
-            line-height: 1.72rem;
+            line-height: 2.2rem;
 
             i {
                 color: var(--write);
             }
         }
 
-        h1 {
-            // font-weight: 400;
-            font-family: 'GTWalsheim Bold',sans-serif;
-        }
 
         .section-heading {
             text-transform: capitalize;
@@ -60,19 +62,16 @@
                 display: grid;
                 grid-template-columns: 0.54fr 0.46fr;
                 min-height: 100%;
-                // grid-gap: 1rem;
                 width: 100%;
 
                 &__left {
-                    height: 76vh;
+                    height: $jumbo-height;
                     display: grid;
-                    grid-template-rows: 0.64fr 0.28fr;
-                    // padding: 3.2rem;
+                    grid-template-rows: 0.64fr 0.20fr;
                     &__content,&__heading{
                         width: 80%;
                         margin:auto;
                     }
-
                     &__content {
                         display: flex;
                         flex-direction: column;
@@ -88,8 +87,7 @@
                 &__right {
                     display: flex;
                     justify-content: flex-end;
-                    height: 76vh;
-
+                    height: $jumbo-height;
                     &__content {
                         @include flex-center-center;
                         overflow: hidden;
@@ -100,14 +98,15 @@
                             overflow: hidden;
                             border-radius: 100%;
                             transform-origin: right;
-                            background-color: var(--background-transparent);
+                            // background-color: var(--background-transparent);
+                            background-color: var(--body-darker);
                             width: 74%;
                             height: auto;
                             margin: auto;
                             aspect-ratio: 1/1;
                             object-position: center;
                             outline: 1px solid var(--border-color);
-                            padding: 1rem;
+                            padding: 1.6vw;
                             filter: brightness(1.12);
                         }
                     }
@@ -115,30 +114,10 @@
             }
         }
 
-        &__header {
-            display: flex;
-            width: 100%;
-            position: absolute;
-            height: 76vh;
-            left: 0;
-            top: 12vh;
-            overflow: hidden;
-
-            img {
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-
     }
 
     .section.banner {
-        height: 76vh;
-    }
-
-
-    #phone-curves {
-        display: none;
+        height: $jumbo-height;
     }
 
 
@@ -149,7 +128,7 @@
     #test {
         .section {
             h1 {
-                font-size: 5.2vw;;
+                font-size: 5.2vw;
                 margin: 2.4rem 0;
             }
 
@@ -167,19 +146,36 @@
 
             h1 {
                 font-size: 4.8vw;
-                margin: 2rem 0 2.8rem;
+                margin: 2vw 0 2.8vw;
             }
 
             h2 {
                 font-size: 24px;
             }
 
+            h3{
+                font-size: 13.5px;
+                line-height: 1.6rem;
+
+            }
+            &__header{
+                height: 520px;
+
+            }
+
             &__body {
                 .flap {
                     grid-template-columns: 1fr 1fr;
+                    &__left,&__right{
+                        height: 520px;
+                    }
                 }
             }
         }
+        .section.banner{
+            height: 520px;
+        }
+
     }
 
 }
@@ -195,8 +191,10 @@
             text-align: center;
         }
         h1 {
-            font-size: 40px;
             margin: 1rem 0;
+            span{
+                font-size: 9.6vw;
+            }
         }
 
         h3 {
@@ -220,33 +218,33 @@
 
             &__left,
             &__right {
-                height: 54vh;
+                height: 100vw;
             }
 
             &__left__content,
             &__left__heading {
                 align-items: center;
                 width: 100%;
+                grid-gap: 2vw;
             }
 
             &__right {
                 justify-content: center;
                 max-width: 100vw;
                 overflow: hidden;
-                height: 50vh;
-
                 &__content {
                     img {
                         width: 78%;
                         height: auto;
-                        padding: 1rem;
-                        outline:unset;
+                        padding: 3.6vw;
+                        outline: unset;
+                        border: 1px solid var(--border-color);
                     }
                 }
             }
 
             &__left {
-                grid-template-rows: 0.72fr 0.16fr;
+                grid-template-rows: 0.8fr 0.2fr;
                 padding: 1.2rem;
             }
         }
@@ -255,18 +253,6 @@
     #test {
         .carousel {
             z-index: 100;
-        }
-    }
-
-    #test #phone-curves {
-        display: flex;
-        height: 108vh;
-        position: absolute;
-        align-items: flex-end;
-        width: 100%;
-
-        img {
-            width: 100%;
         }
     }
 

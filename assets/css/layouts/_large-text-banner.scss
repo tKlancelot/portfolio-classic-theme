@@ -1,6 +1,5 @@
 .large-text-banner {
     display: grid;
-    min-height: 92vh;
     place-items: center;
     @include border-top;
     @include textured-background-dark;
@@ -17,18 +16,18 @@
 
     &__header {
         width: 36%;
-        height: 20vh;
+        height: $section-height-tiny;
         @include flex-evenly-center;
         flex-direction: column;
         hr {
-            width: 32%;
+            width: 44%;
             @include linear-hr;
         }
     }
 
     &__body {
         width: 52%;
-        height: 48vh;
+        height: $section-height-mini;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -39,20 +38,21 @@
     }
 
     &__footer {
-        height: 16vh;
+        height: $section-height-tiny;
         display: grid;
         grid-template-rows: 0.4fr 1fr;
         place-content: center;
         place-items: center;
         span{
-            font-size: 14px;
+            font-size: 0.96vw;
             text-transform: capitalize;
             letter-spacing: 0.040rem;
             color:var(--text-canari);
         }
         .frame{
-            height: 56px;
-            width: 32px;
+
+            height: 3.2vw;
+            width: 2vw;
             border:1px solid var(--border-color);
             border-radius: 24px;
             padding: 8px;
@@ -60,7 +60,7 @@
             justify-content: center;
             .container{
                 display: flex;
-                height: 36px;
+                height: 2vw;
                 background-color: var(--border-color);
                 width: 1px;
             }
@@ -68,8 +68,51 @@
                 background-color:var(--text-canari);
                 border-radius: 16px;
                 width: 1px;
-                height: 18px;
+                height: 1vw;
                 animation: scrollDown 3s ease-in-out  infinite forwards;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:1600px) {
+
+    #test{
+        .large-text-banner{
+            &__footer{
+                .frame{
+                    height: 56px;
+                    width: 32px;
+                    .container{
+                        height: 36px;
+                    }
+                    #vertical-stroke{
+                        height: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width:1200px) {
+
+
+    #test{
+        .large-text-banner{
+            &__body{
+                height: 320px;
+            }
+            &__header,&__footer{
+                height: 160px;
+            }
+            &__footer{
+                span{
+                    font-size: 11.5px;
+                }
             }
         }
     }
@@ -83,11 +126,16 @@
                 text-align: center;
             }
             &__body{
-                height: auto;
+                height: 56vh;
                 width: 80%;
             }
             &__header{
                 width: 64%;
+                height: 20vh;
+            }
+            &__footer{
+                height: 22vh;
+                grid-template-rows: 0.5fr auto;
             }
         }
     }

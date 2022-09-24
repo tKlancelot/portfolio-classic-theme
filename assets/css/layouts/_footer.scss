@@ -1,7 +1,8 @@
 .footer {
-    height: 16vh;
+    height: $section-height-tiny;
     @include border-top;
     @include flex-center-start;
+    background-color: var(--body-darkest);
 
     &__header {
         position: absolute;
@@ -12,8 +13,8 @@
             border: 3px double var(--border-color);
             background-color: var(--body-darker);
             border-radius: 50%;
-            width: 48px;
-            height: 48px;
+            width: 2.8vw;
+            height: 2.8vw;
             margin: auto;
             transform: translate(0, -50%);
             color: var(--write);
@@ -42,7 +43,7 @@
         p {
             color: var(--write);
             font-family: $font-primary-light;
-            font-size: 14px;
+            font-size: 0.88vw;
             letter-spacing: 0.024rem;
         }
     }
@@ -53,13 +54,19 @@
         p {
             font-size: 13px;
         }
+        &__header{
+            .frame{
+                height: 40px;
+                width: 40px;
+            }
+        }
     }
 }
 
 @media screen and (max-width:800px) {
-    footer {
+    .footer {
         @include no-margin-side;
-
+        height: 20vh;
         p {
             font-size: 12px;
         }

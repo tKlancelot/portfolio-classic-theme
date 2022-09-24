@@ -1,5 +1,5 @@
 #autoslide {
-    min-height: 32vh;
+    min-height: 24vw;
     background-color: var(--body-darker);
 }
 
@@ -7,10 +7,11 @@
     &__body {
         display: grid;
         grid-template-rows: 1fr 1fr;
+        border-top:1px solid var(--border-color);
 
         &__top,
         &__bottom {
-            min-height: 16vh;
+            min-height: 12vw;
             overflow-x: hidden;
             width: 100%;
 

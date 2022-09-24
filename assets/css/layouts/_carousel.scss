@@ -14,7 +14,7 @@
             }
 
             &__slide {
-                min-height: 80vh;
+                min-height: $section-height-medium;
                 font-family: $font-primary-light;
                 display: flex;
             }
@@ -27,7 +27,7 @@
                 width: 12%;
                 top: 2rem;
                 right: 2rem;
-                height: 8vh;
+                height: 72px;
                 margin: auto;
                 @include flex-around-center;
                 transition: 0.48s ease-in;
@@ -71,7 +71,7 @@
 
             &__pagination {
                 bottom: 2rem;
-                height: 8vh;
+                height: $navigation-height;
                 width: 12%;
                 @include flex-evenly-center;
                 margin: auto;
@@ -87,7 +87,7 @@
                 position: absolute;
                 left: 2rem;
                 top: 2rem;
-                height: 8vh;
+                height: 72px;
                 @include flex-start-center;
                 font-family: $font-secondary;
                 color: var(--write);
@@ -97,6 +97,23 @@
 
 }
 
+
+@media screen and (max-width:1200px) {
+
+    #test{
+        .carousel{
+            .splide__slide{
+                min-height: 480px;
+            }
+            .splide{
+                &__arrows--ltr{
+                    width: 16vw;
+                }
+            }
+        }
+    }
+
+}
 
 @media screen and (max-width:800px) {
 
@@ -124,6 +141,9 @@
                     width: 100%;
                     left: 0;
                 }
+            }
+            .splide__slide{
+                min-height: 72vh;
             }
         }
     }

@@ -1,0 +1,17 @@
+:root{
+    --write: #fffe;
+    --write-transparent: #fff7;
+    --body-background : #22272e;
+    --body-darker: #1c2128;
+    --body-dark: #1c2128;
+    --body-darkest: #1c2128;
+    /* --body-darkest: #15191c; */
+    --section-background : #2d333b;
+    --border-color: #4b5258;
+    --text-canari : #efb55b;
+    --texture-overlay : #efb55bb4;
+    --background-transparent: #4b525832;
+    --underline-color: #4b525884;
+}
+
+

@@ -24,75 +24,110 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(Observer);
 
+if (window.matchMedia("(max-width: 800px)").matches) {
+    // animations mobiles
+}
+else
+{
 
-gsap.from(".g-text", {
-    scrollTrigger: ".g-text",
-    opacity: 0,
-    duration: 2.4,
-    // scale: 0.5,
-    y: -50,
-    stagger: (0.6)
-});
+    gsap.from(".g-text", {
+        scrollTrigger: ".g-text",
+        opacity: 0,
+        duration: 2.4,
+        y: -50,
+        stagger: (0.6)
+    });
+
+    gsap.from(".g-text-name span", {
+        scrollTrigger: ".g-text",
+        opacity: 0,
+        duration: 1.2,
+        scale: 0.4,
+        y: -80,
+        stagger: (0.4)
+    });
+
+    gsap.to(".g-text-cta span", {
+        scrollTrigger: ".g-text-cta",
+        textShadow:'0px 0px 0px #fffc,0px 0px 0px #fffc',
+        stagger:(0.1),
+        duration:0.05
+    });
+
+
+    gsap.from(".cta svg", {
+        scrollTrigger: ".g-text-cta",
+        duration: 1,
+        y:-40,
+        ease: "Power2.easeOut"
+    });
+
+
+    gsap.to(".cta svg path", {
+        stroke:'#fff',
+        duration:1.2,
+        ease: "Power2.easeOut",
+    });
+
+
+    gsap.from(".flap .flap__right img", {
+        duration: 4,
+        scale: 0.72,
+        y: 40,
+
+    });
+
+    gsap.from(".gsap-background", {
+        duration: 2.4,
+        y: 0,
+        x: 0,
+        opacity:0.1,
+        scale: 0.92
+    });
+
+    //WITH Timelines (cleaner, more versatile)
+    var tl = gsap.timeline({
+        // repeat: 2, 
+        // repeatDelay: 1
+    });
+    tl.from("#one", {
+        x: -100,
+        opacity: 0,
+        duration: 1,
+        scale: 0.1,
+        ease: "Power2.easeOut"
+    });
+    tl.to("#one", {
+        x: 0,
+        duration: 1,
+        ease: "Power2.easeOut"
+    });
+    tl.from("#three", {
+        x: 100,
+        opacity: 0,
+        duration: 1,
+        scale: 0.1
+    });
+    tl.from("#two", {
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        scale: 0.1
+    });
+    tl.pause();
+    // tl.resume();
+    tl.play();
+
+}
 
 gsap.from(".g-text-triggered", {
     scrollTrigger: ".large-text-banner__body",
     opacity: 0,
     duration: 2.4,
-    // scale: 0.5,
     y: -60,
     stagger: (0.6)
 });
 
-gsap.from(".flap .flap__right img", {
-    opacity: 0,
-    duration: 6,
-    scale: 0.8,
-    y: 40,
-
-});
-
-gsap.from(".gsap-background", {
-    duration: 2.4,
-    y: 0,
-    x: 0,
-    opacity:0.1,
-    scale: 0.92
-});
-
-
-
-//WITH Timelines (cleaner, more versatile)
-var tl = gsap.timeline({
-    // repeat: 2, 
-    // repeatDelay: 1
-});
-tl.from("#one", {
-    x: -100,
-    opacity: 0,
-    duration: 1,
-    scale: 0.1,
-    ease: "Power2.easeOut"
-});
-tl.to("#one", {
-    x: 0,
-    duration: 1,
-    ease: "Power2.easeOut"
-});
-tl.from("#three", {
-    x: 100,
-    opacity: 0,
-    duration: 1,
-    scale: 0.1
-});
-tl.from("#two", {
-    y: -50,
-    opacity: 0,
-    duration: 1,
-    scale: 0.1
-});
-tl.pause();
-// tl.resume();
-tl.play();
 
 const handleAutoSlideAnimation = () => {
     gsap.to('.autoslide__body__top .scrolling-frame',{
@@ -114,13 +149,12 @@ const handleAutoSlideAnimation = () => {
         duration:16,
         x: '50%'
     })
-
 }
 
 
 if(window.matchMedia("(min-width:800px)").matches)
 {
-handleAutoSlideAnimation();
+    handleAutoSlideAnimation();
 }
 
 
@@ -162,8 +196,6 @@ const handleMobileGsapAnimation = () => {
     });
 
 }
-
-
 
 
 /****************************** */
@@ -2092,91 +2124,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// progressbar.js@1.0.0 version is used
-// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
-
-// var bar = new ProgressBar.Circle(first, {
-//     color: '#ffd581',
-//     strokeWidth: 1.25,
-//     trailWidth: 1.25,
-//     duration: 2000,
-//     trailColor: '#ccc4',
-//     easing: 'linear',
-//     from: {
-//         color: '#ffd581',
-//         width: 1.25
-//     },
-//     to: {
-//         color: '#ffd581',
-//         width: 1.25
-//     },
-//     step: function (state, circle) {
-//         circle.path.setAttribute('stroke', state.color);
-//         circle.path.setAttribute('stroke-width', state.width);
-//         var value = Math.round(circle.value() * 100);
-//         if (value === 0) {
-//             circle.setText('');
-//         } else {
-//             circle.setText(value + '<br/><span>clients satisfaits</span>');
-//         }
-//     }
-// });
-
-// var barTwo = new ProgressBar.Circle(second, {
-//     color: '#ffd581',
-//     strokeWidth: 1.25,
-//     trailWidth: 1.25,
-//     duration: 2000,
-//     trailColor: '#ccc4',
-//     easing: 'linear',
-//     from: {
-//         color: '#ffd581',
-//         width: 1.25
-//     },
-//     to: {
-//         color: '#ffd581',
-//         width: 1.25
-//     },
-//     step: function (state, circle) {
-//         circle.path.setAttribute('stroke', state.color);
-//         circle.path.setAttribute('stroke-width', state.width);
-//         var value = Math.round(circle.value() * 100);
-//         if (value === 0) {
-//             circle.setText('');
-//         } else {
-//             circle.setText(value + '<br/><span>projets terminés</span>');
-//         }
-//     }
-// });
-
-// var barThree = new ProgressBar.Circle(third, {
-//     color: '#ffd581',
-//     strokeWidth: 1.25,
-//     trailWidth: 1.25,
-//     duration: 2000,
-//     trailColor: '#ccc4',
-//     easing: 'linear',
-//     from: {
-//         color: '#ffd581',
-//         width: 1.25
-//     },
-//     to: {
-//         color: '#ffd581',
-//         width: 1.25
-//     },
-//     step: function (state, circle) {
-//         circle.path.setAttribute('stroke', state.color);
-//         circle.path.setAttribute('stroke-width', state.width);
-//         var value = Math.round(circle.value() * 10);
-//         if (value === 0) {
-//             circle.setText('');
-//         } else {
-//             circle.setText(value + '<br/><span>années d\'expérience</span>');
-//         }
-//     }
-// });
-
-
 /****************************** */
 /*** intersection observer  *** */
 /****************************** */
@@ -2336,7 +2283,7 @@ toggleArrow.addEventListener('click', function () {
     setTimeout(function(){
         jQuery(toggleBox).slideToggle(500);
         jQuery(toggleArrow.parentElement).addClass('small-window');
-    },3000)
+    },4800)
 })
 
 /****************************** */

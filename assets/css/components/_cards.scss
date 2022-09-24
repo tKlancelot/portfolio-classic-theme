@@ -13,7 +13,7 @@
         position: relative;
         background-color: var(--section-background);
         overflow: hidden;
-        height: 40vh;  
+        height: 24vw;  
         img {
             max-width: 100%;
             height: 100%;
@@ -68,12 +68,11 @@
         padding: 1rem;
         display: grid;
         grid-template-rows: 1fr 1fr;
-        transition: 0.4 ease-in all;
-
+        transition: 0.4s ease all;
         &__header {
             text-align: center;
             display: flex;
-            height: 30vh;
+            height: $cards-height;
 
             img {
                 width: 100%;
@@ -81,7 +80,7 @@
         }
 
         &__body {
-            height: 32vh;
+            min-height: $cards-height;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -90,8 +89,8 @@
             h3 {
                 margin: 0.75rem 0 0;
                 text-transform: uppercase;
-                font-size: 12.5px;
-                letter-spacing: 0.080rem;
+                font-size: 0.7vw;
+                letter-spacing: 0.12rem;
             }
 
             hr {
@@ -101,8 +100,8 @@
 
             p {
                 font-family: $font-primary-light;
-                font-size: 14px;
-                line-height: 1.4rem;
+                font-size: 0.88vw;
+                line-height: 1.56rem;
                 text-align: justify;
             }
             i{
@@ -118,26 +117,44 @@
 
 @media screen and (max-width:1600px) {
 
-    .skill-card__content__body p {
-        font-size: 1vw;
+    .skill-card__content__body{
+        p{
+            font-size: 0.96vw;
+        }
+        h3{
+            font-size: 11.5px;
+        }
     }
 
 }
 
 @media screen and (max-width:1200px) {
 
+    .skill-card{
+        &__content{
+            width: 76%;
+        }
+    }
+
     .skill-card__content__body p {
-        font-size: 0.96vw;
+        font-size: 1vw;
         line-height: 1.04rem;
     }
 
 }
 
 @media screen and (max-width: 800px){
-    
-    .skill-card__content__body p {
-        font-size: 11.5px;
-        line-height: 1.32rem;
+
+    .skill-card{
+        &__content{
+            &__header,&__body{
+                height: 32vh;
+                p{
+                    font-size: 11.5px;
+                    line-height: 1.32rem;
+                }
+            }
+        }
     }
 
     .project-card{
@@ -146,6 +163,9 @@
         &__header,&__body,&__footer{
             justify-content: center;
             
+        }
+        &__header{
+            height: 40vh;
         }  
     }
 

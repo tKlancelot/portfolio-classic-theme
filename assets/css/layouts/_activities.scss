@@ -1,8 +1,10 @@
+ 
+
 #activities {
     @include border-top;
     display: grid;
     color: var(--write);
-    height: 88vh;
+    height: auto;
     grid-template-rows: auto 1fr;
 }
 
@@ -12,16 +14,14 @@
     &__body {
         display: grid;
         grid-template-columns: 0.5fr 0.5fr;
-
-        // min-height: 76vh;  
+        height: 46vw;
         &__left {
             display: flex;
             padding: 2rem;
 
             ul {
-                // border: 1px solid orange;
                 margin: auto;
-                height: auto;
+                height: 72%;
                 width: 64%;
                 display: flex;
                 flex-direction: column;
@@ -42,15 +42,14 @@
                     a {
                         color: var(--write);
                         font-family: $font-primary-light;
-                        font-variant: all-petite-caps;
-                        font-size: 18px;
+                        font-size:1vw;
                         opacity: 0.44;
-                        letter-spacing: 0.024rem;
+                        letter-spacing: 0.026rem;
                     }
 
                     &:hover {
                         outline-offset: 8px;
-                        outline: 1px solid var(--body-background);
+                        outline: 1px solid var(--border-color);
                         background-color: var(--body-background);
                         transform: translate(-24px, 0px);
 
@@ -70,7 +69,7 @@
                     box-shadow: unset;
 
                     a {
-                        color: var(--write);
+                        color: var(--text-canari);
                         opacity: 1;
                     }
                 }
@@ -85,7 +84,7 @@
     }
 
     &__header {
-        height: 16vh;
+        height: 8vw;
         @include flex-center-center;
 
         .section-heading {
@@ -100,7 +99,7 @@
 
     &__footer {
         position: absolute;
-        height: 88vh;
+        height: 54vw;
         width: 100%;
         display: flex;
         justify-content: flex-end;
@@ -144,9 +143,14 @@
         .activities {
             height: auto;
 
+            &__header{
+                height: 12vh;
+            }
+
             &__body {
                 grid-template-columns: 1fr;
                 max-height: auto;
+                height: auto;
 
                 &__left {
                     padding: 0rem;
@@ -185,6 +189,22 @@
 
     .activities__footer {
         width: 80%;
+    }
+
+}
+
+@media screen and (max-width:1200px) {
+
+    .activities{
+        &__footer{
+            height: 600px;
+        }
+        &__header{
+            height: 120px;
+        }
+        &__body{
+            height: 480px;
+        }
     }
 
 }

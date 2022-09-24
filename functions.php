@@ -121,6 +121,7 @@ function wpdocs_theme_slug_widgets_init() {
 }
 add_action( 'widgets_init', 'wpdocs_theme_slug_widgets_init' );
 
+require_once __DIR__ . '/includes/classes/Device.php';
 
 
 ?>

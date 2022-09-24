@@ -3,11 +3,11 @@
 .contact-form {
     @include border-top;
     @include textured-background-dark;
-    min-height: 84vh;
+    min-height: $section-height;
     display: grid;
     place-content: space-evenly;
     place-items: center;
-    grid-template-rows: 0.2fr 0.7fr;
+    grid-template-rows: auto auto;
 
     &__header {
         .section-heading {
@@ -27,8 +27,8 @@
                 background-color: var(--section-background);
                 font-family: $font-primary-light;
                 border: 1px solid var(--border-color);
-                padding: 0.5rem;
-                font-size: 16px;
+                padding: 0.64rem;
+                font-size: 0.96vw;
                 width: 100%;
                 color: var(--write);
             }
@@ -96,12 +96,20 @@
 @media screen and (max-width:1600px) {
 
     .contact-form {
-        grid-template-rows: 0.3fr 0.7fr;
-
         &__body {
             >div {
                 width: 80%;
                 margin: auto;
+            }
+
+            .input-box,
+            .input-box--double,
+            .input-box--submit {
+
+                input,
+                textarea {
+                    font-size: 15px;
+                }
             }
 
             .input-box {
@@ -127,11 +135,15 @@
 @media screen and (max-width:800px) {
 
     .contact-form {
+        min-height: 160vw;
         &__body {
             .input-box--submit {
                 input {
                     width: 32%;
                 }
+            }
+            .input-box--double{
+                grid-template-columns: 1fr;
             }
         }
     }

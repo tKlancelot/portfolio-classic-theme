@@ -10,7 +10,8 @@
 ?>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-<link id="themeStylesheet" rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/themes/dark-theme.css">
+<link id="themeStylesheet" rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/themes/blue-theme.css">
+
 
 <main id="test">
 
@@ -25,19 +26,44 @@
 
         <div class="section__body">
             <div class="flap">
-                <div id="phone-curves">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/textures/phone-curves.svg"
-                        alt="phone curves">
-                </div>
                 <div class="flap__left">
                     <div class="flap__left__heading">
                         <h2 class="g-text section-heading">Bonjour,</h2>
-                        <h1 class="g-text">Je suis Tarik</h1>
+                        <h1 class="g-text-name">
+                            <span>J</span>
+                            <span>e</span>
+                            &nbsp;
+                            <span>s</span>
+                            <span>u</span>
+                            <span>i</span>
+                            <span>s</span>
+                            &nbsp;
+                            <span>T</span>
+                            <span>a</span>
+                            <span>r</span>
+                            <span>i</span>
+                            <span>k</span>
+                        </h1>
                         <h3 class="g-text">Je suis développeur <i>front-end</i>, passionné d'<i>intégration</i> et
                             prêt à relever de nouveaux challenges !</h3>
                     </div>
                     <div class="flap__left__content">
-                        <a href="<?php echo get_template_directory_uri();?>/assets/downloads/RESUME-A4.pdf" download="CV-TARIK" class="cta">Télécharger CV &emsp;
+                        <a href="<?php echo get_template_directory_uri();?>/assets/downloads/RESUME-A4.pdf" download="CV-TARIK" class="cta g-text-cta">
+                            <span>T</span>
+                            <span>é</span>
+                            <span>l</span>
+                            <span>é</span>
+                            <span>c</span>
+                            <span>h</span>
+                            <span>a</span>
+                            <span>r</span>
+                            <span>g</span>
+                            <span>e</span>
+                            <span>r</span>
+                            <span>&emsp;</span>
+                            <span>C</span>
+                            <span>V</span>
+                            &emsp;
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M24 11.3065L12.4999 24M12.4999 24L1 11.3066M12.4999 24L12.4999 0.999999"
@@ -70,10 +96,6 @@
                 très rapidement mon métier
                 actuel.
             </p>
-            <!-- <p class="g-text-triggered">Dès lors, je constate que toute expérience professionnelle vécue auparavant a
-                vocation à être recyclée. Ces expériences deviendront
-                des composantes permettant le développement de mon portefeuille de compétences actuel.
-            </p> -->
             <p class="g-text-triggered">Mon objectif : développer des sites beaux et bien construits. Mais ... pas que !
                 Rester en veille face à l'évolution rapide des technologies
                 du web, afin de proposer des sites et des applications de qualité, durables et dans l'ère du temps !
@@ -203,6 +225,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="autoslide__body__bottom">
                 <div class="scrolling-frame">
                     <div class="scrolling-frame__item">
@@ -246,11 +269,10 @@
         <div class="splide__track">
             <ul class="splide__list">
                 <?php 
-                $loop = new WP_Query( array( 'post_type' => 'portfolio', 'posts_per_page' => 10 ) ); 
-                while ( $loop->have_posts() ) : $loop->the_post();
-                $description = get_field( "courte_description" );
-            ?>
-
+                    $loop = new WP_Query( array( 'post_type' => 'portfolio', 'posts_per_page' => 10 ) ); 
+                    while ( $loop->have_posts() ) : $loop->the_post();
+                    $description = get_field( "courte_description" );
+                ?>
                 <li class="splide__slide">
                     <div class="project-card">
                         <div class="project-card__header">
@@ -278,7 +300,6 @@
                         </div>
                     </div>
                 </li>
-
                 <?php endwhile; ?>
             </ul>
         </div>
@@ -302,19 +323,13 @@
             </svg>
         </div>
         <form action="./" method="post">
-            <!-- <select name="themeSelect" id="themeSelect">
-                <option value="dark-theme">dark theme</option>
-                <option value="purple-theme">purple theme</option>
-            </select> -->
-
-
             <fieldset id="themeSelect">
                 <!-- <legend>Select a theme:</legend> -->
 
                 <div>
 
                     <label for="dark-theme" class="form-control">
-                        <input type="radio" id="" name="themeSelect" value="dark-theme" checked>
+                        <input type="radio" id="" name="themeSelect" value="dark-theme">
                         Dark theme
                     </label>
                 </div>
@@ -325,16 +340,13 @@
                         Purple theme
                     </label>
                 </div>
-
-                <!-- <div>
-                    <label for="light-theme" class="form-control">
-                        <input type="radio" id="" name="themeSelect" value="light-theme">
-                        Light theme
+                <div>
+                    <label for="blue-theme" class="form-control">
+                        <input type="radio" id="" name="themeSelect" value="blue-theme" checked>
+                        Grey theme
                     </label>
-                </div> -->
-
+                </div>
             </fieldset>
-            <!-- <input type="submit" value="pick this theme"> -->
         </form>
     </div>
 

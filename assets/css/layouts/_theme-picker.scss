@@ -1,5 +1,3 @@
-
-
 .theme-picker {
     position: fixed;
     z-index: 999;
@@ -15,6 +13,7 @@
     box-shadow: 0px 0px 1px 1px var(--write), 0px 0px 1px 0px var(--write);
     transition: 0.48s ease-in;
     margin: 2.25%;
+
     &__heading {
         display: flex;
         align-items: center;
@@ -24,11 +23,12 @@
             font-family: $font-primary-light;
             color: var(--write);
             font-weight: 500;
+            font-size: 0.96vw;
         }
 
         svg {
-            width:16px;
-            height:auto;
+            width: 16px;
+            height: auto;
             fill: var(--write);
             transform: rotate(45deg) scale(0.84);
         }
@@ -78,7 +78,7 @@
         border: unset;
 
         div {
-            height: 6vh;
+            height: 3.2vw;
             display: flex;
             align-items: center;
         }
@@ -90,8 +90,8 @@
         background-color: var(--body-background);
         margin: 0;
         font: inherit;
-        width: 28px;
-        height: 28px;
+        width: 1.6vw;
+        height: 1.6vw;
         border: 2px double var(--border-color);
         border-radius: 50%;
         transform: translateY(-0.075em);
@@ -124,8 +124,9 @@
 
 #theme-picker.small-window {
     opacity: 0.48;
-    .theme-picker__heading{
-        svg{
+
+    .theme-picker__heading {
+        svg {
             transform: rotate(-180deg);
         }
     }
@@ -137,6 +138,7 @@
     #theme-picker {
         border: 3px double var(--border-color);
         box-shadow: 0px 0px 0.5px 0.5px var(--write), 0px 0px 0.5px 0px var(--write);
+        min-width: 20%;
 
         .form-control {
             font-size: 15px;
@@ -144,14 +146,22 @@
         }
 
         input[type="radio"] {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             border: 1.5px double var(--border-color);
         }
 
         input[type="radio"]::before {
             width: 10px;
             height: 10px;
+        }
+    }
+
+    .theme-picker {
+        &__heading {
+            h3 {
+                font-size: 15px;
+            }
         }
     }
 
@@ -171,11 +181,17 @@
         h3 {
             font-size: medium;
         }
+        fieldset{
+            div{
+                height: 8.4vw;
+            }   
+        }
     }
 
     #theme-picker.small-window {
         width: 38%;
-        svg{
+
+        svg {
             display: none;
         }
     }
