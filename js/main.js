@@ -210,6 +210,10 @@ document.addEventListener('DOMContentLoaded', function () {
         perPage: 3,
         gap: '3.2rem',
         breakpoints: {
+            1200:{
+                perPage: 2,
+                pagination: false
+            },
             800: {
                 perPage: 1,
                 pagination: false

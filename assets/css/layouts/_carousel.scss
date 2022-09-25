@@ -1,12 +1,13 @@
 #test {
 
     .carousel {
-        @include flex-center-center;
+        display: grid;
         width: auto;
         background-color: var(--section-background);
         @include border-top;
         padding: 2rem;
-
+        flex-direction: column;
+        grid-gap: 1rem;
         .splide {
             &__track {
                 width: 100%;
@@ -22,18 +23,15 @@
             &__arrows--ltr {
                 border: 1px solid var(--border-color);
                 background-color: var(--body-darker);
-                position: absolute;
                 border-radius: 48px;
                 width: 8.4vw;
-                top: 2rem;
-                right: 2rem;
                 height: auto;
                 padding:0.5rem;
                 margin: auto;
                 @include flex-around-center;
                 transition: 0.48s ease-in;
                 z-index: 99;
-
+                grid-row: 4;
                 &:hover {
                     border-color: var(--border-color);
                     background-color: var(--section-background);
@@ -72,11 +70,11 @@
             }
 
             &__pagination {
-                bottom: 0;
                 height: $navigation-height;
                 width: 12%;
                 @include flex-evenly-center;
                 margin: auto;
+                position: relative;
                 &__page{
                     background-color: var(--write-transparent);
                 }
@@ -86,15 +84,12 @@
             }
 
             &__header {
-                position: absolute;
-                left: 2rem;
-                top: 2rem;
                 height: auto;
-                @include flex-start-center;
                 font-family: $font-secondary;
                 color: var(--write);
             }
         }
+
     }
 
 }
@@ -144,9 +139,6 @@
                     left: 0;
                     height: auto;
                 }
-            }
-            .splide__slide{
-                min-height: 160vw;
             }
         }
     }

@@ -126,15 +126,15 @@
                 text-align: center;
             }
             &__body{
-                height: 56vh;
+                height: 60vw;
                 width: 80%;
             }
             &__header{
                 width: 64%;
-                height: 20vh;
+                height: 28vw;
             }
             &__footer{
-                height: 22vh;
+                height: 28vw;
                 grid-template-rows: 0.5fr auto;
             }
         }
