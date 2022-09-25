@@ -24,13 +24,15 @@
                 background-color: var(--body-darker);
                 position: absolute;
                 border-radius: 48px;
-                width: 12%;
+                width: 8.4vw;
                 top: 2rem;
                 right: 2rem;
-                height: 72px;
+                height: auto;
+                padding:0.5rem;
                 margin: auto;
                 @include flex-around-center;
                 transition: 0.48s ease-in;
+                z-index: 99;
 
                 &:hover {
                     border-color: var(--border-color);
@@ -70,16 +72,16 @@
             }
 
             &__pagination {
-                bottom: 2rem;
+                bottom: 0;
                 height: $navigation-height;
                 width: 12%;
                 @include flex-evenly-center;
                 margin: auto;
                 &__page{
-                    background-color: var(--section-background);
+                    background-color: var(--write-transparent);
                 }
                 &__page.is-active{
-                    background-color: var(--border-color);
+                    background-color: var(--write);
                 }
             }
 
@@ -87,7 +89,7 @@
                 position: absolute;
                 left: 2rem;
                 top: 2rem;
-                height: 72px;
+                height: auto;
                 @include flex-start-center;
                 font-family: $font-secondary;
                 color: var(--write);
@@ -140,10 +142,11 @@
                     justify-content: center;
                     width: 100%;
                     left: 0;
+                    height: auto;
                 }
             }
             .splide__slide{
-                min-height: 72vh;
+                min-height: 160vw;
             }
         }
     }

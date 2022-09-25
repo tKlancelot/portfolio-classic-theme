@@ -44,8 +44,11 @@
                             <span>i</span>
                             <span>k</span>
                         </h1>
-                        <h3 class="g-text">Je suis développeur <i>front-end</i>, passionné d'<i>intégration</i> et
-                            prêt à relever de nouveaux challenges !</h3>
+                        <?php if (is_active_sidebar('job-description')) : ?>
+                            <?php dynamic_sidebar('job-description'); ?>
+                        <?php endif; ?>
+                        <!-- <h3 class="g-text">Je suis développeur <i>front-end</i>, passionné d'<i>intégration</i> et
+                            prêt à relever de nouveaux challenges !</h3> -->
                     </div>
                     <div class="flap__left__content">
                         <a href="<?php echo get_template_directory_uri();?>/assets/downloads/RESUME-A4.pdf" download="CV-TARIK" class="cta g-text-cta">
@@ -119,8 +122,8 @@
     <section id="activities" class="activities" data-spy>
 
         <div class="activities__footer">
-            <img data-id="conception" class="active" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-cottonbro.webp" alt="cottonbro">
-            <img data-id="integration" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/responsive-design.webp" alt="responsive design">
+            <img data-id="conception" class="active" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/responsive-design.webp" alt="responsive design">
+            <img data-id="integration" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-cottonbro.webp" alt="cottonbro">
             <img data-id="modelisation" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-rodion-kutsaiev.webp" alt="rodion kutsaiev">
             <img data-id="amelioration" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-antonio-batinic.webp" alt="antonio batinic">
         </div>
@@ -143,7 +146,7 @@
                     <div class="skill-card active" data-id="conception">
                         <div class="skill-card__content">
                             <div class="skill-card__content__header">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-cottonbro.webp" alt="pexels cottonbro">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/responsive-design.webp" alt="responsive design">
                             </div>
                             <div class="skill-card__content__body">
                                 <h3><i class="fa-solid fa-plus"></i>&nbsp;conception graphique</h3><hr/>
@@ -155,7 +158,7 @@
                     <div class="skill-card" data-id="integration">
                         <div class="skill-card__content">
                             <div class="skill-card__content__header">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/responsive-design.webp" alt="responsive design">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-cottonbro.webp" alt="pexels cottonbro">
                             </div>
                             <div class="skill-card__content__body">
                                 <h3><i class="fa-solid fa-plus"></i>&nbsp;intégration</h3><hr/>
@@ -272,6 +275,7 @@
                     $loop = new WP_Query( array( 'post_type' => 'portfolio', 'posts_per_page' => 10 ) ); 
                     while ( $loop->have_posts() ) : $loop->the_post();
                     $description = get_field( "courte_description" );
+                    $projetUrl = get_field( "url_projet" );
                 ?>
                 <li class="splide__slide">
                     <div class="project-card">
@@ -282,23 +286,15 @@
                         </div>
                         <div class="project-card__body">
                             <h3><?php the_title();?></h3>
-                            <!-- <p> -->
-                            <?php 
-                                // echo $description 
-                                ?>
-                            <!-- </p> -->
-
                         </div>
                         <div class="project-card__footer">
                             <?php the_terms( get_the_ID() , 'type-projet', '', '&nbsp;/ ', '' ); ?>
-                            <!-- <a href="<?php 
-                            // echo the_permalink();
-                            ?>" title="<?php 
-                            // the_title_attribute();
-                            ?>"
-                                rel="bookmark">voir le projet</a> -->
+                        </div>
+                        <div class="project-card__link">
+                            <a href="<?= $projetUrl;?>" target="_blank">Voir le projet</a>
                         </div>
                     </div>
+
                 </li>
                 <?php endwhile; ?>
             </ul>

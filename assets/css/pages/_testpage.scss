@@ -226,6 +226,10 @@ $jumbo-height : 44vw;
                 align-items: center;
                 width: 100%;
                 grid-gap: 2vw;
+                .widget{
+                    display: flex;
+                    justify-content: center;
+                }
             }
 
             &__right {

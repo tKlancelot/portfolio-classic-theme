@@ -1,14 +1,41 @@
 <?php
 
+//Liste les éléments que le thème peut supporter (img, thumbnails etc.)
+function theme_supports()
+{
+    //titre personnalisé
+    add_theme_support('title-tag');
+    //Vignette sur les articles
 
-function tarik_theme_support(){
-    // ajouter le support de titres dynamiques
+    add_theme_support('post-thumbnails');
+
+    // Gestion des menus
+    add_theme_support('menus');
+
+    // Add theme support for selective refresh for widgets.
+    add_theme_support('customize-selective-refresh-widgets');
+
+    // Add support for Block Styles.
+    add_theme_support('wp-block-styles');
+
+    // Add support for full and wide align images.
+    add_theme_support('align-wide');
+
+    // Add support for editor styles.
+    add_theme_support('editor-styles');
+
+    // Nouvelles tailles par défaut
+    add_image_size('post-thumbnail', 400, 400, true);
+
+        // ajouter le support de titres dynamiques
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
     add_theme_support( 'post-thumbnails', array( 'post', 'portfolio' ) );
 }
 
-add_action('after_setup_theme','tarik_theme_support');
+
+
+add_action('after_setup_theme','theme_supports');
 
 
 // enregister des menu locations 
@@ -123,5 +150,11 @@ add_action( 'widgets_init', 'wpdocs_theme_slug_widgets_init' );
 
 require_once __DIR__ . '/includes/classes/Device.php';
 
+/**
+ * Importation des widgets
+ */
+require_once __DIR__ . '/includes/widgets.php';
+
 
 ?>
+

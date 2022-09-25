@@ -12,6 +12,7 @@
 } */
 :root{
     --write: #fffc;
+    --write-transparent: #fff7;
     --body-background : #2F2052;
     --body-darker: #271B44;
     --body-dark: #271B44;
