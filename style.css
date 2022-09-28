@@ -650,7 +650,7 @@ footer {
     line-height: 1.04rem; } }
 @media screen and (max-width: 800px) {
   .skill-card__content__header, .skill-card__content__body {
-    height: 48vw; }
+    height: 60vw; }
     .skill-card__content__header p, .skill-card__content__body p {
       font-size: 11.5px;
       line-height: 1.32rem; }
@@ -851,7 +851,8 @@ footer {
   height: 8vw;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  align-items: flex-end; }
   .activities__header .section-heading {
     text-align: center; }
 .activities__body, .activities__header {
@@ -1149,7 +1150,7 @@ footer {
     width: 100%;
     height: 100%; }
   #test .carousel .splide__slide {
-    min-height: 46vw;
+    min-height: 36vw;
     font-family: "Roboto Light", sans-serif;
     display: flex; }
   #test .carousel .splide__arrows--ltr {
@@ -1337,13 +1338,13 @@ footer {
   #test .large-text-banner .section-heading {
     text-align: center; }
   #test .large-text-banner__body {
-    height: 60vw;
+    height: 120vw;
     width: 80%; }
   #test .large-text-banner__header {
     width: 64%;
-    height: 28vw; }
+    height: 40vw; }
   #test .large-text-banner__footer {
-    height: 28vw;
+    height: 40vw;
     grid-template-rows: 0.5fr auto; } }
 .contact-form {
   border-top: 1px solid var(--border-color);
@@ -1605,7 +1606,7 @@ footer {
   .theme-picker__heading h3 {
     font-size: 15px; }
   .theme-picker fieldset div {
-    height: 4vw; } }
+    height: 3.4vw; } }
 @media screen and (max-width: 800px) {
   #theme-picker {
     margin: 1rem;

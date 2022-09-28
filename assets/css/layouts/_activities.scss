@@ -86,6 +86,7 @@
     &__header {
         height: 8vw;
         @include flex-center-center;
+        align-items: flex-end;
 
         .section-heading {
             text-align: center;
