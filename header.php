@@ -11,13 +11,35 @@
   </head>
 
 
-  <header id="header">
-      <nav id="social-media" class="social-media">
-        <div class="social-media__body">
-          <a href="https://www.instagram.com/tklancelot/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/tarik-louatah-7983481b3/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+  <header id="header" x-data="{showMenu: false }">
+      <nav  class="top-menu">
+        <div class="top-menu__left">
+          <div class="burger-item">
+            <div class="burger-item__body">
+              <button x-show="!showMenu" x-on:click="showMenu = true">
+                menu
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="top-menu__right">
+          <div class="social-menu">
+            <div class="social-media__body">
+              <a href="https://github.com/tKlancelot" target="_blank"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.instagram.com/tklancelot/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/tarik-louatah-7983481b3/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
         </div>
       </nav>
+      <div class="menu-content" x-show="showMenu" x-transition x-cloak>
+        <div class="menu-content__header">
+          <button x-on:click="showMenu = false">fermer</button>
+        </div>
+        <div class="menu-content__body">
+          <p>menu content</p>
+        </div>
+      </div>
 
       <nav id="navigation">
         <?php

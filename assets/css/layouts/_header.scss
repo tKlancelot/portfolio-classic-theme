@@ -1,5 +1,5 @@
 #header {
-    display: block;     
+    display: block;
 
 
     #navigation {
@@ -10,6 +10,7 @@
         width: 100%;
         border-bottom: 1px solid var(--border-color);
         background-color: var(--body-darker);
+        @include textured-background-dark;
 
         #menu-desktop-top-menu {
             min-width: 99.9%;
@@ -39,10 +40,6 @@
                 }
 
 
-            }
-
-            li.special-active {
-                border-bottom: 1px solid var(--text-canari);
             }
 
             li.special-active {
@@ -117,36 +114,11 @@
         }
     }
 
-    #social-media {
-        border-bottom: 1px solid var(--border-color);
-        background-color: var(--body-darkest);
-    }
 
-    .social-media {
-        &__body {
-            color: var(--write);
-            min-height: $social-media-height;
-            padding: initial;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            background-size: 0.5%;
-            a{
-                color: #fff4;
-                transition: unset;
-                &:hover{
-                    color: var(--write);
-                }
-            }
-            i {
-                margin: auto 1rem;
-                text-shadow: 0px 0px 1px #fff1, 0px 0px 2px #fff2, 0px 0px 2px #fff2;
-                border-radius: 50%;
-                cursor: pointer;
-            }
-        }
-    }
+
+
 }
+
 
 #header.navbar-fixed {
     @include no-margin-side;

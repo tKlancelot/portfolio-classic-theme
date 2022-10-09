@@ -60,14 +60,14 @@ function register_custom_image_size()
 
 add_action('init','register_custom_image_size');
 
-function tarik_register_styles()
+function enqueue_styles()
 {
     $version = wp_get_theme()->get('Version');
     wp_enqueue_style('tarik-css',get_template_directory_uri()."/style.css",array(),$version,'all');
     wp_enqueue_style('tarik-font-awesome',get_template_directory_uri()."/assets/fontawesome/css/all.css",array(),'6.1.2','all');   
 }
 
-function tarik_register_scripts()
+function enqueue_scripts()
 {
     $version = wp_get_theme()->get('Version');
     wp_enqueue_script('main-script',get_template_directory_uri()."/js/main.js",[],$version,'all');
@@ -78,14 +78,26 @@ function tarik_register_scripts()
     wp_enqueue_script('gsap-observer', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Observer.min.js",[],'3.10.4',false);
     wp_enqueue_script('gsap-scrollTo', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js",[],'3.10.4',false);
     wp_enqueue_script('splide-slide', "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js",[],'4.0.7',true);
+
+    /**
+     * Chargement d'Alpine JS
+     * Mini Framework Javascrpit très léger permettant d'accélérer le développement des sites. 
+     * Utilisé principalement pour la bar de navigation
+     * @link https://alpinejs.dev/
+     * 
+     * @since 0.0.1
+     */
+
+    wp_register_script('AlpineJS', 'https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js', [], false, true);
+    wp_enqueue_script('AlpineJS');
 }
 
 
 
 
-add_action('wp_enqueue_scripts','tarik_register_styles');
+add_action('wp_enqueue_scripts','enqueue_styles');
 
-add_action('wp_enqueue_scripts','tarik_register_scripts');
+add_action('wp_enqueue_scripts','enqueue_scripts');
 
  
 function register_post_types() {

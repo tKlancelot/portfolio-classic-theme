@@ -77,46 +77,6 @@ else
 
     });
 
-    gsap.from(".gsap-background", {
-        duration: 2.4,
-        y: 0,
-        x: 0,
-        opacity:0.1,
-        scale: 0.92
-    });
-
-    //WITH Timelines (cleaner, more versatile)
-    var tl = gsap.timeline({
-        // repeat: 2, 
-        // repeatDelay: 1
-    });
-    tl.from("#one", {
-        x: -100,
-        opacity: 0,
-        duration: 1,
-        scale: 0.1,
-        ease: "Power2.easeOut"
-    });
-    tl.to("#one", {
-        x: 0,
-        duration: 1,
-        ease: "Power2.easeOut"
-    });
-    tl.from("#three", {
-        x: 100,
-        opacity: 0,
-        duration: 1,
-        scale: 0.1
-    });
-    tl.from("#two", {
-        y: -50,
-        opacity: 0,
-        duration: 1,
-        scale: 0.1
-    });
-    tl.pause();
-    // tl.resume();
-    tl.play();
 
 }
 

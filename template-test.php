@@ -125,7 +125,7 @@
             <img data-id="conception" class="active" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/responsive-design.webp" alt="responsive design">
             <img data-id="integration" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-cottonbro.webp" alt="cottonbro">
             <img data-id="modelisation" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-rodion-kutsaiev.webp" alt="rodion kutsaiev">
-            <img data-id="amelioration" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-antonio-batinic.webp" alt="antonio batinic">
+            <img data-id="amelioration" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/code-refactoring.jpg" alt="code refactoring">
         </div>
 
         <div class="activities__header">
@@ -146,7 +146,7 @@
                     <div class="skill-card active" data-id="conception">
                         <div class="skill-card__content">
                             <div class="skill-card__content__header">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/responsive-design.webp" alt="responsive design">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/responsive-design.webp" alt="web design">
                             </div>
                             <div class="skill-card__content__body">
                                 <h3><i class="fa-solid fa-plus"></i>&nbsp;conception graphique</h3><hr/>
@@ -158,7 +158,7 @@
                     <div class="skill-card" data-id="integration">
                         <div class="skill-card__content">
                             <div class="skill-card__content__header">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-cottonbro.webp" alt="pexels cottonbro">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-cottonbro.webp" alt="intégration">
                             </div>
                             <div class="skill-card__content__body">
                                 <h3><i class="fa-solid fa-plus"></i>&nbsp;intégration</h3><hr/>
@@ -170,7 +170,7 @@
                     <div class="skill-card" data-id="modelisation">
                         <div class="skill-card__content">
                             <div class="skill-card__content__header">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-rodion-kutsaiev.webp" alt="rodion kutsaiev">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-rodion-kutsaiev.webp" alt="modélisation 3d">
                             </div>
                             <div class="skill-card__content__body">
                                 <h3><i class="fa-solid fa-plus"></i>&nbsp;modélisation 3d</h3><hr/>
@@ -182,7 +182,7 @@
                     <div class="skill-card" data-id="amelioration">
                         <div class="skill-card__content">
                             <div class="skill-card__content__header">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-antonio-batinic.webp" alt="antonio batinic">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/code-refactoring.jpg" alt="code refactoring">
                             </div>
                             <div class="skill-card__content__body">
                                 <h3><i class="fa-solid fa-plus"></i>&nbsp;Réusinage de code</h3><hr/>
