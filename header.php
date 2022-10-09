@@ -17,7 +17,7 @@
           <div class="burger-item">
             <div class="burger-item__body">
               <button x-show="!showMenu" x-on:click="showMenu = true">
-                menu
+                <i class="fa-solid fa-ellipsis"></i>
               </button>
             </div>
           </div>
@@ -34,10 +34,12 @@
       </nav>
       <div class="menu-content" x-show="showMenu" x-transition x-cloak>
         <div class="menu-content__header">
-          <button x-on:click="showMenu = false">fermer</button>
+          <button x-on:click="showMenu = false">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </button>
         </div>
         <div class="menu-content__body">
-          <p>menu content</p>
+          <h2>votre menu <br/>coming soon !</h2>
         </div>
       </div>
 

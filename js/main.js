@@ -38,13 +38,11 @@ else
         stagger: (0.6)
     });
 
-    gsap.from(".g-text-name span", {
+    gsap.from(".g-text-name", {
         scrollTrigger: ".g-text",
         opacity: 0,
-        duration: 1.2,
-        scale: 0.4,
-        y: -80,
-        stagger: (0.4)
+        duration: 1,
+        y:-50
     });
 
     gsap.to(".g-text-cta span", {

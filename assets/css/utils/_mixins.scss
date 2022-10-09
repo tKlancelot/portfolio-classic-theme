@@ -128,9 +128,9 @@
 }
 
 @mixin textured-background-alt {
-    background-color: var(--text-canari);
+    background-color: var(--body-darker);
     background-image: url('https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png');
-    background-size: 0.5%;
+    background-size: 2%;
     background-blend-mode: screen;
 }
 

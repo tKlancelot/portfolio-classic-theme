@@ -54,10 +54,15 @@
         p {
             font-size: 13px;
         }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .footer {
         &__header{
             .frame{
-                height: 40px;
                 width: 40px;
+                height: 40px;
             }
         }
     }

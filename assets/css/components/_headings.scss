@@ -13,14 +13,53 @@
 
 }
 
+.menu-content h2,
 .section-heading {
     font-size: 2.4vw;
+    font-family: 'GTWalsheim Medium', sans-serif;
     font-weight: 500;
-    font-family: 'GTWalsheim Medium',sans-serif;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     text-align: center;
 }
+
+#test {
+    .section {
+
+        h1,
+        h2,
+        h3 {
+            color: var(--write);
+            text-align: start;
+            transform-origin: left;
+        }
+
+        h1 {
+            display: flex;
+            margin: 3rem 0;
+            word-spacing: 0.84rem;
+            font-size: 4.2vw;
+            letter-spacing: 0.20vw;
+            font-family: 'GTWalsheim Bold', sans-serif;
+        }
+
+
+        h3 {
+            font-size: 0.96vw;
+            font-weight: 300;
+            font-family: $font-primary-light;
+            letter-spacing: 0.032rem;
+            color: var(--write);
+            width: 72%;
+            line-height: 2.2rem;
+
+            i {
+                color: var(--write);
+            }
+        }
+    }
+}
+
 
 
 @media screen and (max-width:1600px) {
@@ -31,6 +70,42 @@
 
     .section-heading {
         font-size: 32px;
+    }
+
+    #test {
+        .section {
+            h1 {
+                font-size: 5.2vw;
+                margin: 2.4rem 0;
+            }
+
+            h3 {
+                font-size: 15px;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:1200px) {
+
+    #test {
+        .section {
+            h1 {
+                font-size: 4.8vw;
+                margin: 2vw 0 2.8vw;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 13.5px;
+                line-height: 1.6rem;
+
+            }
+        }
     }
 
 }
@@ -44,6 +119,21 @@
 
     .section-heading {
         font-size: 24px;
+    }
+
+    #test {
+        .section {
+            h1 {
+                margin: 1rem 0;
+                font-size: 9.6vw;
+            }
+
+            h3 {
+                text-align: center;
+                font-family: $font-primary-light;
+                line-height: 1.72rem;
+            }
+        }
     }
 
 }

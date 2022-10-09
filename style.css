@@ -549,13 +549,42 @@ footer {
   font-size: 92px;
 }
 
+.menu-content h2,
 .section-heading {
   font-size: 2.4vw;
-  font-weight: 500;
   font-family: "GTWalsheim Medium", sans-serif;
+  font-weight: 500;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   text-align: center;
+}
+
+#test .section h1,
+#test .section h2,
+#test .section h3 {
+  color: var(--write);
+  text-align: start;
+  transform-origin: left;
+}
+#test .section h1 {
+  display: flex;
+  margin: 3rem 0;
+  word-spacing: 0.84rem;
+  font-size: 4.2vw;
+  letter-spacing: 0.2vw;
+  font-family: "GTWalsheim Bold", sans-serif;
+}
+#test .section h3 {
+  font-size: 0.96vw;
+  font-weight: 300;
+  font-family: "Roboto Light", sans-serif;
+  letter-spacing: 0.032rem;
+  color: var(--write);
+  width: 72%;
+  line-height: 2.2rem;
+}
+#test .section h3 i {
+  color: var(--write);
 }
 
 @media screen and (max-width: 1600px) {
@@ -565,6 +594,26 @@ footer {
   .section-heading {
     font-size: 32px;
   }
+  #test .section h1 {
+    font-size: 5.2vw;
+    margin: 2.4rem 0;
+  }
+  #test .section h3 {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #test .section h1 {
+    font-size: 4.8vw;
+    margin: 2vw 0 2.8vw;
+  }
+  #test .section h2 {
+    font-size: 24px;
+  }
+  #test .section h3 {
+    font-size: 13.5px;
+    line-height: 1.6rem;
+  }
 }
 @media screen and (max-width: 780px) {
   .large-heading h1 {
@@ -572,6 +621,15 @@ footer {
   }
   .section-heading {
     font-size: 24px;
+  }
+  #test .section h1 {
+    margin: 1rem 0;
+    font-size: 9.6vw;
+  }
+  #test .section h3 {
+    text-align: center;
+    font-family: "Roboto Light", sans-serif;
+    line-height: 1.72rem;
   }
 }
 .wp-block-button__link {
@@ -616,7 +674,7 @@ footer {
 .cta span {
   font-family: "Roboto Light", sans-serif;
   color: var(--write-transparent);
-  font-size: 1.02vw;
+  font-size: 1vw;
   letter-spacing: 0.048rem;
   backface-visibility: visible;
 }
@@ -632,6 +690,24 @@ footer {
 }
 .cta svg path {
   stroke: var(--write);
+}
+
+.menu-content__header button,
+.top-menu__left .burger-item__body button {
+  margin: auto 0.5rem;
+  min-height: 28px;
+  width: 28px;
+  background-color: var(--body-darkest);
+  font-size: 18px;
+  color: var(--write);
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+.menu-content__header i,
+.top-menu__left .burger-item__body i {
+  margin: auto;
 }
 
 @media screen and (max-width: 1600px) {
@@ -1359,9 +1435,11 @@ footer {
   .footer p {
     font-size: 13px;
   }
+}
+@media screen and (max-width: 1200px) {
   .footer__header .frame {
-    height: 40px;
     width: 40px;
+    height: 40px;
   }
 }
 @media screen and (max-width: 800px) {
@@ -2010,49 +2088,44 @@ footer {
   display: flex;
   align-items: center;
 }
-.top-menu__left .burger-item__body a,
-.top-menu__left .social-media__body a, .top-menu__right .burger-item__body a,
-.top-menu__right .social-media__body a {
+.top-menu__left .social-media__body a, .top-menu__right .social-media__body a {
   color: rgba(255, 255, 255, 0.2666666667);
   transition: unset;
 }
-.top-menu__left .burger-item__body a:hover,
-.top-menu__left .social-media__body a:hover, .top-menu__right .burger-item__body a:hover,
-.top-menu__right .social-media__body a:hover {
+.top-menu__left .social-media__body a:hover, .top-menu__right .social-media__body a:hover {
   color: var(--write);
 }
-.top-menu__left .burger-item__body i,
-.top-menu__left .social-media__body i, .top-menu__right .burger-item__body i,
-.top-menu__right .social-media__body i {
+.top-menu__left .social-media__body i, .top-menu__right .social-media__body i {
   margin: auto 1rem;
   text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.0666666667), 0px 0px 2px rgba(255, 255, 255, 0.1333333333), 0px 0px 2px rgba(255, 255, 255, 0.1333333333);
   border-radius: 50%;
   cursor: pointer;
 }
-.top-menu__left .burger-item__body button, .top-menu__right .burger-item__body button {
-  margin: auto 1rem;
-  border: 1px solid var(--write);
-  min-height: 28px;
-  width: 28px;
-  background-color: var(--body-darkest);
-  font-size: 10px;
-  color: var(--write);
-  text-align: center;
-}
 
 .menu-content {
   position: fixed;
   z-index: 99;
-  border: 2px solid red;
+  border-right: 3px double var(--border-color);
   top: 0;
   left: 0;
   width: 50vw;
   height: 100%;
   background-color: var(--body-darker);
-  background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png");
-  background-size: 0.5%;
-  background-blend-mode: screen;
+  color: var(--write);
 }
+.menu-content__header {
+  min-height: 2.8vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.menu-content__body {
+  display: flex;
+  height: 100%;
+}
+.menu-content__body h2 {
+  margin: auto;
+}
+
 body {
   background-color: var(--body-dark);
 }
@@ -2060,35 +2133,6 @@ body {
 #test .section {
   border-color: var(--border-color);
   display: flex;
-}
-#test .section h1,
-#test .section h2,
-#test .section h3 {
-  color: var(--write);
-  text-align: start;
-  transform-origin: left;
-}
-#test .section h1 {
-  display: flex;
-  margin: 3rem 0;
-  word-spacing: 1rem;
-}
-#test .section h1 span {
-  font-size: 4.4vw;
-  letter-spacing: 0.26vw;
-  font-family: "GTWalsheim Bold", sans-serif;
-}
-#test .section h3 {
-  font-size: 0.96vw;
-  font-weight: 300;
-  font-family: "Roboto Light", sans-serif;
-  letter-spacing: 0.032rem;
-  color: var(--write);
-  width: 72%;
-  line-height: 2.2rem;
-}
-#test .section h3 i {
-  color: var(--write);
 }
 #test .section .section-heading {
   text-transform: capitalize;
@@ -2161,27 +2205,7 @@ body {
   height: 44vw;
 }
 
-@media screen and (max-width: 1600px) {
-  #test .section h1 {
-    font-size: 5.2vw;
-    margin: 2.4rem 0;
-  }
-  #test .section h3 {
-    font-size: 15px;
-  }
-}
 @media screen and (max-width: 1200px) {
-  #test .section h1 {
-    font-size: 4.8vw;
-    margin: 2vw 0 2.8vw;
-  }
-  #test .section h2 {
-    font-size: 24px;
-  }
-  #test .section h3 {
-    font-size: 13.5px;
-    line-height: 1.6rem;
-  }
   #test .section__header {
     height: 520px;
   }
@@ -2201,17 +2225,6 @@ body {
   }
   #test .section * {
     text-align: center;
-  }
-  #test .section h1 {
-    margin: 1rem 0;
-  }
-  #test .section h1 span {
-    font-size: 9.6vw;
-  }
-  #test .section h3 {
-    text-align: center;
-    font-family: "Roboto Light", sans-serif;
-    line-height: 1.72rem;
   }
   #test .section__body {
     padding: unset;

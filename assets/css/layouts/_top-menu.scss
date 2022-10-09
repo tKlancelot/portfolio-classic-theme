@@ -16,7 +16,11 @@
                     padding: initial;
                     display: flex;
                     align-items: center;
+                }
+            }
 
+            .social-media {
+                &__body{
                     a {
                         color: #fff4;
                         transition: unset;
@@ -34,36 +38,34 @@
                     }
                 }
             }
-
-            .burger-item{
-                &__body{
-                    button{
-                        margin:auto 1rem;
-                        border:1px solid var(--write);
-                        min-height: 28px;
-                        width: 28px;
-                        background-color: var(--body-darkest);
-                        font-size: 10px;
-                        color:var(--write);
-                        text-align: center;
-                    }
-                }
-            }
         }
     }
 
-    .menu-content{
+    .menu-content {
         position: fixed;
         z-index: 99;
-        border:2px solid red;
-        top:0;
-        left:0;
+        border-right: 3px double var(--border-color);
+        top: 0;
+        left: 0;
+        // sass calcul 1/3 de la largeur de l'écran 
+        // width: calc(1/3 * 100vw);
         width: 50vw;
-        height:100%;
-        @include textured-background-dark;
-        &__header{
+        height: 100%;
+        // @include textured-background-alt;
+        background-color: var(--body-darker);
+        color: var(--write);
 
+        &__header {
+            min-height: $social-media-height;
+            display: flex;
+            justify-content: flex-end;
         }
-        &__body{
+
+        &__body {
+            display: flex;
+            height: 100%;
+            h2{
+                margin:auto;
+            }
         }
     }

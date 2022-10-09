@@ -29,26 +29,19 @@
                 <div class="flap__left">
                     <div class="flap__left__heading">
                         <h2 class="g-text section-heading">Bonjour,</h2>
-                        <h1 class="g-text-name">
-                            <span>J</span>
-                            <span>e</span>
-                            &nbsp;
-                            <span>s</span>
-                            <span>u</span>
-                            <span>i</span>
-                            <span>s</span>
-                            &nbsp;
-                            <span>T</span>
-                            <span>a</span>
-                            <span>r</span>
-                            <span>i</span>
-                            <span>k</span>
-                        </h1>
+                        
+                        <!-- presentation heading widget -->
+                        
+                        <?php if (is_active_sidebar('presentation-heading')) : ?>
+                            <?php dynamic_sidebar('presentation-heading'); ?>
+                        <?php endif; ?>
+
+                        <!-- job description widget -->
+
                         <?php if (is_active_sidebar('job-description')) : ?>
                             <?php dynamic_sidebar('job-description'); ?>
                         <?php endif; ?>
-                        <!-- <h3 class="g-text">Je suis développeur <i>front-end</i>, passionné d'<i>intégration</i> et
-                            prêt à relever de nouveaux challenges !</h3> -->
+
                     </div>
                     <div class="flap__left__content">
                         <a href="<?php echo get_template_directory_uri();?>/assets/downloads/RESUME-A4.pdf" download="CV-TARIK" class="cta g-text-cta">
@@ -122,10 +115,10 @@
     <section id="activities" class="activities" data-spy>
 
         <div class="activities__footer">
-            <img data-id="conception" class="active" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/responsive-design.webp" alt="responsive design">
+            <img data-id="conception" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/responsive-design.webp" alt="responsive design">
             <img data-id="integration" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-cottonbro.webp" alt="cottonbro">
             <img data-id="modelisation" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-rodion-kutsaiev.webp" alt="rodion kutsaiev">
-            <img data-id="amelioration" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/code-refactoring.jpg" alt="code refactoring">
+            <img class="active" data-id="amelioration" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/code-refactoring.jpg" alt="code refactoring">
         </div>
 
         <div class="activities__header">
@@ -135,15 +128,15 @@
 
             <div class="activities__body__left">
                 <ul class="tabs">
-                    <li class="active" data-id="conception"><a>conception graphique</a></li>
+                    <li data-id="conception"><a>conception graphique</a></li>
                     <li data-id="integration"><a>intégration</a></li>
                     <li data-id="modelisation"><a>modélisation 3d</a></li>
-                    <li data-id="amelioration"><a>amelioration de code</a></li>
+                    <li class="active" data-id="amelioration"><a>amelioration de code</a></li>
                 </ul>
             </div>
             <div class="activities__body__right">
                 <div class="tab-content">
-                    <div class="skill-card active" data-id="conception">
+                    <div class="skill-card" data-id="conception">
                         <div class="skill-card__content">
                             <div class="skill-card__content__header">
                                 <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/responsive-design.webp" alt="web design">
@@ -179,7 +172,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skill-card" data-id="amelioration">
+                    <div class="skill-card active" data-id="amelioration">
                         <div class="skill-card__content">
                             <div class="skill-card__content__header">
                                 <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/code-refactoring.jpg" alt="code refactoring">

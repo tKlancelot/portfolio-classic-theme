@@ -40,10 +40,11 @@
     @include flex-center-center;
     cursor: pointer;
     z-index: 100;
+
     span {
         font-family: $font-primary-light;
         color: var(--write-transparent);
-        font-size: 1.02vw;
+        font-size: 1.0vw;
         letter-spacing: 0.048rem;
         backface-visibility: visible;
     }
@@ -66,6 +67,26 @@
     }
 }
 
+
+.menu-content__header,
+.top-menu__left .burger-item__body {
+    button {
+        margin: auto 0.5rem;
+        min-height: 28px;
+        width: 28px;
+        background-color: var(--body-darkest);
+        font-size: 18px;
+        color: var(--write);
+        text-align: center;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+    }
+
+    i {
+        margin: auto;
+    }
+}
 
 @media screen and (max-width:1600px) {
 

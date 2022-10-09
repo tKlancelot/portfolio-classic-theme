@@ -14,6 +14,18 @@ function theme_widgets_init()
             'after_title'   => '</h3>',
         )
     );
+
+    register_sidebar(
+        array(
+            'name'          => esc_html__('Presentation-Heading', 'classic-portfolio'),
+            'id'            => 'presentation-heading',
+            'description'   => esc_html__('Add widgets.', 'classic-portfolio'),
+            'before_widget' => '<div id="%1$s" class="widget widget-presentation-heading %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h1 class="presentation-heading g-text">',
+            'after_title'   => '</h1>',
+        )
+    );
 }
 
 add_action('widgets_init', 'theme_widgets_init');
