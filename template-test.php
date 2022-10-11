@@ -22,6 +22,10 @@
 
     <section id="jumbo" class="section banner" data-spy>
         <div class="section__header">
+            <?php 
+            // include __dir__.'/template-parts/svg-curves.php'; 
+            ?> 
+            <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/svg-curves.svg" alt="background svg">
         </div>
 
         <div class="section__body">
@@ -271,22 +275,22 @@
                     $projetUrl = get_field( "url_projet" );
                 ?>
                 <li class="splide__slide">
-                    <div class="project-card">
-                        <div class="project-card__header">
-                            <?php 
-                            the_post_thumbnail();
-                            ?>
+                    <a href="<?= $projetUrl;?>" target="_blank">
+                        <div class="project-card">
+                            <div class="project-card__header">
+                                <?php 
+                                the_post_thumbnail();
+                                ?>
+                            </div>
+                            <div class="project-card__body">
+                                <h3><?php the_title();?></h3>
+                            </div>
+                            <div class="project-card__footer">
+                                <?php the_terms( get_the_ID() , 'type-projet', '', '&nbsp;/ ', '' ); ?>
+                            </div>
+
                         </div>
-                        <div class="project-card__body">
-                            <h3><?php the_title();?></h3>
-                        </div>
-                        <div class="project-card__footer">
-                            <?php the_terms( get_the_ID() , 'type-projet', '', '&nbsp;/ ', '' ); ?>
-                        </div>
-                        <div class="project-card__link">
-                            <a href="<?= $projetUrl;?>" target="_blank">Voir le projet</a>
-                        </div>
-                    </div>
+                    </a>
 
                 </li>
                 <?php endwhile; ?>

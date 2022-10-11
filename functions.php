@@ -85,7 +85,7 @@ function enqueue_scripts()
      * Utilisé principalement pour la bar de navigation
      * @link https://alpinejs.dev/
      * 
-     * @since 0.0.1
+     * @since 0.0.1 
      */
 
     wp_register_script('AlpineJS', 'https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js', [], false, true);

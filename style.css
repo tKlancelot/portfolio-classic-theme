@@ -1477,7 +1477,7 @@ footer {
   border-top: 1px solid var(--border-color);
   padding: 2rem;
   flex-direction: column;
-  grid-gap: 1rem;
+  grid-gap: 0rem;
 }
 #test .carousel .splide__track {
   width: 100%;
@@ -2144,7 +2144,6 @@ body {
   transition: 0.8s ease all;
   flex-direction: column;
   width: 100%;
-  background-color: var(--section-background);
   z-index: 10;
 }
 #test .section__body .flap {
@@ -2201,22 +2200,39 @@ body {
   padding: 1.6vw;
   filter: brightness(1.12);
 }
+#test .section__header {
+  background-color: var(--section-background);
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  height: 44vw;
+  width: 79.9%;
+}
+#test .section__header img {
+  width: 100%;
+  object-fit: none;
+}
 #test .section.banner {
   height: 44vw;
 }
 
+@media screen and (max-width: 1600px) {
+  #test .section__header {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 1200px) {
   #test .section__header {
-    height: 520px;
+    height: 48vw;
   }
   #test .section__body .flap {
     grid-template-columns: 1fr 1fr;
   }
   #test .section__body .flap__left, #test .section__body .flap__right {
-    height: 520px;
+    height: 48vw;
   }
   #test .section.banner {
-    height: 520px;
+    height: 48vw;
   }
 }
 @media screen and (max-width: 800px) {
@@ -2262,6 +2278,9 @@ body {
   #test .section__body .flap__left {
     grid-template-rows: 0.8fr 0.2fr;
     padding: 1.2rem;
+  }
+  #test .section__header {
+    display: none;
   }
   #test .carousel {
     z-index: 100;
