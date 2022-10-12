@@ -168,40 +168,7 @@ const handleMobileGsapAnimation = () => {
 }
 
 
-/****************************** */
-/******   splide slide   ****** */
-/****************************** */
 
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    var splide = new Splide('.splide', {
-        type: 'loop',
-        perPage: 3,
-        gap: '3.2rem',
-        breakpoints: {
-            1200:{
-                perPage: 2,
-                pagination: false
-            },
-            800: {
-                perPage: 1,
-                pagination: false
-            },
-        }
-    });
-
-    splide.mount();
-    disableLinks();
-    window.onscroll = function () {
-        scrollFunction();
-    };
-    if(window.matchMedia("(max-width:800px)").matches)
-    {
-        handleMobileGsapAnimation();
-    }
-
-});
 
 ! function (a) {
     if ("object" == typeof exports && "undefined" != typeof module) module.exports = a();
@@ -2195,15 +2162,6 @@ function rjs_mousemove(e) { //Function to correctly position the cursor
     rjs_cursor.style.transform = rjs_cursor_pos;
 }
 
-//Eventlisteners
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    window.addEventListener('mousemove', rjs_mousemove); //Attach an event listener
-    body.addEventListener('mouseleave', rjs_hide_cursor);
-    
-
-})
 
 //Hover behaviour
 
@@ -2298,3 +2256,121 @@ tablinks.forEach((e) => {
         pictureToDisplay.classList.add('active');
     })
 })
+
+
+// handle star animation 
+
+// script qui clone mon objet x fois et l'insere dans le jumbo de manière aléatoire des que le DOM est chargé
+
+const cloneStar = () => {
+
+    let item = document.querySelector('#star-animation');
+    let container = document.querySelector('#jumbo .section__header');
+    let cloneArray = [];
+    for (let i = 0; i < 48; i++){
+        let clone = item.cloneNode(true);
+        setStarPosition(clone);
+        setStarWidth(clone);
+        setInitialStarRotation(clone);
+        container.append(clone);
+        cloneArray.push(clone)
+    }
+
+}
+
+const setRandoms = () => {
+
+    let item = document.querySelector('#star-animation');
+    setStarWidth(item);
+    setStarPosition(item);
+    setInitialStarRotation(item);
+
+}
+
+
+function randomIntFromInterval(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+
+const setStarPosition = (item) => {
+
+    let randomTop = Math.floor(Math.random() * 100);
+    let randomLeft = Math.floor(Math.random() * 100);
+    item.style.top = randomTop + '%';
+    item.style.left = randomLeft + '%';
+}
+
+const setStarWidth = (item) => {
+    let randomWidth = randomIntFromInterval(0.25,1);
+    item.style.width = randomWidth + '%';
+}
+
+const setInitialStarRotation = (item) => {
+    let randomRotation = Math.floor(Math.random() * 360);
+    item.style.transform = "rotate(" + randomRotation + "deg)";
+}
+
+
+const handleStarAnimation = () => {
+    gsap.to('#star-animation',{
+        opacity:1
+    })
+
+    var starTl = gsap.timeline ()
+    .to('#star-animation',{
+        x: "random(-400, 400, 10)",
+        y: "random(-400, 200, 10)",
+        duration:'random(8,16)',
+        ease:"Power2.linear",
+        rotate:"random(0,90)",
+        scale:"random(0.25,0.75)",
+        repeat:-1,
+        repeatRefresh:true, // gets a new random x and y value on each repeat
+        yoyo:true
+    })
+}
+
+
+
+//Eventlisteners
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    var splide = new Splide('.splide', {
+        type: 'loop',
+        perPage: 3,
+        gap: '3.2rem',
+        breakpoints: {
+            1200:{
+                perPage: 2,
+                pagination: false
+            },
+            800: {
+                perPage: 1,
+                pagination: false
+            },
+        }
+    });
+
+    splide.mount();
+    disableLinks();
+    window.onscroll = function () {
+        scrollFunction();
+    };
+    if(window.matchMedia("(max-width:800px)").matches)
+    {
+        handleMobileGsapAnimation();
+    }
+
+    // cursor events 
+
+    window.addEventListener('mousemove', rjs_mousemove); //Attach an event listener
+    body.addEventListener('mouseleave', rjs_hide_cursor);
+    setRandoms();
+    cloneStar();
+    handleStarAnimation();
+
+});
+
+

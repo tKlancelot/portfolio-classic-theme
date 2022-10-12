@@ -95,16 +95,24 @@ $jumbo-height : 44vw;
                 width: 100%;
                 object-fit: none;
             }
+
+            svg {
+                margin: auto;
+                width: 20%;
+                height: auto;
+                position: absolute;
+                opacity: 0;
+            }
         }
-
     }
-
-    .section.banner {
-        height: $jumbo-height;
-    }
-
 
 }
+
+.section.banner {
+    height: $jumbo-height;
+}
+
+
 
 @media screen and (max-width:1600px) {
 
@@ -142,7 +150,7 @@ $jumbo-height : 44vw;
         }
 
         .section.banner {
-            height:48vw;
+            height: 48vw;
         }
 
     }
@@ -212,7 +220,8 @@ $jumbo-height : 44vw;
                     }
                 }
             }
-            &__header{
+
+            &__header {
                 display: none;
             }
         }

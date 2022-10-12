@@ -1218,6 +1218,7 @@ footer {
   margin: auto;
   height: 6vw;
   width: 100%;
+  border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   background-color: var(--body-darker);
   background-color: var(--body-darker);
@@ -1318,7 +1319,7 @@ footer {
 #header .scrollBar {
   width: 100%;
   background-color: var(--text-canari);
-  height: 1px;
+  height: 2px;
 }
 
 #header.navbar-fixed {
@@ -2217,7 +2218,15 @@ body {
   width: 100%;
   object-fit: none;
 }
-#test .section.banner {
+#test .section__header svg {
+  margin: auto;
+  width: 20%;
+  height: auto;
+  position: absolute;
+  opacity: 0;
+}
+
+.section.banner {
   height: 44vw;
 }
 

@@ -26,6 +26,18 @@ function theme_widgets_init()
             'after_title'   => '</h1>',
         )
     );
+
+    register_sidebar(
+        array(
+            'name'          => esc_html__('Greetings', 'classic-portfolio'),
+            'id'            => 'greetings',
+            'description'   => esc_html__('Add widgets.', 'classic-portfolio'),
+            'before_widget' => '<div id="%1$s" class="widget widget-greetings %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2 class="greetings g-text section-heading">',
+            'after_title'   => '</h2>',
+        )
+    );
 }
 
 add_action('widgets_init', 'theme_widgets_init');
