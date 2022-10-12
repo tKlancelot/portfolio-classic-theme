@@ -42,6 +42,7 @@
           <h2>votre menu <br/>coming soon !</h2>
         </div>
       </div>
+      <div class="scrollBar"></div>
 
       <nav id="navigation">
         <?php

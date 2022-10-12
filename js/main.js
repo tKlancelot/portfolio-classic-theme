@@ -53,6 +53,7 @@ else
     });
 
 
+
     gsap.from(".cta svg", {
         scrollTrigger: ".g-text-cta",
         duration: 1,
@@ -115,7 +116,18 @@ if(window.matchMedia("(min-width:800px)").matches)
     handleAutoSlideAnimation();
 }
 
+// handle scrollbar 
 
+gsap.from('.scrollBar',{
+    scrollTrigger:{
+        trigger:'body',
+        start:'top top',
+        scrub:4
+    },
+    backgroundColor:'var(--texture-overlay)',
+    scaleX:0,
+    transformOrigin:'left center'
+})
 
 
 /************************************* */

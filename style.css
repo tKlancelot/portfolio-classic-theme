@@ -1315,6 +1315,11 @@ footer {
   transform: scale(2);
   transform-origin: center;
 }
+#header .scrollBar {
+  width: 100%;
+  background-color: var(--text-canari);
+  height: 1px;
+}
 
 #header.navbar-fixed {
   border-left: unset;
@@ -1387,7 +1392,7 @@ footer {
   }
 }
 .footer {
-  height: 11.25vw;
+  height: 22.5vw;
   border-top: 1px solid var(--border-color);
   display: flex;
   justify-content: center;
@@ -2073,7 +2078,7 @@ footer {
   }
 }
 .top-menu {
-  border-bottom: 3px double var(--border-color);
+  border-bottom: 1px double var(--border-color);
   background-color: var(--body-darkest);
   background-size: 0.5%;
   display: flex;

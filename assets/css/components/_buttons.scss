@@ -34,6 +34,8 @@
 .cta {
     background-color: var(--body-darker);
     border: 1px solid var(--border-color);
+    // box-shadow:1px 1px 1px 0px var(--texture-overlay),-1px -1px 1px 0px var(--texture-overlay);
+    // box-shadow: 1px 1px 1px var(--write);
     width: fit-content;
     padding: 1.92rem;
     border-radius: 48px;
