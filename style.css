@@ -1168,7 +1168,9 @@ footer {
     height: auto;
   }
   #test .activities__header {
-    height: 12vh;
+    height: 32vw;
+    display: flex;
+    align-items: center;
   }
   #test .activities__body {
     grid-template-columns: 1fr;
@@ -1187,7 +1189,7 @@ footer {
   }
   #test .activities__body__right .tab-content .skill-card__content {
     width: auto;
-    margin: 1rem;
+    margin: 0rem 1rem 1rem;
   }
   #test .activities__footer {
     display: none;
@@ -1728,7 +1730,7 @@ footer {
     text-align: center;
   }
   #test .large-text-banner__body {
-    height: 120vw;
+    height: 112vw;
     width: 80%;
   }
   #test .large-text-banner__header {

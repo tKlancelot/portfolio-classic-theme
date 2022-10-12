@@ -145,7 +145,9 @@
             height: auto;
 
             &__header{
-                height: 12vh;
+                height: 32vw;
+                display: flex;
+                align-items: center;
             }
 
             &__body {
@@ -169,7 +171,7 @@
 
                             &__content {
                                 width: auto;
-                                margin: 1rem;
+                                margin: 0rem 1rem 1rem;
                             }
                         }
                     }

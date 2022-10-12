@@ -10,6 +10,16 @@
       ?>
   </head>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BC966BE3PR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BC966BE3PR');
+  </script>
+
 
   <header id="header" x-data="{showMenu: false }">
       <nav  class="top-menu">

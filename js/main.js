@@ -110,6 +110,16 @@ const handleAutoSlideAnimation = () => {
     })
 }
 
+// pinning du jumbo 
+
+// gsap.to('#jumbo',{
+//     scrollTrigger:{
+//         trigger:'#jumbo',
+//         pin:true,
+//         end: "+=1500",
+//     }
+// })
+
 
 if(window.matchMedia("(min-width:800px)").matches)
 {
@@ -122,7 +132,8 @@ gsap.from('.scrollBar',{
     scrollTrigger:{
         trigger:'body',
         start:'top top',
-        scrub:4
+        end: "bottom 100%",
+        scrub:3.2,
     },
     backgroundColor:'var(--texture-overlay)',
     scaleX:0,
@@ -2321,8 +2332,8 @@ const handleStarAnimation = () => {
     .to('#star-animation',{
         x: "random(-400, 400, 10)",
         y: "random(-400, 200, 10)",
-        duration:'random(8,16)',
-        ease:"Power2.linear",
+        duration:'random(6,12)',
+        ease:"Power2.ease",
         rotate:"random(0,90)",
         scale:"random(0.25,0.75)",
         repeat:-1,
