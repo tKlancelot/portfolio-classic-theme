@@ -28,9 +28,9 @@
                 a {
                     color: var(--write);
                     @include flex-center-center;
-                    @include font-roboto-item;
-                    text-transform: capitalize;
-                    font-size: 0.88vw;
+                    font-family:$font-primary-light;
+                    text-transform: uppercase;
+                    font-size: 0.80vw;
                     letter-spacing: 0.12rem;
                     height: 100%;
                     width: 100%;

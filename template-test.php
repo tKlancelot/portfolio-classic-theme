@@ -100,6 +100,7 @@
                         <!-- <img src="<?php echo get_template_directory_uri();?>/assets/portrait/portrait-grayscale-one.webp"
                             alt="portrait détouré"> -->
                         <div id="three-container"></div>
+                        <div id="canvas-background"></div>
                     </div>
                 </div>
             </div>

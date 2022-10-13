@@ -79,6 +79,19 @@ $jumbo-height : 44vw;
                             filter: brightness(1.12);
                         }
                     }
+
+                    // #canvas-background{
+                    //     width: 80%;
+                    //     height: 44vw;
+                    //     background:linear-gradient(-80deg,
+                    //     /*#4ef2,#4ef1,#4ef1,#4ef1,#4ef1,*/
+                    //     #4ef1,
+                    //     /*#fff0,#fff0,#fff0,#fff0,#fff0,#fff0,#fff0*/
+                    //     #fff0,#fff0
+                    //     );
+                    //     position: absolute;
+                    //     left:10%;;
+                    // }
                 }
             }
         }
@@ -120,6 +133,15 @@ $jumbo-height : 44vw;
         .section {
             &__header {
                 width: 100%;
+            }
+            &__body{
+                .flap{
+                    &__right{
+                        #canvas-background{
+                            width: 50vw;
+                        }
+                    }
+                }
             }
         }
     }
@@ -211,6 +233,9 @@ $jumbo-height : 44vw;
                                 outline: unset;
                                 border: 1px solid var(--border-color);
                             }
+                        }
+                        #canvas-background{
+                            display: none;
                         }
                     }
 

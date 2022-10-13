@@ -135,8 +135,11 @@
 @media screen and (max-width:800px) {
 
     .contact-form {
-        min-height: 160vw;
+        min-height: 180vw;
         &__body {
+            >div{
+                width: 92%;
+            }
             .input-box--submit {
                 input {
                     width: 32%;

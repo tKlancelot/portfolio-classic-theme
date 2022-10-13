@@ -77,9 +77,7 @@ gltfLoader.load(
     },
     // called when loading has errors
     function (error) {
-
         console.log('An error happened');
-
     }
 );
 
@@ -95,11 +93,19 @@ gltfLoader.load(
 // scene.background = texture;
 
 
-const light = new THREE.AmbientLight( 0x606096 , 1.25 ); // medium white light
+const light = new THREE.AmbientLight( 0x6060d4 , 1.2 ); // medium white light
 scene.add( light );
 
-const hemisphereLight = new THREE.HemisphereLight( 0xdedeff, 0x080820, 0.96 );
-scene.add( hemisphereLight );
+// const hemisphereLight = new THREE.HemisphereLight( 0xdedeff, 0x080820, 0.96 );
+// scene.add( hemisphereLight );
+
+var hemiLight = new THREE.HemisphereLight( 0xffffff, 0x444444 );
+hemiLight.position.set( 0, 300, 0 );
+scene.add( hemiLight );
+
+var dirLight = new THREE.DirectionalLight( 0xffffff );
+dirLight.position.set( 75, 50, -75 );
+scene.add( dirLight );
 
 function animate() {
     requestAnimationFrame(animate);
@@ -126,8 +132,10 @@ animate();
 let tl = new gsap.timeline({
     scrollTrigger:{
         trigger:'#three-container',
-        toggleActions:"play restart restart restart",
-    }
+        toggleActions:"play pause resume restart",
+    },
+    repeat:-1,
+    yoyo:true
 });
 
 window.addEventListener('load', function () {
@@ -162,11 +170,20 @@ window.addEventListener('load', function () {
             camera.lookAt(0, 0, 0);
         }
     }).to(camera.position,{
-        z:-10,
-        x:-16,
-        y:10,
+        z:6,
+        x:-24,
+        y:6,
         duration:4,
         ease:'Power2.easeOut',
+        onUpdate: function () {
+            camera.lookAt(0, 0, 0);
+        }
+    }).to(camera.position,{
+        z:-56,
+        x:-32,
+        y:10,
+        duration:4,
+        ease:'Power2.easeIn',
         onUpdate: function () {
             camera.lookAt(0, 0, 0);
         }

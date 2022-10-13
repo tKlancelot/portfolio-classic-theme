@@ -988,6 +988,16 @@ footer {
   border-color: transparent;
 }
 
+.rjs-cursor.rjs_cursor_hover_input {
+  height: 22px;
+}
+
+.rjs-cursor.rjs_cursor_hover_input .rjs-cursor-icon {
+  border-color: var(--text-canari);
+  border-radius: 0;
+  width: 1px;
+}
+
 /* Hover effects */
 .rjs-cursor.rjs_cursor_hover .rjs-cursor-icon::after {
   opacity: 0;
@@ -1231,7 +1241,7 @@ footer {
   background-color: var(--body-darker);
   background-color: var(--body-darker);
   background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png");
-  background-size: 0.5%;
+  background-size: 0.75%;
   background-blend-mode: screen;
 }
 #header #navigation #menu-desktop-top-menu {
@@ -1252,12 +1262,8 @@ footer {
   align-items: center;
   justify-content: center;
   font-family: "Roboto Light", sans-serif;
-  font-size: 13.5px;
   text-transform: uppercase;
-  letter-spacing: 0.032rem;
-  transition: 0.32se ease-in;
-  text-transform: capitalize;
-  font-size: 0.88vw;
+  font-size: 0.8vw;
   letter-spacing: 0.12rem;
   height: 100%;
   width: 100%;
@@ -1461,7 +1467,7 @@ footer {
     border-left: unset;
     border-right: unset;
     margin: initial;
-    height: 32vw;
+    height: 84vw;
   }
   .footer p {
     font-size: 12px;
@@ -1578,11 +1584,12 @@ footer {
 }
 @media screen and (max-width: 800px) {
   #test .carousel .splide__arrows--ltr {
-    width: 28%;
+    width: auto;
     top: unset;
     right: unset;
     bottom: 2rem;
     height: 6vh;
+    grid-gap: 1rem;
   }
   #test .carousel .splide__pagination {
     width: 36%;
@@ -1636,7 +1643,7 @@ footer {
   border-top: 1px solid var(--border-color);
   background-color: var(--body-darker);
   background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png");
-  background-size: 0.5%;
+  background-size: 0.75%;
   background-blend-mode: screen;
 }
 .large-text-banner .section-heading,
@@ -1693,6 +1700,7 @@ footer {
   padding: 8px;
   display: flex;
   justify-content: center;
+  outline: 6px solid var(--texture-overlay);
 }
 .large-text-banner__footer .frame .container {
   display: flex;
@@ -1752,7 +1760,7 @@ footer {
   border-top: 1px solid var(--border-color);
   background-color: var(--body-darker);
   background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png");
-  background-size: 0.5%;
+  background-size: 0.75%;
   background-blend-mode: screen;
   min-height: 48vw;
   display: grid;
@@ -1857,7 +1865,10 @@ footer {
 }
 @media screen and (max-width: 800px) {
   .contact-form {
-    min-height: 160vw;
+    min-height: 180vw;
+  }
+  .contact-form__body > div {
+    width: 92%;
   }
   .contact-form__body .input-box--submit input {
     width: 32%;
@@ -2150,6 +2161,7 @@ footer {
   width: 40vw !important;
   height: 40vw !important;
   display: block;
+  z-index: 99;
 }
 
 @media screen and (max-width: 800px) {
@@ -2260,6 +2272,9 @@ body {
   #test .section__header {
     width: 100%;
   }
+  #test .section__body .flap__right #canvas-background {
+    width: 50vw;
+  }
 }
 @media screen and (max-width: 1200px) {
   #test .section__header {
@@ -2314,6 +2329,9 @@ body {
     padding: 3.6vw;
     outline: unset;
     border: 1px solid var(--border-color);
+  }
+  #test .section__body .flap__right #canvas-background {
+    display: none;
   }
   #test .section__body .flap__left {
     grid-template-rows: 0.8fr 0.2fr;

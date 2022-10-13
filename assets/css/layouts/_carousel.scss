@@ -118,11 +118,12 @@
         .carousel{
             .splide{
                 &__arrows--ltr{
-                    width: 28%;
+                    width: auto;
                     top: unset;
                     right: unset;
                     bottom: 2rem;
                     height: 6vh;
+                    grid-gap: 1rem;
                 }
                 &__pagination{
                     width: 36%;

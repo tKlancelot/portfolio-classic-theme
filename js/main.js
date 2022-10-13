@@ -135,7 +135,7 @@ gsap.from('.scrollBar',{
         end: "bottom 100%",
         scrub:3.2,
     },
-    backgroundColor:'var(--texture-overlay)',
+    backgroundColor:'var(--text-canari)',
     scaleX:0,
     transformOrigin:'left center'
 })
@@ -2184,10 +2184,25 @@ function rjs_unhover_cursor(e) {
     rjs_cursor.classList.remove('rjs_cursor_hover');
 }
 
+// hover input behavior
+
+function rjs_hover_input_cursor(e) {
+    rjs_cursor.classList.add('rjs_cursor_hover_input');
+}
+
+function rjs_unhover__input_cursor(e) {
+    rjs_cursor.classList.remove('rjs_cursor_hover_input');
+}
+
 
 document.querySelectorAll('a, #footer .frame svg,.splide__arrow,.cta,button,.activities__body__left ul li').forEach(item => {
     item.addEventListener('mouseover', rjs_hover_cursor);
     item.addEventListener('mouseleave', rjs_unhover_cursor);
+})
+
+document.querySelectorAll('input:not([type="submit"]),textarea').forEach(item => {
+    item.addEventListener('mouseover', rjs_hover_input_cursor);
+    item.addEventListener('mouseleave', rjs_unhover__input_cursor);
 })
 
 
@@ -2278,7 +2293,7 @@ const cloneStar = () => {
     let item = document.querySelector('#star-animation');
     let container = document.querySelector('#jumbo .section__header');
     let cloneArray = [];
-    for (let i = 0; i < 48; i++){
+    for (let i = 0; i < 72; i++){
         let clone = item.cloneNode(true);
         setStarPosition(clone);
         setStarWidth(clone);
@@ -2340,6 +2355,8 @@ const handleStarAnimation = () => {
         repeatRefresh:true, // gets a new random x and y value on each repeat
         yoyo:true
     })
+
+
 }
 
 

@@ -60,6 +60,16 @@
     border-color:transparent;
 }
 
+.rjs-cursor.rjs_cursor_hover_input{
+    height: 22px;
+}
+
+.rjs-cursor.rjs_cursor_hover_input .rjs-cursor-icon{
+    border-color:var(--text-canari);
+    border-radius: 0;
+    width: 1px;
+}
+
 /* Hover effects */
 
 .rjs-cursor.rjs_cursor_hover .rjs-cursor-icon::after {

@@ -71,7 +71,7 @@
 @media screen and (max-width:800px) {
     .footer {
         @include no-margin-side;
-        height: 32vw;
+        height: 84vw;
         p {
             font-size: 12px;
         }
