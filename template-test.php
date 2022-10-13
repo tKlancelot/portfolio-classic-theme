@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 <link id="themeStylesheet" rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/themes/blue-theme.css">
-
+<script src="<?php echo get_template_directory_uri();?>/js/script3d.js" defer="true" type="module"></script>
 
 <main id="test">
 
@@ -97,8 +97,9 @@
                 </div>
                 <div class="flap__right">
                     <div class="flap__right__content">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/portrait/portrait-grayscale-one.webp"
-                            alt="portrait détouré">
+                        <!-- <img src="<?php echo get_template_directory_uri();?>/assets/portrait/portrait-grayscale-one.webp"
+                            alt="portrait détouré"> -->
+                        <div id="three-container"></div>
                     </div>
                 </div>
             </div>
@@ -366,6 +367,9 @@
         </form>
     </div>
 
+    <!-- <div id="three-container">
+
+    </div> -->
 
 </main>
 

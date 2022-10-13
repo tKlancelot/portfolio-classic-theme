@@ -79,6 +79,14 @@ function enqueue_scripts()
     wp_enqueue_script('gsap-scrollTo', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js",[],'3.10.4',false);
     wp_enqueue_script('splide-slide', "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js",[],'4.0.7',true);
 
+
+    // chargement de three.js
+
+    // wp_enqueue_script('three-js', "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.145.0/three.min.js",[],'0.145.0',true);
+    // wp_enqueue_script('gltf-loader', "https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js",[]);
+
+    
+
     /**
      * Chargement d'Alpine JS
      * Mini Framework Javascrpit très léger permettant d'accélérer le développement des sites. 
@@ -170,3 +178,12 @@ require_once __DIR__ . '/includes/widgets.php';
 
 ?>
 
+<?php 
+function loadDirectory() { ?>
+<script type="text/javascript">
+    var theme_directory = "<?php echo get_template_directory_uri() ?>";
+</script> 
+<?php } 
+
+
+add_action('wp_head', 'loadDirectory'); ?>

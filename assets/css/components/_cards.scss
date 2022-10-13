@@ -161,6 +161,7 @@
 
     .skill-card{
         &__content{
+            border:unset;
             &__header,&__body{
                 height: 60vw;
                 p{

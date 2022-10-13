@@ -24,8 +24,8 @@
 }
 
 .rjs-cursor {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     position: fixed;
     top: 0;
     left: 0;
@@ -38,7 +38,8 @@
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    background-color: rgba(185, 185, 185, 0.2);
+    background-color: rgba(185, 185, 185, 0.1);
+    border:1px solid var(--text-canari);
 }
 
 .rjs-cursor.rjs_cursor_visible {
@@ -55,7 +56,8 @@
 }
 
 .rjs-cursor.rjs_cursor_hover .rjs-cursor-icon {
-    transform: scale(4.8);
+    transform: scale(7.2);
+    border-color:transparent;
 }
 
 /* Hover effects */

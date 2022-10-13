@@ -695,13 +695,14 @@ footer {
 .menu-content__header button,
 .top-menu__left .burger-item__body button {
   margin: auto 0.5rem;
-  min-height: 28px;
-  width: 28px;
+  min-height: 32px;
+  width: 32px;
   background-color: var(--body-darkest);
   font-size: 18px;
   color: var(--write);
   text-align: center;
   border-radius: 50%;
+  border: 3px double var(--border-color);
   display: flex;
   align-items: center;
 }
@@ -879,6 +880,9 @@ footer {
   }
 }
 @media screen and (max-width: 800px) {
+  .skill-card__content {
+    border: unset;
+  }
   .skill-card__content__header, .skill-card__content__body {
     height: 60vw;
   }
@@ -948,8 +952,8 @@ footer {
   }
 }
 .rjs-cursor {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   position: fixed;
   top: 0;
   left: 0;
@@ -962,7 +966,8 @@ footer {
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  background-color: rgba(185, 185, 185, 0.2);
+  background-color: rgba(185, 185, 185, 0.1);
+  border: 1px solid var(--text-canari);
 }
 
 .rjs-cursor.rjs_cursor_visible {
@@ -979,7 +984,8 @@ footer {
 }
 
 .rjs-cursor.rjs_cursor_hover .rjs-cursor-icon {
-  transform: scale(4.8);
+  transform: scale(7.2);
+  border-color: transparent;
 }
 
 /* Hover effects */
@@ -1321,7 +1327,7 @@ footer {
 #header .scrollBar {
   width: 100%;
   background-color: var(--text-canari);
-  height: 2px;
+  height: 1px;
 }
 
 #header.navbar-fixed {
@@ -1502,7 +1508,7 @@ footer {
   border-radius: 48px;
   width: 8.4vw;
   height: auto;
-  padding: 0.5rem;
+  padding: 1rem;
   margin: auto;
   display: flex;
   justify-content: space-around;
@@ -2134,6 +2140,24 @@ footer {
   margin: auto;
 }
 
+#three-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+#three-container canvas {
+  margin: auto;
+  width: 40vw !important;
+  height: 40vw !important;
+  display: block;
+}
+
+@media screen and (max-width: 800px) {
+  #three-container canvas {
+    width: 96vw !important;
+    height: 96vw !important;
+  }
+}
 body {
   background-color: var(--body-dark);
 }
@@ -2156,7 +2180,7 @@ body {
 }
 #test .section__body .flap {
   display: grid;
-  grid-template-columns: 0.54fr 0.46fr;
+  grid-template-columns: 1fr 1fr;
   min-height: 100%;
   width: 100%;
 }
