@@ -2285,7 +2285,7 @@ const cloneStar = () => {
     let item = document.querySelector('#star-animation');
     let container = document.querySelector('#jumbo .section__header');
     let cloneArray = [];
-    for (let i = 0; i < 40; i++){
+    for (let i = 0; i < 68; i++){
         let clone = item.cloneNode(true);
         setStarPosition(clone);
         setStarWidth(clone);

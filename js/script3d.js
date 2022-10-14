@@ -25,14 +25,12 @@ const height = canvas.clientHeight;
 
 // camera
 const fov = 60;
-// const aspect = window.innerWidth / window.innerHeight;
 const aspect = height / width;
-// const aspect = width / height;
 const near = 1;
 const far = 1000.0;
 
 const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-camera.position.set(-28, 14, 0);
+camera.position.set(-24, 18, 0);
 camera.lookAt(0, 0, 0);
 
 function resizeCanvasToDisplaySize() {
@@ -42,8 +40,6 @@ function resizeCanvasToDisplaySize() {
     renderer.setSize(width, height, false);
     camera.aspect = aspect;
     camera.updateProjectionMatrix();
-
-    // set render target sizes here
   }
 }
 
@@ -93,19 +89,28 @@ gltfLoader.load(
 // scene.background = texture;
 
 
-const light = new THREE.AmbientLight( 0x6060d4 , 1.2 ); // medium white light
+const light = new THREE.AmbientLight( 0x606060 , 1 ); // medium white light
 scene.add( light );
 
 // const hemisphereLight = new THREE.HemisphereLight( 0xdedeff, 0x080820, 0.96 );
 // scene.add( hemisphereLight );
 
-var hemiLight = new THREE.HemisphereLight( 0xffffff, 0x444444 );
-hemiLight.position.set( 0, 300, 0 );
+let upColour = 0xddddff;
+let downColour = 0x9696c4;
+
+var hemiLight = new THREE.HemisphereLight( upColour , downColour );
+hemiLight.position.set( 0, 250, 0 );
 scene.add( hemiLight );
 
-var dirLight = new THREE.DirectionalLight( 0xffffff );
-dirLight.position.set( 75, 50, -75 );
+var dirLight = new THREE.DirectionalLight( 0xddeeff );
+dirLight.position.set( 25, 75, 25 );
 scene.add( dirLight );
+
+
+// var hemiLight = new THREE.HemisphereLight( upColour, downColour, 0.76 );
+// hemiLight.position.set( 0, 200, 0 );
+// scene.add( hemiLight );
+
 
 function animate() {
     requestAnimationFrame(animate);
@@ -127,8 +132,6 @@ animate();
 
 
 
-
-
 let tl = new gsap.timeline({
     scrollTrigger:{
         trigger:'#three-container',
@@ -140,50 +143,31 @@ let tl = new gsap.timeline({
 
 window.addEventListener('load', function () {
 
-    // gsap.to('#jumbo',{
-    //         scrollTrigger:{
-    //         trigger:'#jumbo',
-    //         start: "top top",
-    //         end: this.window.innerHeight,
-    //         pin: "#jumbo .section__body .flap__right #three-container",
-    //         scrub: 4,
-    //     }
-    // })
-
 
     tl.to(camera.position, {
-        z: 4,
-        x: -18,
-        y: 4,
-        duration:6,
+        z: 6,
+        x: -20,
+        y: 12,
+        duration:4,
         ease:'Power2.ease',
         onUpdate: function () {
             camera.lookAt(0, 0, 0);
         }
     }).to(camera.position,{
         z:8,
-        x:-24,
-        y:16,
+        x:-20,
+        y:8,
         duration:4,
-        ease:'Power2.easeOut',
+        ease:'Power2.ease',
         onUpdate: function () {
             camera.lookAt(0, 0, 0);
         }
     }).to(camera.position,{
-        z:6,
-        x:-24,
-        y:6,
-        duration:4,
-        ease:'Power2.easeOut',
-        onUpdate: function () {
-            camera.lookAt(0, 0, 0);
-        }
-    }).to(camera.position,{
-        z:-56,
-        x:-32,
+        z:-10,
+        x:-20,
         y:10,
         duration:4,
-        ease:'Power2.easeIn',
+        ease:'Power2.easeOut',
         onUpdate: function () {
             camera.lookAt(0, 0, 0);
         }

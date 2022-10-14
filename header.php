@@ -53,6 +53,11 @@
         </div>
         <div class="menu-content__body">
           <h2>votre menu <br/>coming soon !</h2>
+          <!--
+          <a href=<?php 
+          // echo get_site_url().'/blog';
+          ?>>blog</a>
+          -->
         </div>
       </div>
       <div class="scrollBar"></div>
