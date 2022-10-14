@@ -3,7 +3,6 @@
     @include border-top;
     @include flex-center-start;
     background-color: var(--body-darkest);
-
     &__header {
         position: absolute;
         width: 100%;
@@ -74,6 +73,12 @@
         height: 84vw;
         p {
             font-size: 12px;
+        }
+        &__header{
+            .frame{
+                width: 72px;
+                height: 72px;
+            }
         }
     }
 }

@@ -112,7 +112,6 @@
             filter:opacity(0.24);
             transition: 0.48s ease-in all;
             display: none;
-            // clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
         }
 
         img.active {
@@ -125,7 +124,6 @@
 @media screen and (max-width:1200px){
 
     .activities__body{
-        // max-height: 72vh;
         &__left{
             padding: 1rem;
             ul{

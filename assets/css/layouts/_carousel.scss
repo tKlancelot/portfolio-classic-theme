@@ -5,9 +5,12 @@
         width: auto;
         background-color: var(--section-background);
         @include border-top;
-        padding: 2rem;
+        padding:2rem;
+        padding-top: unset;
+        padding-bottom: unset;
         flex-direction: column;
         grid-gap: 0rem;
+
         .splide {
             &__track {
                 width: 100%;
@@ -15,7 +18,7 @@
             }
 
             &__slide {
-                min-height: $section-height-small;
+                min-height: auto;
                 font-family: $font-primary-light;
                 display: flex;
             }
@@ -26,12 +29,13 @@
                 border-radius: 48px;
                 width: 8.4vw;
                 height: auto;
-                padding:1rem;
-                margin: auto;
+                padding: 1rem;
+                margin: 2rem auto;
                 @include flex-around-center;
                 transition: 0.48s ease-in;
                 z-index: 99;
                 grid-row: 4;
+
                 &:hover {
                     border-color: var(--border-color);
                     background-color: var(--section-background);
@@ -50,6 +54,7 @@
 
                 &:hover {
                     border-color: var(--text-canari);
+
                     svg {
                         fill: var(--write);
                     }
@@ -70,15 +75,17 @@
             }
 
             &__pagination {
-                height: $navigation-height;
+                height: 4vw;
                 width: 12%;
                 @include flex-evenly-center;
                 margin: auto;
                 position: relative;
-                &__page{
+
+                &__page {
                     background-color: var(--write-transparent);
                 }
-                &__page.is-active{
+
+                &__page.is-active {
                     background-color: var(--write);
                 }
             }
@@ -87,6 +94,8 @@
                 height: auto;
                 font-family: $font-secondary;
                 color: var(--write);
+
+
             }
         }
 
@@ -97,13 +106,14 @@
 
 @media screen and (max-width:1200px) {
 
-    #test{
-        .carousel{
-            .splide__slide{
+    #test {
+        .carousel {
+            .splide__slide {
                 min-height: 480px;
             }
-            .splide{
-                &__arrows--ltr{
+
+            .splide {
+                &__arrows--ltr {
                     width: 16vw;
                 }
             }
@@ -114,10 +124,10 @@
 
 @media screen and (max-width:800px) {
 
-    #test{
-        .carousel{
-            .splide{
-                &__arrows--ltr{
+    #test {
+        .carousel {
+            .splide {
+                &__arrows--ltr {
                     width: auto;
                     top: unset;
                     right: unset;
@@ -125,20 +135,26 @@
                     height: 6vh;
                     grid-gap: 1rem;
                 }
-                &__pagination{
+
+                &__pagination {
                     width: 36%;
                 }
-                &__arrow{
-                    &--prev,&--next{
+
+                &__arrow {
+
+                    &--prev,
+                    &--next {
                         width: 24px;
                         height: 24px;
                     }
                 }
-                &__header{
+
+                &__header {
                     justify-content: center;
                     width: 100%;
                     left: 0;
                     height: auto;
+
                 }
             }
         }

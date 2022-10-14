@@ -24,8 +24,8 @@
 }
 
 .rjs-cursor {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     position: fixed;
     top: 0;
     left: 0;
@@ -37,9 +37,10 @@
 .rjs-cursor-icon {
     width: 100%;
     height: 100%;
-    border-radius: 100%;
+    border-radius: 50%;
     background-color: rgba(185, 185, 185, 0.1);
-    border:1px solid var(--text-canari);
+    transition: all 0.2s ease;
+    border:1px solid var(--border-color);
 }
 
 .rjs-cursor.rjs_cursor_visible {
@@ -50,14 +51,12 @@
     opacity: 0;
 }
 
-.rjs-cursor-icon {
-    transition: all 0.2s ease;
-    transform-origin: 50% 50%;
-}
 
 .rjs-cursor.rjs_cursor_hover .rjs-cursor-icon {
     transform: scale(7.2);
+    transform-origin: center;
     border-color:transparent;
+    background-color: #fff1;
 }
 
 .rjs-cursor.rjs_cursor_hover_input{

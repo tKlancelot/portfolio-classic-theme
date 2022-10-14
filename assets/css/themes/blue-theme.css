@@ -4,16 +4,12 @@
     --body-background : #22272e;
     --body-darker: #1c2128;
     --body-dark: #1c2128;
-    --body-darkest: #1c2128;
-    /* --body-darkest: #15191c; */
+    --body-darkest: #181c24;
     --section-background : #262b32;
     --border-color: #4b5258;
-    /* --text-canari : #5bef97; */
     --text-canari : #5bef7b;
-    --texture-overlay : #5bef7b36;
-    /* --text-canari : #5be8ef;
-    --texture-overlay : #5be8efb4; */
-    --background-transparent: #4b525832;
+    --texture-overlay : #5bef7b12;
+    --background-transparent: #131a1f76;
     --underline-color: #4b525884;
 }
 

@@ -25,9 +25,9 @@ function theme_supports()
     add_theme_support('editor-styles');
 
     // Nouvelles tailles par défaut
-    add_image_size('post-thumbnail', 400, 400, true);
+    add_image_size('post-thumbnail', 210, 297);
 
-        // ajouter le support de titres dynamiques
+    // ajouter le support de titres dynamiques
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
     add_theme_support( 'post-thumbnails', array( 'post', 'portfolio' ) );
@@ -51,14 +51,6 @@ function tarik_register_menus()
 
 add_action('init','tarik_register_menus');
 
-// ajouter un format d'image personnalisé
-
-function register_custom_image_size()
-{
-    add_image_size('custom-project-thumbnail',480,480,false);
-}
-
-add_action('init','register_custom_image_size');
 
 function enqueue_styles()
 {

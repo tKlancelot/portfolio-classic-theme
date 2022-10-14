@@ -88,6 +88,8 @@ gsap.from(".g-text-triggered", {
 });
 
 
+
+
 const handleAutoSlideAnimation = () => {
     gsap.to('.autoslide__body__top .scrolling-frame',{
         scrollTrigger:{
@@ -109,16 +111,6 @@ const handleAutoSlideAnimation = () => {
         x: '50%'
     })
 }
-
-// pinning du jumbo 
-
-// gsap.to('#jumbo',{
-//     scrollTrigger:{
-//         trigger:'#jumbo',
-//         pin:true,
-//         end: "+=1500",
-//     }
-// })
 
 
 if(window.matchMedia("(min-width:800px)").matches)
@@ -2293,7 +2285,7 @@ const cloneStar = () => {
     let item = document.querySelector('#star-animation');
     let container = document.querySelector('#jumbo .section__header');
     let cloneArray = [];
-    for (let i = 0; i < 72; i++){
+    for (let i = 0; i < 40; i++){
         let clone = item.cloneNode(true);
         setStarPosition(clone);
         setStarWidth(clone);

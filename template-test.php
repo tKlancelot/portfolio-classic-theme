@@ -16,7 +16,8 @@
 <main id="test">
 
     <div id="rjs_cursor" class="rjs-cursor">
-        <div class="rjs-cursor-icon"></div>
+        <div class="rjs-cursor-icon">
+        </div>
     </div>
     <!-- section jumbotron -->
 
@@ -51,6 +52,7 @@
             <div class="flap">
                 <div class="flap__left">
                     <div class="flap__left__heading">
+
                         <!-- greetings widget -->
 
                         <?php if (is_active_sidebar('greetings')) : ?>
@@ -69,30 +71,30 @@
                             <?php dynamic_sidebar('job-description'); ?>
                         <?php endif; ?>
 
-                    </div>
-                    <div class="flap__left__content">
-                        <a href="<?php echo get_template_directory_uri();?>/assets/downloads/RESUME-A4.pdf" download="CV-TARIK" class="cta g-text-cta">
-                            <span>T</span>
-                            <span>é</span>
-                            <span>l</span>
-                            <span>é</span>
-                            <span>c</span>
-                            <span>h</span>
-                            <span>a</span>
-                            <span>r</span>
-                            <span>g</span>
-                            <span>e</span>
-                            <span>r</span>
-                            <span>&emsp;</span>
-                            <span>C</span>
-                            <span>V</span>
-                            &emsp;
-                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M24 11.3065L12.4999 24M12.4999 24L1 11.3066M12.4999 24L12.4999 0.999999"
-                                    stroke="white" stroke-linecap="square" />
-                            </svg>
-                        </a>
+                        <div class="download-frame">
+                            <a href="<?php echo get_template_directory_uri();?>/assets/downloads/RESUME-A4.pdf" download="CV-TARIK" class="cta g-text-cta">
+                                <span>T</span>
+                                <span>é</span>
+                                <span>l</span>
+                                <span>é</span>
+                                <span>c</span>
+                                <span>h</span>
+                                <span>a</span>
+                                <span>r</span>
+                                <span>g</span>
+                                <span>e</span>
+                                <span>r</span>
+                                <span>&emsp;</span>
+                                <span>C</span>
+                                <span>V</span>
+                                &emsp;
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24 11.3065L12.4999 24M12.4999 24L1 11.3066M12.4999 24L12.4999 0.999999"
+                                        stroke="white" stroke-linecap="square" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="flap__right">
@@ -100,7 +102,6 @@
                         <!-- <img src="<?php echo get_template_directory_uri();?>/assets/portrait/portrait-grayscale-one.webp"
                             alt="portrait détouré"> -->
                         <div id="three-container"></div>
-                        <div id="canvas-background"></div>
                     </div>
                 </div>
             </div>
@@ -304,7 +305,7 @@
                         <div class="project-card">
                             <div class="project-card__header">
                                 <?php 
-                                the_post_thumbnail();
+                                the_post_thumbnail('post-thumbnail');
                                 ?>
                             </div>
                             <div class="project-card__body">
@@ -343,15 +344,6 @@
         <form action="./" method="post">
             <fieldset id="themeSelect">
                 <!-- <legend>Select a theme:</legend> -->
-
-                <div>
-
-                    <label for="dark-theme" class="form-control">
-                        <input type="radio" id="" name="themeSelect" value="dark-theme">
-                        Dark theme
-                    </label>
-                </div>
-
                 <div>
                     <label for="purple-theme" class="form-control">
                         <input type="radio" id="" name="themeSelect" value="purple-theme">

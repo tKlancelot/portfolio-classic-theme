@@ -2,69 +2,67 @@
 
 .project-card {
     margin: auto;
-    height: auto;
+    height: 100%;
     width: 100%;
     display: grid;
-    grid-template-rows: auto auto auto;
-    grid-gap: 1rem;
+    grid-template-rows: auto;
+    grid-gap: 0rem;
+    padding: 2rem;
     place-items: center;
+    background-color: var(--body-darker);
+    >a{
+        width: 100%;
+    }
 
     &__header {
         display: flex;
         width: 100%;
         position: relative;
-        background-color: var(--section-background);
+        perspective: 1000px;
         overflow: hidden;
         img {
-            // transform: rotate3d(1, -1, 1, 40deg);
             position: relative;
             display: flex;
             box-sizing: border-box;
             object-fit: cover;
-            width: auto;
-            aspect-ratio: 1/1;
             margin: auto;
+            transform: rotateY(-16deg) scaleY(0.92);
+            transition: 0.2s ease;
+        }
+        &:hover{
+            img{
+                transform: unset;
+            }
         }
     }
 
-    &__body,
-    &__footer {
-        height: 6.4vh;
+    &__body,&__footer{
+        height: 5.6vw;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: baseline;
-    }
-
-    &__body {
         align-items: center;
-
-        h3 {
-            color: var(--text-canari);
-            font-size: 22px;
+        a{
+            @include flex-center-center;
+            color: var(--write);
             font-family: $font-primary-light;
-            font-weight: 100;
+            font-style: italic;
         }
     }
 
-    &__footer,
-    &__footer a,&__link a{
-        color: var(--write);
-        font-family: $font-primary-light;
-        font-style: italic;
+    &__footer{
+        height: 3.6vw;
+        color:var(--text-canari);
     }
+
+
     &__link{
         border:1px solid var(--write);
         border-radius: 32px;
         display: flex;
         padding: 0.5rem 0.75rem;
         width: max-content;
-        a{
-            font-style:normal;
-            text-transform: uppercase;
-            font-size: smaller;
-        }
     }
 
 }
@@ -165,7 +163,7 @@
             &__header,&__body{
                 height: 60vw;
                 p{
-                    font-size: 11.5px;
+                    font-size: 11px;
                     line-height: 1.32rem;
                 }
             }
@@ -180,16 +178,17 @@
             justify-content: center;
             
         }
-        &__header{
-            height: auto;
-            img{
-                width: 100%;
-                height: 100%;
-            }
-        }  
+        &__body{
+            height: 20vw;
+        }
+
+        &__footer{
+            height: 16vw;
+        }
+
         &__link{
             a{
-                font-size: 11.5px;
+                font-size: 11px;
             }
         }
     }
