@@ -8,7 +8,15 @@
       </div>
     </div>
     <div class="footer__body">
-      <p>© Tarik Louatah 2022 - Tous droits réservés</p>
+      <div class="footer__body__top">
+        <?php 
+            include __dir__.'/template-parts/social-media.php'; 
+        ?> 
+      </div>
+      <hr/>
+      <div class="footer__body__bottom">
+        <p>© Tarik Louatah 2022 - Tous droits réservés</p>
+      </div>
     </div>
   </footer>
 

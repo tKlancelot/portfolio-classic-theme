@@ -136,6 +136,7 @@
 
     .contact-form {
         min-height: 180vw;
+        background-size: 2%;
         &__body {
             >div{
                 width: 92%;
@@ -147,6 +148,11 @@
             }
             .input-box--double{
                 grid-template-columns: 1fr;
+            }
+            .input-box,.input-box--submit,.input-box--double{
+                input,textarea{
+                    border:unset;
+                }
             }
         }
     }

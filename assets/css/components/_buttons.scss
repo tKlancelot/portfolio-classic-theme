@@ -42,6 +42,7 @@
     @include flex-center-center;
     cursor: pointer;
     z-index: 100;
+    outline: 8px solid var(--background-transparent);
 
     span {
         font-family: $font-primary-light;
@@ -126,6 +127,10 @@
 
     .wp-block-button__link {
         font-size: 14px;
+    }
+
+    .cta{
+        outline: unset;
     }
 
 }

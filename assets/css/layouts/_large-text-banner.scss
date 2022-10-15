@@ -58,7 +58,7 @@
             padding: 8px;
             display: flex;
             justify-content: center;
-            outline:8px solid var(--background-transparent); 
+            outline:8px solid var(--background-transparent);
             background-color: var(--body-darker);
             .container{
                 display: flex;
@@ -124,6 +124,7 @@
 @media screen and (max-width:800px) {
     #test{
         .large-text-banner{
+            background-size: 2%;
             .section-heading{
                 text-align: center;
             }

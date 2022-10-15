@@ -3,7 +3,7 @@
     .carousel {
         display: grid;
         width: auto;
-        background-color: var(--section-background);
+        background-color: var(--body-darker);
         @include border-top;
         padding:2rem;
         padding-top: unset;
@@ -126,6 +126,7 @@
 
     #test {
         .carousel {
+            padding: 0rem;
             .splide {
                 &__arrows--ltr {
                     width: auto;

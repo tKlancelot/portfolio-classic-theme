@@ -77,7 +77,7 @@ $jumbo-height : 44vw;
         }
 
         &__header {
-            background-color: var(--section-background);
+            background-color: var(--body-darker);
             position: absolute;
             overflow: hidden;
             display: flex;
@@ -179,9 +179,8 @@ $jumbo-height : 44vw;
                 height: auto;
 
                 .flap {
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 1fr 1fr;
-                    grid-gap: unset;
+                    display: flex;
+                    flex-direction: column;
 
                     &__left,
                     &__right {
@@ -190,9 +189,10 @@ $jumbo-height : 44vw;
 
                     &__left__heading {
                         width: 100%;
-                        grid-gap: 6vw;
+                        grid-gap: 1rem;
                         height: 100%;
                         align-items: center;
+                        justify-content: space-evenly;
                         .widget {
                             display: flex;
                             justify-content: center;
@@ -219,7 +219,6 @@ $jumbo-height : 44vw;
                     }
 
                     &__left {
-                        grid-template-rows: 0.8fr 0.2fr;
                         padding: 1.2rem;
                     }
                 }

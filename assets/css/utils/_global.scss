@@ -29,7 +29,8 @@ p,
 ul,
 li,
 a,
-span {
+span,
+label {
     font-family: $font-primary;
     font-size: 0.96vw;
 }
@@ -62,6 +63,7 @@ footer {
 [x-cloak] {
     display: none !important;
 }
+
 
 
 @media screen and (max-width:1600px) {

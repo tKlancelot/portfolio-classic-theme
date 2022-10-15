@@ -3,6 +3,7 @@
     @include border-top;
     @include flex-center-start;
     background-color: var(--body-darkest);
+
     &__header {
         position: absolute;
         width: 100%;
@@ -23,8 +24,9 @@
                 transition: 0.32s ease-in;
                 cursor: pointer;
                 margin: auto;
-                path{
-                    stroke:var(--write);
+
+                path {
+                    stroke: var(--write);
                 }
 
                 &:hover {
@@ -45,6 +47,10 @@
             font-size: 0.88vw;
             letter-spacing: 0.024rem;
         }
+
+        &__top,hr {
+            display: none;
+        }
     }
 }
 
@@ -58,8 +64,8 @@
 
 @media screen and (max-width:1200px) {
     .footer {
-        &__header{
-            .frame{
+        &__header {
+            .frame {
                 width: 40px;
                 height: 40px;
             }
@@ -71,13 +77,39 @@
     .footer {
         @include no-margin-side;
         height: 84vw;
+
         p {
             font-size: 12px;
         }
-        &__header{
-            .frame{
+
+        &__header {
+            .frame {
                 width: 72px;
                 height: 72px;
+            }
+        }
+
+        &__body {
+            grid-gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            &__top,hr{
+                display: block;
+            }
+            hr{
+                @include linear-hr;
+                width: 72%;
+                margin:auto;
+            }
+            &__top {
+                .social-media {
+                    &__body {
+                        justify-content: space-evenly;
+                        a{
+                            font-size: 16px;
+                        }
+                    }
+                }
             }
         }
     }

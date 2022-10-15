@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: TarikTheme
 Author: Tarik Louatah
@@ -74,7 +75,8 @@ p,
 ul,
 li,
 a,
-span {
+span,
+label {
   font-family: "Roboto", sans-serif;
   font-size: 0.96vw;
 }
@@ -655,6 +657,9 @@ footer {
   #test .splide__header .section-heading {
     height: 32vw;
   }
+  .project-card__body h3 {
+    font-size: 16px;
+  }
 }
 .wp-block-button__link {
   border: 2px solid var(--border-color);
@@ -694,6 +699,7 @@ footer {
   justify-content: center;
   cursor: pointer;
   z-index: 100;
+  outline: 8px solid var(--background-transparent);
 }
 .cta span {
   font-family: "Roboto Light", sans-serif;
@@ -758,6 +764,48 @@ footer {
   .wp-block-button__link {
     font-size: 14px;
   }
+  .cta {
+    outline: unset;
+  }
+}
+input[type=range].custom-slider {
+  -webkit-appearance: none;
+  /*nécessaire pour Chrome */
+  padding: 0;
+  /* nécessaire pour IE */
+  font: inherit;
+  /* même rendu suivant font document */
+  outline: none;
+  color: #069;
+  /* sert pour couleur de référence, via currentColor, pour le curseur */
+  opacity: 0.8;
+  background: #CCC;
+  /* sert pour couleur de fond de la zone de déplacement */
+  box-sizing: border-box;
+  /* même modèle de boîte pour tous */
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+input[type=radio] {
+  cursor: pointer;
+}
+
+.three-container label {
+  color: var(--write);
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */
+  input, textarea {
+    border-radius: 0;
+  }
+  input[type=search] {
+    -webkit-appearance: none;
+  }
+  input, textarea {
+    -webkit-appearance: none;
+  }
 }
 .test-tooltip {
   font-family: "ArcadeClassic";
@@ -779,7 +827,7 @@ footer {
   grid-gap: 0rem;
   padding: 2rem;
   place-items: center;
-  background-color: var(--body-darker);
+  background-color: var(--section-background);
 }
 .project-card > a {
   width: 100%;
@@ -907,13 +955,18 @@ footer {
 @media screen and (max-width: 800px) {
   .skill-card__content {
     border: unset;
+    display: flex;
+    flex-direction: column;
   }
   .skill-card__content__header, .skill-card__content__body {
-    height: 60vw;
+    min-height: 36vw;
   }
   .skill-card__content__header p, .skill-card__content__body p {
     font-size: 11px;
     line-height: 1.32rem;
+  }
+  .skill-card__content__header {
+    min-height: 48vw;
   }
   .project-card {
     justify-content: center;
@@ -1472,6 +1525,9 @@ footer {
   font-size: 0.88vw;
   letter-spacing: 0.024rem;
 }
+.footer__body__top, .footer__body hr {
+  display: none;
+}
 
 @media screen and (max-width: 1600px) {
   .footer p {
@@ -1498,6 +1554,27 @@ footer {
     width: 72px;
     height: 72px;
   }
+  .footer__body {
+    grid-gap: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer__body__top, .footer__body hr {
+    display: block;
+  }
+  .footer__body hr {
+    border: unset;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--underline-color), var(--underline-color), var(--underline-color), var(--underline-color), transparent);
+    width: 72%;
+    margin: auto;
+  }
+  .footer__body__top .social-media__body {
+    justify-content: space-evenly;
+  }
+  .footer__body__top .social-media__body a {
+    font-size: 16px;
+  }
 }
 #presentation {
   min-height: 72vh;
@@ -1519,7 +1596,7 @@ footer {
 #test .carousel {
   display: grid;
   width: auto;
-  background-color: var(--section-background);
+  background-color: var(--body-darker);
   border-top: 1px solid var(--border-color);
   padding: 2rem;
   padding-top: unset;
@@ -1611,6 +1688,9 @@ footer {
   }
 }
 @media screen and (max-width: 800px) {
+  #test .carousel {
+    padding: 0rem;
+  }
   #test .carousel .splide__arrows--ltr {
     width: auto;
     top: unset;
@@ -1669,7 +1749,7 @@ footer {
   display: grid;
   place-items: center;
   border-top: 1px solid var(--border-color);
-  background-color: var(--body-darker);
+  background-color: var(--body-darkest);
   background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png");
   background-size: 0.75%;
   background-blend-mode: screen;
@@ -1769,6 +1849,9 @@ footer {
   }
 }
 @media screen and (max-width: 800px) {
+  #test .large-text-banner {
+    background-size: 2%;
+  }
   #test .large-text-banner .section-heading {
     text-align: center;
   }
@@ -1790,7 +1873,7 @@ footer {
 }
 .contact-form {
   border-top: 1px solid var(--border-color);
-  background-color: var(--body-darker);
+  background-color: var(--body-darkest);
   background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png");
   background-size: 0.75%;
   background-blend-mode: screen;
@@ -1898,6 +1981,7 @@ footer {
 @media screen and (max-width: 800px) {
   .contact-form {
     min-height: 180vw;
+    background-size: 2%;
   }
   .contact-form__body > div {
     width: 92%;
@@ -1908,10 +1992,13 @@ footer {
   .contact-form__body .input-box--double {
     grid-template-columns: 1fr;
   }
+  .contact-form__body .input-box input, .contact-form__body .input-box textarea, .contact-form__body .input-box--submit input, .contact-form__body .input-box--submit textarea, .contact-form__body .input-box--double input, .contact-form__body .input-box--double textarea {
+    border: unset;
+  }
 }
 #autoslide {
   min-height: 24vw;
-  background-color: var(--body-darker);
+  background-color: var(--body-darkest);
 }
 
 .autoslide__body {
@@ -2138,26 +2225,11 @@ footer {
   height: 2.6vw;
   align-items: center;
 }
-.top-menu__left .burger-item__body,
-.top-menu__left .social-media__body, .top-menu__right .burger-item__body,
-.top-menu__right .social-media__body {
+.top-menu__left .burger-item__body, .top-menu__right .burger-item__body {
   color: var(--write);
   padding: initial;
   display: flex;
   align-items: center;
-}
-.top-menu__left .social-media__body a, .top-menu__right .social-media__body a {
-  color: rgba(255, 255, 255, 0.2666666667);
-  transition: unset;
-}
-.top-menu__left .social-media__body a:hover, .top-menu__right .social-media__body a:hover {
-  color: var(--write);
-}
-.top-menu__left .social-media__body i, .top-menu__right .social-media__body i {
-  margin: auto 1rem;
-  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.0666666667), 0px 0px 2px rgba(255, 255, 255, 0.1333333333), 0px 0px 2px rgba(255, 255, 255, 0.1333333333);
-  border-radius: 50%;
-  cursor: pointer;
 }
 
 .menu-content {
@@ -2184,12 +2256,38 @@ footer {
   margin: auto;
 }
 
-#three-container {
+.social-media__body {
+  color: var(--write);
+  padding: initial;
+  display: flex;
+  align-items: center;
+}
+
+.social-media__body a {
+  color: rgba(255, 255, 255, 0.2666666667);
+  transition: unset;
+}
+.social-media__body a:hover {
+  color: var(--write);
+}
+.social-media__body i {
+  margin: auto 1rem;
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.0666666667), 0px 0px 2px rgba(255, 255, 255, 0.1333333333), 0px 0px 2px rgba(255, 255, 255, 0.1333333333);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.three-container {
   display: flex;
   width: 100%;
   height: 100%;
 }
-#three-container canvas {
+.three-container__header {
+  border: 4px solid red;
+  position: absolute;
+  z-index: 999;
+}
+.three-container canvas {
   margin: auto;
   width: 40vw !important;
   height: 40vw !important;
@@ -2204,7 +2302,7 @@ footer {
   }
 }
 body {
-  background-color: var(--body-dark);
+  background-color: var(--section-background);
 }
 
 #test .section {
@@ -2271,7 +2369,7 @@ body {
   filter: brightness(1.12);
 }
 #test .section__header {
-  background-color: var(--section-background);
+  background-color: var(--body-darker);
   position: absolute;
   overflow: hidden;
   display: flex;
@@ -2328,18 +2426,18 @@ body {
     height: auto;
   }
   #test .section__body .flap {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: unset;
+    display: flex;
+    flex-direction: column;
   }
   #test .section__body .flap__left, #test .section__body .flap__right {
     height: 100vw;
   }
   #test .section__body .flap__left__heading {
     width: 100%;
-    grid-gap: 6vw;
+    grid-gap: 1rem;
     height: 100%;
     align-items: center;
+    justify-content: space-evenly;
   }
   #test .section__body .flap__left__heading .widget {
     display: flex;
@@ -2361,7 +2459,6 @@ body {
     display: none;
   }
   #test .section__body .flap__left {
-    grid-template-rows: 0.8fr 0.2fr;
     padding: 1.2rem;
   }
   #test .section__header {

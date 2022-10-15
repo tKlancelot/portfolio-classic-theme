@@ -15,11 +15,13 @@
     --write-transparent: #fff7;
     --body-background : #2F2052;
     --body-darker: #271B44;
+    --body-darkest: #21153b;
     --body-dark: #271B44;
-    --section-background : #372560;
-    --border-color: #7050BB;
+    --section-background : #322158;
+    /* --border-color: #7050BB; */
+    --border-color: #3d2d64;
     --text-canari : #e9df58;
     --texture-overlay : #e9df5836;
-    --background-transparent: #7050BB32;
+    --background-transparent: #7050BB10;
     --underline-color: #7050BB64;
 }

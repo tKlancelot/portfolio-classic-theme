@@ -89,27 +89,22 @@ gltfLoader.load(
 // scene.background = texture;
 
 
-const light = new THREE.AmbientLight( 0x606060 , 1 ); // medium white light
+const light = new THREE.AmbientLight( 0x606060 , 0.5 ); // weak white light
 scene.add( light );
 
-// const hemisphereLight = new THREE.HemisphereLight( 0xdedeff, 0x080820, 0.96 );
-// scene.add( hemisphereLight );
+const light2 = new THREE.AmbientLight( 0xa4a4e4 , 0.72 ); // medium blue-white light
+scene.add( light2 );
 
-let upColour = 0xddddff;
-let downColour = 0x9696c4;
+
+let upColour = 0x727292;
+let downColour = 0x404056;
 
 var hemiLight = new THREE.HemisphereLight( upColour , downColour );
-hemiLight.position.set( 0, 250, 0 );
 scene.add( hemiLight );
 
-var dirLight = new THREE.DirectionalLight( 0xddeeff );
-dirLight.position.set( 25, 75, 25 );
+
+var dirLight = new THREE.DirectionalLight( 0xaabbff , 0.5);
 scene.add( dirLight );
-
-
-// var hemiLight = new THREE.HemisphereLight( upColour, downColour, 0.76 );
-// hemiLight.position.set( 0, 200, 0 );
-// scene.add( hemiLight );
 
 
 function animate() {
@@ -120,15 +115,15 @@ function animate() {
 }
 animate();
 
-// const onWindowResize = () => {
-//     camera.aspect = aspect;
-//     camera.updateProjectionMatrix();
-//     renderer.setSize(aspect);
-// }
+const onWindowResize = () => {
+    camera.aspect = aspect;
+    camera.updateProjectionMatrix();
+    renderer.setSize(aspect);
+}
 
-// window.addEventListener('resize', () => {
-//     onWindowResize();
-// }, false);
+window.addEventListener('resize', () => {
+    onWindowResize();
+}, false);
 
 
 
@@ -176,3 +171,38 @@ window.addEventListener('load', function () {
 
 })
 
+
+
+
+// const pointLight = new THREE.PointLight( 0xaabbff, 1 );
+// pointLight.position.set( 0, 50, 0 );
+// scene.add( pointLight );
+// let myXPos = 0;
+// let myZPos = 0;
+
+// let inputXPos = document.querySelector('#xPos');
+// let inputZPos = document.querySelector('#zPos');
+
+
+// let inputLight = document.querySelector('#lights');
+
+// inputLight.addEventListener('change',function(){
+//     // console.log(dirLight.intensity);
+//     var value = jQuery(this).val();
+//     dirLight.intensity = value;
+// })
+
+
+// inputXPos.addEventListener('change',function(){
+//     var value = jQuery(this).val();
+//     myXPos = value;
+//     dirLight.position.set (myXPos,100,myZPos);
+//     console.log(dirLight.position);
+// })
+
+// inputZPos.addEventListener('change',function(){
+//     var value = jQuery(this).val();
+//     myZPos = value;
+//     dirLight.position.set (myXPos,100,myZPos);
+//     console.log(dirLight.position);
+// })

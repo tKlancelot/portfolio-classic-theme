@@ -34,30 +34,6 @@ if (window.matchMedia("(max-width: 800px)").matches) {
 else
 {
 
-    gsap.from(".g-text", {
-        scrollTrigger: ".g-text",
-        opacity: 0,
-        duration: 2.4,
-        y: -50,
-        stagger: (0.6)
-    });
-
-    gsap.from(".g-text-name", {
-        scrollTrigger: ".g-text",
-        opacity: 0,
-        duration: 1,
-        y:-50
-    });
-
-    gsap.to(".g-text-cta span", {
-        scrollTrigger: ".g-text-cta",
-        textShadow:'0px 0px 0px #fffc,0px 0px 0px #fffc',
-        stagger:(0.1),
-        duration:0.05
-    });
-
-
-
     gsap.from(".cta svg", {
         scrollTrigger: ".g-text-cta",
         duration: 1,
@@ -82,6 +58,28 @@ else
 
 
 }
+
+gsap.from(".g-text", {
+    scrollTrigger: ".g-text",
+    opacity: 0,
+    duration: 2.4,
+    y: -50,
+    stagger: (0.6)
+});
+
+gsap.from(".g-text-name", {
+    scrollTrigger: ".g-text",
+    opacity: 0,
+    duration: 1,
+    y:-50
+});
+
+gsap.to(".g-text-cta span", {
+    scrollTrigger: ".g-text-cta",
+    textShadow:'0px 0px 0px #fffc,0px 0px 0px #fffc',
+    stagger:(0.1),
+    duration:0.05
+});
 
 gsap.from(".g-text-triggered", {
     scrollTrigger: ".large-text-banner__body",
@@ -299,7 +297,8 @@ document.querySelectorAll('a, #footer .frame svg,.splide__arrow,.cta,button,.act
     item.addEventListener('mouseleave', rjs_unhover_cursor);
 })
 
-document.querySelectorAll('input:not([type="submit"]),textarea').forEach(item => {
+// document.querySelectorAll('input:not([type="submit"]):not([type="radio"])),textarea').forEach(item => {
+document.querySelectorAll('input[type="text"],textarea').forEach(item => {
     item.addEventListener('mouseover', rjs_hover_input_cursor);
     item.addEventListener('mouseleave', rjs_unhover__input_cursor);
 })
@@ -477,7 +476,9 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             800: {
                 perPage: 1,
-                pagination: false
+                pagination: false,
+                padding: '4rem',
+                gap:'2rem'
             },
         }
     });
@@ -497,7 +498,7 @@ document.addEventListener('DOMContentLoaded', function () {
     body.addEventListener('mouseleave', rjs_hide_cursor);
 
     setRandoms();
-    cloneStar(72);
+    cloneStar(48);
     handleStarAnimation();
 
 });

@@ -9,7 +9,7 @@
     grid-gap: 0rem;
     padding: 2rem;
     place-items: center;
-    background-color: var(--body-darker);
+    background-color: var(--section-background);
     >a{
         width: 100%;
     }
@@ -160,12 +160,17 @@
     .skill-card{
         &__content{
             border:unset;
+            display: flex;
+            flex-direction: column;
             &__header,&__body{
-                height: 60vw;
+                min-height: 36vw;
                 p{
                     font-size: 11px;
                     line-height: 1.32rem;
                 }
+            }
+            &__header{
+                min-height: 48vw;
             }
 
         }
@@ -176,7 +181,6 @@
         text-align: center;  
         &__header,&__body,&__footer{
             justify-content: center;
-            
         }
         &__body{
             height: 20vw;
@@ -185,6 +189,7 @@
         &__footer{
             height: 16vw;
         }
+
 
         &__link{
             a{

@@ -120,7 +120,22 @@
                     <div class="flap__right__content">
                         <!-- <img src="<?php echo get_template_directory_uri();?>/assets/portrait/portrait-grayscale-one.webp"
                             alt="portrait détouré"> -->
-                        <div id="three-container"></div>
+                        <div id="three-container" class="three-container">
+                            <div class="three-container__header" style="display:none">
+                                <div class="form-group">
+                                    <label for="lights">directional light</label>
+                                    <input class="custom-slider" type="range" id="lights" name="lights" min="0" max="1" value="0.5" step="0.1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="xPos">dirlight x position</label>
+                                    <input class="custom-slider" type="range" id="xPos" name="xPos" min="0" max="1000" value="50" step="10">
+                                </div>
+                                <div class="form-group">
+                                    <label for="zPos">dirlight z position</label>
+                                    <input class="custom-slider" type="range" id="zPos" name="zPos" min="0" max="1000" value="50" step="10">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

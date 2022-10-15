@@ -1,23 +1,31 @@
-#three-container{
+.three-container {
     display: flex;
     width: 100%;
     height: 100%;
-    canvas{
-        margin:auto;
-        width: 40vw!important;
-        height: 40vw!important;
+
+    &__header {
+        border: 4px solid red;
+        position: absolute;
+        z-index: 999;
+    }
+
+    canvas {
+        margin: auto;
+        width: 40vw !important;
+        height: 40vw !important;
         display: block;
         z-index: 99;
     }
 
+
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:800px) {
 
-    #three-container{
-        canvas{
-            width: 96vw!important;
-            height: 96vw!important;
+    #three-container {
+        canvas {
+            width: 96vw !important;
+            height: 96vw !important;
         }
     }
 
