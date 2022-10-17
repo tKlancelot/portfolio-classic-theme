@@ -60,7 +60,7 @@ img {
 }
 
 body {
-  background-color: var(--section-background);
+  background-color: var(--body-darker);
   max-width: 100vw;
   overflow-x: hidden !important;
 }
@@ -689,8 +689,8 @@ footer {
 }
 
 .cta {
-  background-color: var(--body-darker);
   border: 1px solid var(--border-color);
+  background-color: var(--background-transparent);
   width: fit-content;
   padding: 1.92rem;
   border-radius: 48px;
@@ -1309,7 +1309,7 @@ input[type=radio] {
   display: flex;
   justify-content: center;
   margin: auto;
-  height: 4vw;
+  height: 4.4vw;
   width: 100%;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
@@ -2302,7 +2302,7 @@ input[type=radio] {
   }
 }
 body {
-  background-color: var(--section-background);
+  background-color: var(--body-darkest);
 }
 
 #test .section {
@@ -2370,6 +2370,8 @@ body {
 }
 #test .section__header {
   background-color: var(--body-darker);
+  background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/backgrounds/milky-way.jpg");
+  background-size: cover;
   position: absolute;
   overflow: hidden;
   display: flex;
@@ -2424,6 +2426,8 @@ body {
   #test .section__body {
     padding: unset;
     height: auto;
+    background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/backgrounds/milky-way.jpg");
+    background-size: cover;
   }
   #test .section__body .flap {
     display: flex;

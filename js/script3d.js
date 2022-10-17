@@ -1,119 +1,119 @@
+// import * as THREE from 'three';
+// import { OrbitControls } from 'https://unpkg.com/three@0.143.0/examples/jsm/controls/OrbitControls.js';
+// import { RGBELoader } from '/planet-reflection/js/RGBELoader.js';  
+// import { AmbientLight, PerspectiveCamera, PointLight } from 'three';
+import { FlakesTexture } from 'https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/js/FlakesTexture.js';  
+
+let scene, camera, renderer, controls, pointlight, ambienlight, aspect, canvas, width, height, ballMesh, cloudMesh, dirlight;
+
+function init(){
+    scene = new THREE.Scene();
+
+    renderer = new THREE.WebGL1Renderer({alpha:true,antialias:true});
+    renderer.setPixelRatio(window.devicePixelRatio);
+    let container = document.querySelector('#three-container');
+    container.appendChild(renderer.domElement);
+
+    canvas = renderer.domElement;
+    width = canvas.clientWidth;
+    height = canvas.clientHeight;
+    aspect = height / width;
+
+    renderer.setSize(width,height,false);
+
+    camera = new THREE.PerspectiveCamera(50,aspect,1,1000);
+    camera.position.set(0,0,400);
+    // controls = new THREE.OrbitControls( camera, renderer.domElement );
+
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.6;
+
+    dirlight = new THREE.DirectionalLight(0x242424,7);
+    dirlight.position.set(250,250,-200);
+    scene.add(dirlight); 
+
+    let rwidth = 750;
+    let rheight = 750;
+    let intensity = 1;
+    let rectLight = new THREE.RectAreaLight( 0xffffff, intensity,  rwidth, rheight );
+    rectLight.position.set( 100, 200, 200 );
+    rectLight.lookAt( 0, 0, 0 );
+    scene.add( rectLight );
+    console.log(rectLight);
 
 
+    ambienlight = new THREE.AmbientLight(0xffffff,0.24);
+    scene.add(ambienlight);
 
-const scene = new THREE.Scene();
+    const imageTexture = new THREE.TextureLoader().load( theme_directory + '/assets/textures/earth-map.jpg' );
+    const roughnessTexture = new THREE.TextureLoader().load( theme_directory + '/assets/textures/earth-bump-map.jpg' );
+    const specularTexture = new THREE.TextureLoader().load( theme_directory + '/assets/textures/earth-specular-map.jpg' );
+    const normalTexture = new THREE.TextureLoader().load( theme_directory + '/assets/textures/earth-normal-map.tif' );
 
-//renderer
+    const ballMaterial = {
+        clearcoat : 0.6,
+        clearcoatRoughness : 0.8,
+        metalness : 0.4,
+        roughness:0.6,
+        color: 0x92a4d4,
+        roughnessMap:roughnessTexture,  
+        bumpMap:roughnessTexture,  
+        bumpScale:1,
+        map:imageTexture,
+        specularMap:specularTexture,    
+        // normalMap:normalTexture,
+        // normalScale : new THREE.Vector2(0.01,0.01),
+    }
 
-const renderer = new THREE.WebGLRenderer({
-    antialias: true,
-    alpha : true
-});
+    let ballGeo = new THREE.SphereGeometry(100,64,64);
+    let ballMat = new THREE.MeshPhysicalMaterial(ballMaterial);
+    ballMesh = new THREE.Mesh(ballGeo,ballMat);
+    ballMesh.receiveShadow = false;
+    ballMesh.castShadow = false;
 
 
+    // cloud Geometry
+    let cloudGeometry = new THREE.SphereGeometry(108, 64, 64);
 
-// renderer.shadowMap.enabled = true;
-// renderer.shadowMap.type = THREE.PCFShadowMap;
-renderer.setPixelRatio(window.devicePixelRatio);
-// renderer.setSize(width,height);
-let container = document.querySelector('#three-container');
-container.appendChild(renderer.domElement);
+    // cloud material
+    let cloudMaterial = new THREE.MeshPhongMaterial({
+        map: THREE.ImageUtils.loadTexture(theme_directory + '/assets/textures/earth-cloud-map.jpg'),
+        transparent: true,
+        opacity:0.08
+    });
 
-const canvas = renderer.domElement;
-const width = canvas.clientWidth;
-const height = canvas.clientHeight;
+    // cloud mesh
+    cloudMesh = new THREE.Mesh(cloudGeometry, cloudMaterial);
 
-// camera
-const fov = 60;
-const aspect = height / width;
-const near = 1;
-const far = 1000.0;
+    console.log(ballMat);
 
-const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-camera.position.set(-24, 18, 0);
-camera.lookAt(0, 0, 0);
+
+    scene.add(ballMesh);
+    scene.add(cloudMesh);
+    animate();
+}
 
 function resizeCanvasToDisplaySize() {
 
-  if (canvas.width !== width ||canvas.height !== height) {
-    // you must pass false here or three.js sadly fights the browser
-    renderer.setSize(width, height, false);
-    camera.aspect = aspect;
-    camera.updateProjectionMatrix();
-  }
+    // you must pass false here or three.js sadly fights the browser    
+    if (canvas.width !== width ||canvas.height !== height) {
+        renderer.setSize(width, height, false);
+        camera.aspect = aspect;
+        camera.updateProjectionMatrix();
+    }
 }
 
 
-// orbitcontrols
-
-// const controls = new THREE.OrbitControls( camera, renderer.domElement );
-
-
-// Instantiate a loader
-const gltfLoader = new THREE.GLTFLoader();
-
-// Load a glTF resource
-let url = theme_directory + '/assets/models/castle-low-poly.glb';
-console.log(url);
-
-// Load a glTF resource
-gltfLoader.load(
-    // resource URL
-    url,
-    // called when the resource is loaded
-    function (gltf) {
-
-        scene.add(gltf.scene);
-    },
-    // called while loading is progressing
-    function (xhr) {
-
-        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-
-    },
-    // called when loading has errors
-    function (error) {
-        console.log('An error happened');
-    }
-);
-
-// const loader = new THREE.CubeTextureLoader();
-// const texture = loader.load([
-//     'textures/posx.png',
-//     'textures/negx.png',
-//     'textures/posy.png',
-//     'textures/negy.png',
-//     'textures/posz.png',
-//     'textures/negz.png',
-// ]);
-// scene.background = texture;
-
-
-const light = new THREE.AmbientLight( 0x606060 , 0.5 ); // weak white light
-scene.add( light );
-
-const light2 = new THREE.AmbientLight( 0xa4a4e4 , 0.72 ); // medium blue-white light
-scene.add( light2 );
-
-
-let upColour = 0x727292;
-let downColour = 0x404056;
-
-var hemiLight = new THREE.HemisphereLight( upColour , downColour );
-scene.add( hemiLight );
-
-
-var dirLight = new THREE.DirectionalLight( 0xaabbff , 0.5);
-scene.add( dirLight );
-
-
-function animate() {
+function animate(){
+    // controls.update();
+    renderer.render(scene,camera);
     requestAnimationFrame(animate);
     resizeCanvasToDisplaySize();
-    renderer.render(scene, camera);
-
+    cloudMesh.rotation.y += 0.001;
+    cloudMesh.rotation.z += 0.001;
+    ballMesh.rotation.y += 0.002;
 }
-animate();
 
 const onWindowResize = () => {
     camera.aspect = aspect;
@@ -127,6 +127,10 @@ window.addEventListener('resize', () => {
 
 
 
+init();
+
+
+
 let tl = new gsap.timeline({
     scrollTrigger:{
         trigger:'#three-container',
@@ -136,73 +140,16 @@ let tl = new gsap.timeline({
     yoyo:true
 });
 
-window.addEventListener('load', function () {
+// window.addEventListener('load', function () {
 
+//     tl.to(camera.position, {
+//         z: 600,
+//         y: 400,
+//         duration:4,
+//         ease:'Power2.ease',
+//         onUpdate: function () {
+//             camera.lookAt(0, 0,0);
+//         }
+//     });
 
-    tl.to(camera.position, {
-        z: 6,
-        x: -20,
-        y: 12,
-        duration:4,
-        ease:'Power2.ease',
-        onUpdate: function () {
-            camera.lookAt(0, 0, 0);
-        }
-    }).to(camera.position,{
-        z:8,
-        x:-20,
-        y:8,
-        duration:4,
-        ease:'Power2.ease',
-        onUpdate: function () {
-            camera.lookAt(0, 0, 0);
-        }
-    }).to(camera.position,{
-        z:-10,
-        x:-20,
-        y:10,
-        duration:4,
-        ease:'Power2.easeOut',
-        onUpdate: function () {
-            camera.lookAt(0, 0, 0);
-        }
-    })
-
-
-})
-
-
-
-
-// const pointLight = new THREE.PointLight( 0xaabbff, 1 );
-// pointLight.position.set( 0, 50, 0 );
-// scene.add( pointLight );
-// let myXPos = 0;
-// let myZPos = 0;
-
-// let inputXPos = document.querySelector('#xPos');
-// let inputZPos = document.querySelector('#zPos');
-
-
-// let inputLight = document.querySelector('#lights');
-
-// inputLight.addEventListener('change',function(){
-//     // console.log(dirLight.intensity);
-//     var value = jQuery(this).val();
-//     dirLight.intensity = value;
-// })
-
-
-// inputXPos.addEventListener('change',function(){
-//     var value = jQuery(this).val();
-//     myXPos = value;
-//     dirLight.position.set (myXPos,100,myZPos);
-//     console.log(dirLight.position);
-// })
-
-// inputZPos.addEventListener('change',function(){
-//     var value = jQuery(this).val();
-//     myZPos = value;
-//     dirLight.position.set (myXPos,100,myZPos);
-//     console.log(dirLight.position);
 // })
