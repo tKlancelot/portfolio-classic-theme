@@ -9,16 +9,17 @@
     get_header();
 ?>
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"> -->
 <link id="themeStylesheet" rel="stylesheet" href="<?php echo get_template_directory_uri();?>/assets/css/themes/blue-theme.css">
 <script src="<?php echo get_template_directory_uri();?>/js/script3d.js" defer="true" type="module"></script>
 
 <main id="test">
 
-    <div id="rjs_cursor" class="rjs-cursor">
-        <div class="rjs-cursor-icon">
-        </div>
-    </div>
+    <!-- rjs cursor  -->
+    <?php
+        include(dirname(__FILE__) . '/template-parts/rjs-cursor.php');
+    ?>
+
     <!-- section jumbotron -->
 
     <section id="jumbo" class="section banner" data-spy>
@@ -142,6 +143,8 @@
         </div>
     </section>
 
+    <!-- section about  -->
+
     <section id="about" class="large-text-banner" data-spy>
         <div class="large-text-banner__header">
             <h2 class="section-heading">À propos de moi</h2>
@@ -175,6 +178,7 @@
         </div>
     </section>
 
+    <!-- section activities -->
 
     <section id="activities" class="activities" data-spy>
 
@@ -255,6 +259,8 @@
         </div>
     </section>
 
+    <!-- section autoslide  -->
+
     <section id="autoslide" class="autoslide">
         <div class="autoslide__body">
             <div class="autoslide__body__top">
@@ -319,7 +325,7 @@
 
     <!-- <section class="intersection"></section> -->
 
-    <!-- section carousel cards -->
+    <!-- section carousel projets -->
 
     <section id="last-projects" class="splide carousel" data-spy>
 
@@ -358,6 +364,7 @@
         </div>
     </section>
 
+    <!-- section contact -->
 
     <section id="contact" class="contact-form" data-spy>
         <div class="contact-form__header">
@@ -368,37 +375,16 @@
         </div>
     </section>
 
-    <div id="theme-picker" class="theme-picker">
-        <div class="theme-picker__heading">
-            <h3>Theme picker</h3>
-            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4.5 -1.5299e-07L4.5 8M4.5 8L8 4.93985M4.5 8L0.999998 4.93976" stroke="var(--write)" />
-            </svg>
-        </div>
-        <form action="./" method="post">
-            <fieldset id="themeSelect">
-                <!-- <legend>Select a theme:</legend> -->
-                <div>
-                    <label for="purple-theme" class="form-control">
-                        <input type="radio" id="" name="themeSelect" value="purple-theme">
-                        Purple theme
-                    </label>
-                </div>
-                <div>
-                    <label for="blue-theme" class="form-control">
-                        <input type="radio" id="" name="themeSelect" value="blue-theme" checked>
-                        Grey theme
-                    </label>
-                </div>
-            </fieldset>
-        </form>
-    </div>
 
-    <!-- <div id="three-container">
+    <!-- rjs cursor  -->
+    <?php
+        include_once(dirname(__FILE__) . '/template-parts/theme-picker.php');
+    ?>
 
-    </div> -->
 
 </main>
+
+
 
 <?php 
 

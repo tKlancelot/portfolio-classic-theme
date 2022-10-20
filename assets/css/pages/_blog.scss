@@ -1,0 +1,39 @@
+.blog-navigation{
+    @include textured-background-alt;
+    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    background-size: 2%;
+
+    .searchbar{
+        border-top: 1px solid var(--border-color);
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem;
+    }
+
+    .category-frame,.searchbar{
+        background-image: unset;
+        background-color: var(--body-darkest);
+    }
+
+    .category-frame{
+        &__body{
+            ul{
+                display: flex;
+                // border:2px solid red;
+                li{
+                    a{
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+#blog{
+    // border:2px solid red;
+    min-height: 60vw;
+    background-color: var(--body-darker);
+}

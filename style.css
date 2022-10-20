@@ -97,7 +97,7 @@ a {
 
 section,
 header,
-footer {
+footer, #blog {
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
 }
@@ -116,7 +116,7 @@ p {
   }
   section,
 header,
-footer {
+footer, #blog {
     border-left: unset;
     border-right: unset;
   }
@@ -549,6 +549,10 @@ footer {
   right: 0.5em;
   top: 0;
 } /* headings */
+h1, h2 {
+  font-family: "GTWalsheim Medium", sans-serif;
+}
+
 .large-heading {
   padding: 1rem;
 }
@@ -558,10 +562,13 @@ footer {
   font-size: 92px;
 }
 
+.blog-navigation .large-heading h1 {
+  text-transform: capitalize;
+}
+
 .menu-content h2,
 .section-heading {
   font-size: 2.4vw;
-  font-family: "GTWalsheim Medium", sans-serif;
   font-weight: 500;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
@@ -581,7 +588,6 @@ footer {
   word-spacing: 0.84rem;
   font-size: 4.2vw;
   letter-spacing: 0.2vw;
-  font-family: "GTWalsheim Bold", sans-serif;
 }
 #test .section h3 {
   font-size: 0.96vw;
@@ -661,6 +667,10 @@ footer {
     font-size: 16px;
   }
 }
+button {
+  cursor: pointer;
+}
+
 .wp-block-button__link {
   border: 2px solid var(--border-color);
   background-color: transparent;
@@ -697,7 +707,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   z-index: 100;
   outline: 8px solid var(--background-transparent);
 }
@@ -1008,77 +1017,6 @@ input[type=radio] {
   color: var(--write);
 }
 
-@media (pointer: fine) {
-  * {
-    cursor: none;
-  }
-}
-* {
-  cursor: none;
-}
-
-@media (pointer: none), (pointer: coarse) {
-  #rjs_cursor,
-#rjs_cursor .rjs-cursor-icon {
-    display: none !important;
-    visibility: hidden;
-    opacity: 0;
-  }
-  * {
-    cursor: auto !important;
-  }
-}
-.rjs-cursor {
-  width: 16px;
-  height: 16px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999999;
-  pointer-events: none;
-  transition: none;
-}
-
-.rjs-cursor-icon {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: rgba(185, 185, 185, 0.1);
-  transition: all 0.2s ease;
-  border: 1px solid var(--border-color);
-}
-
-.rjs-cursor.rjs_cursor_visible {
-  opacity: 1;
-}
-
-.rjs-cursor.rjs_cursor_hidden {
-  opacity: 0;
-}
-
-.rjs-cursor.rjs_cursor_hover .rjs-cursor-icon {
-  transform: scale(7.2);
-  transform-origin: center;
-  border-color: transparent;
-  background-color: rgba(255, 255, 255, 0.0666666667);
-}
-
-.rjs-cursor.rjs_cursor_hover_input {
-  height: 22px;
-}
-
-.rjs-cursor.rjs_cursor_hover_input .rjs-cursor-icon {
-  border-color: var(--text-canari);
-  border-radius: 0;
-  width: 1px;
-}
-
-/* Hover effects */
-.rjs-cursor.rjs_cursor_hover .rjs-cursor-icon::after {
-  opacity: 0;
-  transform: scale(100);
-}
-
 .jumbotron {
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
@@ -1314,10 +1252,6 @@ input[type=radio] {
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   background-color: var(--body-darker);
-  background-color: var(--body-darkest);
-  background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/climpek.png");
-  background-size: 1.25%;
-  background-blend-mode: screen;
 }
 #header #navigation #menu-desktop-top-menu {
   min-width: 99.9%;
@@ -1439,14 +1373,26 @@ input[type=radio] {
     border-left: unset;
     border-right: unset;
     margin: initial;
-    display: none;
   }
   #header #navigation .custom-logo-link {
     display: none;
   }
-  #header.navbar-fixed {
-    width: auto;
-    right: 0;
+  #header .scrollBar, #header #navigation {
+    display: none;
+  }
+  #header .top-menu {
+    height: 14vw;
+    display: flex;
+    justify-content: flex-end;
+  }
+  #header .top-menu__right {
+    display: none;
+  }
+  #header .menu-content {
+    width: 100%;
+  }
+  #header .menu-content__header {
+    height: 14vw;
   }
   #header.navbar-fixed #navigation {
     height: auto;
@@ -1675,7 +1621,7 @@ input[type=radio] {
 }
 #test .carousel .splide__header {
   height: auto;
-  font-family: "Glitten";
+  font-family: "GTWalsheim Medium", sans-serif;
   color: var(--write);
 }
 
@@ -2471,6 +2417,36 @@ body {
   #test .carousel {
     z-index: 100;
   }
+}
+.blog-navigation {
+  background-color: var(--body-darkest);
+  background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/climpek.png");
+  background-size: 1.25%;
+  background-blend-mode: screen;
+  border-bottom: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+  background-size: 2%;
+}
+.blog-navigation .searchbar {
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+.blog-navigation .category-frame, .blog-navigation .searchbar {
+  background-image: unset;
+  background-color: var(--body-darkest);
+}
+.blog-navigation .category-frame__body ul {
+  display: flex;
+}
+.blog-navigation .category-frame__body ul li a {
+  color: #fff;
+}
+
+#blog {
+  min-height: 60vw;
+  background-color: var(--body-darker);
 }
 
 /*# sourceMappingURL=style.css.map */

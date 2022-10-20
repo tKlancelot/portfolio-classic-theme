@@ -1,3 +1,7 @@
+button{
+    cursor: pointer;
+}
+
 // wordpress button
 
 .wp-block-button__link {
@@ -10,7 +14,6 @@
     transition: 0.48s ease-in;
     display: flex;
     align-items: center;
-
     svg {
         width: 24%;
         display: flex;
@@ -40,7 +43,6 @@
     padding: 1.92rem;
     border-radius: 48px;
     @include flex-center-center;
-    cursor: pointer;
     z-index: 100;
     outline: 8px solid var(--background-transparent);
 

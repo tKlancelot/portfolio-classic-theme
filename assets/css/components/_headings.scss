@@ -1,10 +1,15 @@
 /* headings */
 
+
+h1,h2{
+    font-family: $font-secondary;
+}
+
 // large page heading 
+
 
 .large-heading {
     padding: 1rem;
-
     h1 {
         color: var(--write);
         font-weight: normal;
@@ -13,10 +18,17 @@
 
 }
 
+.blog-navigation{
+    .large-heading{
+        h1{
+            text-transform: capitalize;
+        }
+    }
+}
+
 .menu-content h2,
 .section-heading {
     font-size: 2.4vw;
-    font-family: 'GTWalsheim Medium', sans-serif;
     font-weight: 500;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
@@ -40,7 +52,6 @@
             word-spacing: 0.84rem;
             font-size: 4.2vw;
             letter-spacing: 0.20vw;
-            font-family: 'GTWalsheim Bold', sans-serif;
         }
 
 

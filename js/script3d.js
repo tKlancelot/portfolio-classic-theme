@@ -29,13 +29,13 @@ function init(){
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.6;
 
-    dirlight = new THREE.DirectionalLight(0x242424,7);
+    dirlight = new THREE.DirectionalLight(0x323232,8);
     dirlight.position.set(250,250,-200);
     scene.add(dirlight); 
 
     let rwidth = 750;
     let rheight = 750;
-    let intensity = 1;
+    let intensity = 0.75;
     let rectLight = new THREE.RectAreaLight( 0xffffff, intensity,  rwidth, rheight );
     rectLight.position.set( 100, 200, 200 );
     rectLight.lookAt( 0, 0, 0 );
@@ -43,13 +43,13 @@ function init(){
     console.log(rectLight);
 
 
-    ambienlight = new THREE.AmbientLight(0xffffff,0.24);
+    ambienlight = new THREE.AmbientLight(0xffffff,0.2);
     scene.add(ambienlight);
 
     const imageTexture = new THREE.TextureLoader().load( theme_directory + '/assets/textures/earth-map.jpg' );
     const roughnessTexture = new THREE.TextureLoader().load( theme_directory + '/assets/textures/earth-bump-map.jpg' );
     const specularTexture = new THREE.TextureLoader().load( theme_directory + '/assets/textures/earth-specular-map.jpg' );
-    const normalTexture = new THREE.TextureLoader().load( theme_directory + '/assets/textures/earth-normal-map.tif' );
+    const normalTexture = new THREE.TextureLoader().load( theme_directory + '/assets/textures/earth-normal-map.jpg' );
 
     const ballMaterial = {
         clearcoat : 0.6,
@@ -62,11 +62,11 @@ function init(){
         bumpScale:1,
         map:imageTexture,
         specularMap:specularTexture,    
-        // normalMap:normalTexture,
-        // normalScale : new THREE.Vector2(0.01,0.01),
+        normalMap:normalTexture,
+        normalScale : new THREE.Vector2(0.5,0.5)
     }
 
-    let ballGeo = new THREE.SphereGeometry(100,64,64);
+    let ballGeo = new THREE.SphereGeometry(120,64,64);
     let ballMat = new THREE.MeshPhysicalMaterial(ballMaterial);
     ballMesh = new THREE.Mesh(ballGeo,ballMat);
     ballMesh.receiveShadow = false;
@@ -74,7 +74,7 @@ function init(){
 
 
     // cloud Geometry
-    let cloudGeometry = new THREE.SphereGeometry(108, 64, 64);
+    let cloudGeometry = new THREE.SphereGeometry(124, 64, 64);
 
     // cloud material
     let cloudMaterial = new THREE.MeshPhongMaterial({

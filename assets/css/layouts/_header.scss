@@ -11,8 +11,6 @@
         border-top: 1px solid var(--border-color);
         border-bottom: 1px solid var(--border-color);
         background-color: var(--body-darker);
-        @include textured-background-alt;
-
         #menu-desktop-top-menu {
             min-width: 99.9%;
             display: flex;
@@ -171,18 +169,33 @@
 
     #header {
         @include no-margin-side;
-        display: none;
-
         #navigation {
             .custom-logo-link {
                 display: none;
             }
         }
+        .scrollBar,#navigation{
+            display: none;
+        }
+        .top-menu{
+            height: 14vw;
+            display: flex;
+            justify-content: flex-end;
+            &__right{
+                display: none;
+            }
+        }
+        .menu-content{
+            width: 100%;
+            &__header{
+                height: 14vw;
+            }
+        }
     }
 
     #header.navbar-fixed {
-        width: auto;
-        right: 0;
+        // width: auto;
+        // right: 0;
 
         #navigation {
             height: auto;

@@ -71,6 +71,11 @@ function enqueue_scripts()
     wp_enqueue_script('gsap-scrollTo', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js",[],'3.10.4',false);
     wp_enqueue_script('splide-slide', "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js",[],'4.0.7',true);
 
+    if(is_page_template('template-test.php'))
+    {
+        wp_enqueue_script('homepage-script', get_template_directory_uri()."/js/homepage.js",[],$version,true);
+    }
+
 
     // chargement de three.js
 

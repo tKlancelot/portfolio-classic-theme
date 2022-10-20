@@ -58,22 +58,52 @@
       </div>
       <div class="scrollBar"></div>
 
-      <nav id="navigation">
-        <?php
-        // if(function_exists('the_custom_logo'))
-        // {
-        //   the_custom_logo();
-        // }
-        ?>
-        <?php
-          wp_nav_menu(array(
-            'menu' => 'primary',
-            'container' => '',
-            'theme_location' => 'primary'
-          ))
+      <?php
+        if(is_page_template('template-test.php')){
+
+          ?>
+          <nav id="navigation">
+          <?php
+            wp_nav_menu(array(
+              'menu' => 'primary',
+              'container' => '',
+              'theme_location' => 'primary'
+            ));
+          ?>
+          </nav>
+          <?php
+        }
+        elseif(is_home()){
+          ?>
+
+          <nav class="blog-navigation">
+            <div class="large-heading">
+              <h1>blog</h1>
+            </div>
+            <div class="searchbar">
+              <?php get_search_form(); ?>
+            </div>
+            <div class="category-frame">
+              <div class="category-frame__body">
+                <ul>
+                  <?php 
+                  // $taxonomy = 'r';
+                  wp_list_categories( array(
+                    'orderby' => 'name',
+                    'title_li' => ''
+                  ) ); ?> 
+                </ul>
+              </div>
+            </div>  
+
+          </nav>
+
+          <?php
+        }
       ?>
-      </nav>
 
   </header>
+
+
 
   <body>

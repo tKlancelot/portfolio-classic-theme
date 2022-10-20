@@ -55,7 +55,7 @@ a {
 
 section,
 header,
-footer {
+footer,#blog {
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
 }
@@ -82,7 +82,7 @@ footer {
 
     section,
     header,
-    footer {
+    footer,#blog {
         border-left: unset;
         border-right: unset;
     }
