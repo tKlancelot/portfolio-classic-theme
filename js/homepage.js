@@ -162,10 +162,10 @@ tablinks.forEach((e) => {
         }
         let activeLink = document.querySelector('#activities .tabs li.active');
         let activeContent = document.querySelector('#activities .skill-card.active');
-        let activePicture = document.querySelector('.activities__footer img.active');
+        // let activePicture = document.querySelector('.activities__footer img.active');
         activeLink.classList.remove('active');
         activeContent.classList.remove('active');
-        activePicture.classList.remove('active');
+        // activePicture.classList.remove('active');
         if(e.classList.contains('active')){
             e.classList.remove('active');
         }
@@ -178,9 +178,9 @@ tablinks.forEach((e) => {
         console.log(dataClicked);
         // on display l'element qui a la valeur de data-id
         let contentToDisplay = document.querySelector('#activities .skill-card[data-id='+dataClicked+']');
-        let pictureToDisplay = document.querySelector('.activities__footer img[data-id='+dataClicked+']');
+        // let pictureToDisplay = document.querySelector('.activities__footer img[data-id='+dataClicked+']');
         contentToDisplay.classList.add('active');
-        pictureToDisplay.classList.add('active');
+        // pictureToDisplay.classList.add('active');
     })
 })
 

@@ -60,7 +60,7 @@ img {
 }
 
 body {
-  background-color: var(--body-darker);
+  background-color: var(--body-darkest);
   max-width: 100vw;
   overflow-x: hidden !important;
 }
@@ -708,7 +708,6 @@ button {
   align-items: center;
   justify-content: center;
   z-index: 100;
-  outline: 8px solid var(--background-transparent);
 }
 .cta span {
   font-family: "Roboto Light", sans-serif;
@@ -1092,6 +1091,9 @@ input[type=radio] {
   grid-template-rows: auto 1fr;
 }
 
+.activities {
+  background-color: var(--body-darkest);
+}
 .activities__body {
   display: grid;
   grid-template-columns: 0.5fr 0.5fr;
@@ -1519,7 +1521,7 @@ input[type=radio] {
     justify-content: space-evenly;
   }
   .footer__body__top .social-media__body a {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 #presentation {
@@ -1754,7 +1756,6 @@ input[type=radio] {
   padding: 8px;
   display: flex;
   justify-content: center;
-  outline: 8px solid var(--background-transparent);
   background-color: var(--body-darker);
 }
 .large-text-banner__footer .frame .container {
@@ -1976,10 +1977,10 @@ input[type=radio] {
   justify-content: center;
   padding: 1rem;
   border: 1px solid var(--border-color);
-  background-color: var(--section-background);
-  background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png");
-  background-blend-mode: color-burn;
-  background-size: 4%;
+  background-color: var(--body-darkest);
+  background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/climpek.png");
+  background-blend-mode: exclusion;
+  background-size: 1%;
   border-radius: 32px;
   width: 60%;
   margin: auto;

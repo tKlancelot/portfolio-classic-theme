@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Page Test
+* Template Name: Homepage
 */
 
 ?>
@@ -182,12 +182,12 @@
 
     <section id="activities" class="activities" data-spy>
 
-        <div class="activities__footer">
+        <!-- <div class="activities__footer">
             <img data-id="conception" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/responsive-design.webp" alt="responsive design">
             <img data-id="integration" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-cottonbro.webp" alt="cottonbro">
             <img data-id="modelisation" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-rodion-kutsaiev.webp" alt="rodion kutsaiev">
             <img class="active" data-id="amelioration" src="<?php echo get_template_directory_uri();?>/assets/backgrounds/code-refactoring.jpg" alt="code refactoring">
-        </div>
+        </div> -->
 
         <div class="activities__header">
             <h2 class="section-heading">expertises</h2>

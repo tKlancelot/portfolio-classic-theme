@@ -44,8 +44,6 @@ button{
     border-radius: 48px;
     @include flex-center-center;
     z-index: 100;
-    outline: 8px solid var(--background-transparent);
-
     span {
         font-family: $font-primary-light;
         color: var(--write-transparent);

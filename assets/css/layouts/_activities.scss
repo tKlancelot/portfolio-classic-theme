@@ -9,8 +9,8 @@
 }
 
 .activities {
-
-
+    background-color: var(--body-darkest);
+    // @include textured-background-subtle;
     &__body {
         display: grid;
         grid-template-columns: 0.5fr 0.5fr;
