@@ -29,7 +29,7 @@ function init(){
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.6;
 
-    dirlight = new THREE.DirectionalLight(0x323232,8);
+    dirlight = new THREE.DirectionalLight(0x323272,8);
     dirlight.position.set(250,250,-200);
     scene.add(dirlight); 
 
@@ -56,7 +56,7 @@ function init(){
         clearcoatRoughness : 0.8,
         metalness : 0.4,
         roughness:0.6,
-        color: 0x92a4d4,
+        color: 0x92a4ef,
         roughnessMap:roughnessTexture,  
         bumpMap:roughnessTexture,  
         bumpScale:1,

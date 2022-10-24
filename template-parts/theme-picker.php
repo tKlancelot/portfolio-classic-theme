@@ -17,7 +17,7 @@
             <div>
                 <label for="blue-theme" class="form-control">
                     <input type="radio" id="" name="themeSelect" value="blue-theme" checked>
-                    Grey theme
+                    Blue theme
                 </label>
             </div>
         </fieldset>

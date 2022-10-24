@@ -29,7 +29,7 @@
 
   <script>
     const handleFooterArrow = () => {
-      let handler = document.querySelector('#footer .frame svg');
+      let handler = document.querySelector('#footer .frame');
       handler.addEventListener('click', function () {
         window.scrollTo({
           top: 0,

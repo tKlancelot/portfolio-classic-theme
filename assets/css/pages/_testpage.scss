@@ -77,9 +77,10 @@ $jumbo-height : 44vw;
         }
 
         &__header {
-            background-color: var(--body-darker);
             background-image: url('https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/backgrounds/milky-way.jpg');
             background-size: cover;
+            background-color: #4084ef20;
+            background-blend-mode: overlay;
             position: absolute;
             overflow: hidden;
             display: flex;

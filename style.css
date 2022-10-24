@@ -705,7 +705,7 @@ button {
   border: 1px solid var(--border-color);
   background-color: var(--background-transparent);
   width: fit-content;
-  padding: 1.92rem;
+  padding: 1.44rem;
   border-radius: 48px;
   display: flex;
   align-items: center;
@@ -1450,23 +1450,27 @@ input[type=radio] {
   border: 3px double var(--border-color);
   background-color: var(--body-darker);
   border-radius: 50%;
-  width: 3.6vw;
-  height: 3.6vw;
+  width: 3.8vw;
+  height: 3.8vw;
   margin: auto;
   transform: translate(0, -50%);
   color: var(--write);
   display: flex;
+  transition: 0.32s ease-in;
+  cursor: pointer;
+}
+.footer__header .frame:hover {
+  background-color: var(--border-color);
+}
+.footer__header .frame:hover svg path {
+  stroke: var(--text-canari) !important;
 }
 .footer__header .frame svg {
   transition: 0.32s ease-in;
-  cursor: pointer;
   margin: auto;
 }
 .footer__header .frame svg path {
   stroke: var(--write);
-}
-.footer__header .frame svg:hover path {
-  stroke: var(--text-canari) !important;
 }
 .footer__body {
   margin: auto;
@@ -1477,7 +1481,8 @@ input[type=radio] {
   font-size: 0.88vw;
   letter-spacing: 0.024rem;
 }
-.footer__body__top, .footer__body hr {
+.footer__body__top,
+.footer__body hr {
   display: none;
 }
 
@@ -1511,7 +1516,8 @@ input[type=radio] {
     display: flex;
     flex-direction: column;
   }
-  .footer__body__top, .footer__body hr {
+  .footer__body__top,
+.footer__body hr {
     display: block;
   }
   .footer__body hr {
@@ -2031,6 +2037,7 @@ input[type=radio] {
   color: var(--write);
   font-weight: 500;
   font-size: 0.96vw;
+  cursor: pointer;
 }
 .theme-picker__heading svg {
   width: 16px;
@@ -2320,9 +2327,10 @@ body {
   filter: brightness(1.12);
 }
 #test .section__header {
-  background-color: var(--body-darker);
   background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/backgrounds/milky-way.jpg");
   background-size: cover;
+  background-color: rgba(64, 132, 239, 0.1254901961);
+  background-blend-mode: overlay;
   position: absolute;
   overflow: hidden;
   display: flex;
