@@ -162,6 +162,7 @@
             border:unset;
             display: flex;
             flex-direction: column;
+            background-color: var(--body-darkest);
             &__header,&__body{
                 min-height: 36vw;
                 p{

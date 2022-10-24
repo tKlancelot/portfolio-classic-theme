@@ -52,6 +52,9 @@ h1,h2{
             word-spacing: 0.84rem;
             font-size: 4.2vw;
             letter-spacing: 0.20vw;
+            background: -webkit-linear-gradient(#eee, var(--body-darkest));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
 

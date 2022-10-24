@@ -588,6 +588,9 @@ h1, h2 {
   word-spacing: 0.84rem;
   font-size: 4.2vw;
   letter-spacing: 0.2vw;
+  background: -webkit-linear-gradient(#eee, var(--body-darkest));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 #test .section h3 {
   font-size: 0.96vw;
@@ -965,6 +968,7 @@ input[type=radio] {
     border: unset;
     display: flex;
     flex-direction: column;
+    background-color: var(--body-darkest);
   }
   .skill-card__content__header, .skill-card__content__body {
     min-height: 36vw;
@@ -2169,7 +2173,7 @@ input[type=radio] {
   background-size: 0.5%;
   display: flex;
   justify-content: space-between;
-  height: 2.6vw;
+  height: 3.2vw;
   align-items: center;
 }
 .top-menu__left .burger-item__body, .top-menu__right .burger-item__body {

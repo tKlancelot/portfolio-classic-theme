@@ -1,5 +1,5 @@
 :root{
-    --write: #fffc;
+    /* --write: #fffc;
     --write-transparent: #fff7;
 
     --body-background : #004052;
@@ -14,5 +14,22 @@
 
     --texture-overlay : #00506604;
     --background-transparent: #00506680;
-    --underline-color: #00506684;
+    --underline-color: #00506684; */
+
+    --write: #fffd;
+    --write-transparent: #fff7;
+
+    --body-background : #00264F;
+    --section-background : #00264F;
+
+    --body-dark: #001933;
+    --body-darker: #001933;
+    --body-darkest: #001021;
+
+    --border-color: #002C5C;
+    --text-canari : #147eee;
+
+    --texture-overlay : #002C5C04;
+    --background-transparent: #002C5C80;
+    --underline-color: #002C5C84;
 }
