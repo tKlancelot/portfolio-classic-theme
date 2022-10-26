@@ -115,28 +115,44 @@ if(window.matchMedia("(min-width:800px)").matches)
 const handleMobileGsapAnimation = () => {
 
     gsap.from(".skill-card:nth-child(1)", {
-        scrollTrigger: ".skill-card:nth-child(1)",
+        scrollTrigger:{
+            trigger:".skill-card:nth-child(1)",
+            toggleActions:"play resume reverse reset",
+            scrub:4
+        },
         opacity: 0,
         duration: 3,
         scale: 0.40,
         y: -100
     });
     gsap.from(".skill-card:nth-child(2)", {
-        scrollTrigger: ".skill-card:nth-child(2)",
+        scrollTrigger:{
+            trigger:".skill-card:nth-child(2)",
+            toggleActions:"play resume reverse reset",
+            scrub:4
+        },
         opacity: 0,
         duration: 2.4,
         scale: 0.56,
         y: -80
     });
     gsap.from(".skill-card:nth-child(3)", {
-        scrollTrigger: ".skill-card:nth-child(3)",
+        scrollTrigger:{
+            trigger:".skill-card:nth-child(3)",
+            toggleActions:"play resume reverse reset",
+            scrub:4
+        },
         opacity: 0,
         duration: 3,
         scale: 0.40,
         y: -100
     });
     gsap.from(".skill-card:nth-child(4)", {
-        scrollTrigger: ".skill-card:nth-child(4)",
+        scrollTrigger:{
+            trigger:".skill-card:nth-child(4)",
+            toggleActions:"play resume reverse reset",
+            scrub:4
+        },
         opacity: 0,
         duration: 2.4,
         scale: 0.56,

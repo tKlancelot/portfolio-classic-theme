@@ -197,9 +197,9 @@
             <div class="activities__body__left">
                 <ul class="tabs">
                     <li data-id="conception"><a>conception graphique</a></li>
-                    <li data-id="integration"><a>intégration</a></li>
+                    <li class="active" data-id="integration"><a>intégration</a></li>
                     <li data-id="modelisation"><a>modélisation 3d</a></li>
-                    <li class="active" data-id="amelioration"><a>amelioration de code</a></li>
+                    <li data-id="amelioration"><a>amelioration de code</a></li>
                 </ul>
             </div>
             <div class="activities__body__right">
@@ -207,7 +207,7 @@
                     <div class="skill-card" data-id="conception">
                         <div class="skill-card__content">
                             <div class="skill-card__content__header">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/responsive-design.webp" alt="web design">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/background-graphique.png" alt="web design">
                             </div>
                             <div class="skill-card__content__body">
                                 <h3><i class="fa-solid fa-plus"></i>&nbsp;conception graphique</h3><hr/>
@@ -216,10 +216,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skill-card" data-id="integration">
+                    <div class="skill-card active" data-id="integration">
                         <div class="skill-card__content">
                             <div class="skill-card__content__header">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-cottonbro.webp" alt="intégration">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/background-integration.png" alt="intégration">
                             </div>
                             <div class="skill-card__content__body">
                                 <h3><i class="fa-solid fa-plus"></i>&nbsp;intégration</h3><hr/>
@@ -231,7 +231,7 @@
                     <div class="skill-card" data-id="modelisation">
                         <div class="skill-card__content">
                             <div class="skill-card__content__header">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/pexels-rodion-kutsaiev.webp" alt="modélisation 3d">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/background-modelisation.png" alt="modélisation 3d">
                             </div>
                             <div class="skill-card__content__body">
                                 <h3><i class="fa-solid fa-plus"></i>&nbsp;modélisation 3d</h3><hr/>
@@ -240,10 +240,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skill-card active" data-id="amelioration">
+                    <div class="skill-card" data-id="amelioration">
                         <div class="skill-card__content">
                             <div class="skill-card__content__header">
-                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/code-refactoring.jpg" alt="code refactoring">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/background-refactoring.png" alt="code refactoring">
                             </div>
                             <div class="skill-card__content__body">
                                 <h3><i class="fa-solid fa-plus"></i>&nbsp;Réusinage de code</h3><hr/>
@@ -258,6 +258,97 @@
             </div>
         </div>
     </section>
+
+    <!-- section mosaique (remplacera a terme activities) -->
+    <!-- <section id="mosaic" class="mosaic">
+        <div class="mosaic__body">
+            <div class="grid">
+                <div class="grid__row">
+                    <div class="grid__row__one">
+                        <div class="item">
+                            <div class="item__body">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/background-refactoring.png" alt="code refactoring">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__body">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/background-modelisation.png" alt="modélisation 3d">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__body">
+                                <img src="<?php echo get_template_directory_uri();?>/assets/backgrounds/background-graphique.png" alt="web design">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__row">
+                    <div class="grid__row__two">
+                        <div class="item">
+                            <div class="item__body">
+                                item four
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__body">
+                                item five
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="grid__row">
+                    <div class="grid__row__three">
+                        <div class="item">
+                            <div class="item__body">
+                                item six
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__body">
+                                item seven
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__body">
+                                item eight
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid__row">
+                    <div class="grid__row__four">
+                        <div class="item">
+                            <div class="item__body">
+                                item nine
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__body">
+                                item ten
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__body">
+                                item eleven
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item__body">
+                                item twelve
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section> -->
+
 
     <!-- section autoslide  -->
 

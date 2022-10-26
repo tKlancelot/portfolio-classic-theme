@@ -838,7 +838,7 @@ input[type=radio] {
   grid-gap: 0rem;
   padding: 2rem;
   place-items: center;
-  background-color: var(--section-background);
+  background-color: var(--body-darker);
 }
 .project-card > a {
   width: 100%;
@@ -930,7 +930,7 @@ input[type=radio] {
   margin: 0.2rem 0 1rem;
   border: unset;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--underline-color), var(--underline-color), var(--underline-color), var(--underline-color), transparent);
+  background: var(--border-color);
 }
 .skill-card__content__body p {
   font-family: "Roboto Light", sans-serif;
@@ -978,7 +978,7 @@ input[type=radio] {
     line-height: 1.32rem;
   }
   .skill-card__content__header {
-    min-height: 48vw;
+    min-height: 60vw;
   }
   .project-card {
     justify-content: center;
@@ -1253,7 +1253,7 @@ input[type=radio] {
   display: flex;
   justify-content: center;
   margin: auto;
-  height: 4.4vw;
+  height: 4vw;
   width: 100%;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
@@ -1277,9 +1277,8 @@ input[type=radio] {
   align-items: center;
   justify-content: center;
   font-family: "Roboto Light", sans-serif;
-  text-transform: uppercase;
   font-size: 0.8vw;
-  letter-spacing: 0.12rem;
+  letter-spacing: 0.1rem;
   height: 100%;
   width: 100%;
 }
@@ -1447,7 +1446,7 @@ input[type=radio] {
   display: flex;
 }
 .footer__header .frame {
-  border: 3px double var(--border-color);
+  border: 1px solid var(--border-color);
   background-color: var(--body-darker);
   border-radius: 50%;
   width: 3.8vw;
@@ -1554,7 +1553,7 @@ input[type=radio] {
 #test .carousel {
   display: grid;
   width: auto;
-  background-color: var(--body-darker);
+  background-color: var(--section-background);
   border-top: 1px solid var(--border-color);
   padding: 2rem;
   padding-top: unset;
@@ -1828,6 +1827,62 @@ input[type=radio] {
     outline: unset;
   }
 }
+#mosaic {
+  border-top: 1px solid var(--border-color);
+  height: auto;
+}
+
+.mosaic {
+  background-color: var(--body-darkest);
+  color: var(--write);
+}
+.mosaic__body .grid {
+  display: grid;
+  padding: 2rem;
+}
+.mosaic__body .grid__row {
+  width: auto;
+  height: fit-content;
+  display: flex;
+}
+.mosaic__body .grid__row .item__body {
+  height: 24vw;
+  width: 24vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mosaic__body .grid__row__one, .mosaic__body .grid__row__two, .mosaic__body .grid__row__three, .mosaic__body .grid__row__four {
+  display: grid;
+  margin: auto;
+  place-items: center;
+}
+.mosaic__body .grid__row__one {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.mosaic__body .grid__row__one .item__body img {
+  width: 24vw;
+  height: 24vw;
+}
+.mosaic__body .grid__row__two {
+  grid-template-columns: repeat(2, 1fr);
+}
+.mosaic__body .grid__row__two .item__body {
+  width: 36vw;
+}
+.mosaic__body .grid__row__three {
+  grid-template-columns: repeat(3, 1fr);
+}
+.mosaic__body .grid__row__four {
+  grid-template-columns: repeat(4, 1fr);
+}
+.mosaic__body .grid__row__four .item__body {
+  width: 18vw;
+  height: 18vw;
+}
+
 .contact-form {
   border-top: 1px solid var(--border-color);
   background-color: var(--body-darkest);
@@ -2180,7 +2235,7 @@ input[type=radio] {
   background-size: 0.5%;
   display: flex;
   justify-content: space-between;
-  height: 3.2vw;
+  height: 3vw;
   align-items: center;
 }
 .top-menu__left .burger-item__body, .top-menu__right .burger-item__body {
@@ -2329,7 +2384,7 @@ body {
 #test .section__header {
   background-image: url("https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/backgrounds/milky-way.jpg");
   background-size: cover;
-  background-color: rgba(64, 132, 239, 0.1254901961);
+  background-color: rgba(148, 159, 177, 0.1294117647);
   background-blend-mode: overlay;
   position: absolute;
   overflow: hidden;
