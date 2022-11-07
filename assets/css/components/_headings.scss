@@ -1,8 +1,13 @@
 /* headings */
 
 
-h1,h2{
+h1,
+h2 {
     font-family: $font-secondary;
+}
+
+h3 {
+    font-family: $font-primary-light;
 }
 
 // large page heading 
@@ -10,6 +15,7 @@ h1,h2{
 
 .large-heading {
     padding: 1rem;
+
     h1 {
         color: var(--write);
         font-weight: normal;
@@ -18,9 +24,9 @@ h1,h2{
 
 }
 
-.blog-navigation{
-    .large-heading{
-        h1{
+.blog-navigation {
+    .large-heading {
+        h1 {
             text-transform: capitalize;
         }
     }
@@ -48,11 +54,11 @@ h1,h2{
 
         h1 {
             display: flex;
-            margin: 3rem 0;
+            margin: 2vw 0 0;
             word-spacing: 0.84rem;
             font-size: 4.2vw;
             letter-spacing: 0.20vw;
-            background: -webkit-linear-gradient(#eee, var(--body-darkest));
+            background: -webkit-linear-gradient(var(--write-transparent), var(--write), var(--write), var(--body-darkest));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -65,7 +71,7 @@ h1,h2{
             letter-spacing: 0.032rem;
             color: var(--write);
             width: 80%;
-            line-height: 2.2rem;
+            line-height: 1.72vw;
 
             i {
                 color: var(--write);
@@ -85,17 +91,34 @@ h1,h2{
     }
 }
 
-.project-card{
+
+.project-card {
     &__body {
         h3 {
             color: var(--text-canari);
-            font-size: 22px;
-            font-family: $font-primary-light;
+            font-size: 1.1vw;
             font-weight: 100;
         }
+
     }
 }
 
+.activities__body .item,
+.skill-card__content {
+    &__body {
+        h2 {
+            margin: 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.12rem;
+            font-size: 1.48vw;
+            color: var(--write);
+        }
+
+        i {
+            color: var(--text-canari);
+        }
+    }
+}
 
 
 @media screen and (max-width:1600px) {
@@ -181,10 +204,27 @@ h1,h2{
             }
         }
     }
-    .project-card{
+
+    .project-card {
         &__body {
             h3 {
-                font-size:16px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .activities {
+        &__body {
+            .grid {
+                &__row {
+                    .item {
+                        &__body {
+                            h2 {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

@@ -16,7 +16,7 @@
 
     &__header {
         width: 36%;
-        height: $section-height-tiny;
+        height: 10vw;
         @include flex-evenly-center;
         flex-direction: column;
         hr {
@@ -27,13 +27,13 @@
 
     &__body {
         width: 52%;
-        height: $section-height-mini;
+        height: 22vw;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         p {
             line-height: 1.96rem;
-            text-align: justify;
+            text-align: center;
         }
     }
 
@@ -53,7 +53,7 @@
 
             height: 3.2vw;
             width: 2vw;
-            border:1px solid var(--border-color);
+            border:2px solid var(--border-color);
             border-radius: 24px;
             padding: 8px;
             display: flex;
@@ -63,12 +63,12 @@
                 display: flex;
                 height: 2vw;
                 background-color: var(--border-color);
-                width: 1px;
+                width: 2px;
             }
             #vertical-stroke{
                 background-color:var(--text-canari);
                 border-radius: 16px;
-                width: 1px;
+                width: 2px;
                 height: 1vw;
                 animation: scrollDown 3s ease-in-out  infinite forwards;
             }

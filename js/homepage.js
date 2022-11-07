@@ -76,6 +76,16 @@ gsap.from('.three-container',{
     duration:3.2
 })
 
+gsap.to('#activities .item:nth-child(1) svg path:nth-child(3)',{
+    fill:'var(--text-canari)',
+    scaleX:0.1,
+    duration:2,
+    transformOrigin:'center',
+    yoyo:true,
+    repeat:-1
+})
+
+
 
 const handleAutoSlideAnimation = () => {
     gsap.to('.autoslide__body__top .scrolling-frame',{
@@ -106,60 +116,6 @@ if(window.matchMedia("(min-width:800px)").matches)
 }
 
 
-
-
-/************************************* */
-/****   gsap animations mobile    **** */
-/************************************* */
-
-const handleMobileGsapAnimation = () => {
-
-    gsap.from(".skill-card:nth-child(1)", {
-        scrollTrigger:{
-            trigger:".skill-card:nth-child(1)",
-            toggleActions:"play resume reverse reset",
-            scrub:4
-        },
-        opacity: 0,
-        duration: 3,
-        scale: 0.40,
-        y: -100
-    });
-    gsap.from(".skill-card:nth-child(2)", {
-        scrollTrigger:{
-            trigger:".skill-card:nth-child(2)",
-            toggleActions:"play resume reverse reset",
-            scrub:4
-        },
-        opacity: 0,
-        duration: 2.4,
-        scale: 0.56,
-        y: -80
-    });
-    gsap.from(".skill-card:nth-child(3)", {
-        scrollTrigger:{
-            trigger:".skill-card:nth-child(3)",
-            toggleActions:"play resume reverse reset",
-            scrub:4
-        },
-        opacity: 0,
-        duration: 3,
-        scale: 0.40,
-        y: -100
-    });
-    gsap.from(".skill-card:nth-child(4)", {
-        scrollTrigger:{
-            trigger:".skill-card:nth-child(4)",
-            toggleActions:"play resume reverse reset",
-            scrub:4
-        },
-        opacity: 0,
-        duration: 2.4,
-        scale: 0.56,
-        y: -80
-    });
-
-}
 
 /****************************** */
 /****** handle navtabs ******** */
@@ -237,48 +193,6 @@ if (spies.length > 0) {
         observer.observe(spy);
     })
 }
-
-/****************************** */
-/****** theme selector ******** */
-/****************************** */
-
-
-const themeStylesheet = document.getElementById('themeStylesheet');
-
-var rad = document.querySelectorAll('#themeSelect input');
-var prev = null;
-for (var i = 0; i < rad.length; i++) {
-    rad[i].addEventListener('change', function () {
-        (prev) ? console.log(prev.value): null;
-        if (this !== prev) {
-            prev = this;
-        }
-        themeStylesheet.setAttribute('href',
-            'https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/css/themes/' + this.value + '.css');
-    });
-}
-
-const toggleArrow = document.querySelector('.theme-picker__heading');
-
-const initThemeSwitcherStatus = () => {
-    let toggleBox = toggleArrow.parentElement.children[1];
-    jQuery(toggleBox).hide();
-    jQuery(toggleArrow.parentElement).addClass('small-window');
-
-}
-
-initThemeSwitcherStatus();
-
-toggleArrow.addEventListener('click', function () {
-    let toggleBox = this.parentElement.children[1];
-    jQuery(toggleBox).slideToggle();
-    jQuery(this.parentElement).toggleClass('small-window', 1000, "easeOutSine");
-
-    setTimeout(function(){
-        jQuery(toggleBox).slideToggle(500);
-        jQuery(toggleArrow.parentElement).addClass('small-window');
-    },4800)
-})
 
 
 /****************************** */
@@ -401,22 +315,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })
 
-
-// let statContainer = document.getElementById('stats');
-
-// const config = {
-//     root: null, // viewport
-//     rootMargin: '0px',
-//     threshold: 0.75
-// };
-
-// let observer = new IntersectionObserver(function (entries) {
-//     entries.forEach(function (entry) {
-//         if (entry.intersectionRatio >= config.threshold) {
-//             bar.animate(0.48); // Number from 0.0 to 1.0
-//             barTwo.animate(0.16); // Number from 0.0 to 1.0
-//             barThree.animate(0.4); // Number from 0.0 to 1.0
-//             // entry.target.classList.add("active");
-//         }
-//     });
-// }, config);

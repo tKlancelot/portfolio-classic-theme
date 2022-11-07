@@ -1,0 +1,164 @@
+#activities {
+    @include border-top;
+    height: auto;
+}
+
+.activities {
+    background-color: var(--body-darker);
+    color: var(--write);
+
+    &__body {
+        .grid {
+            display: grid;
+            padding: 0 0 2vw;
+
+            &__row {
+                grid-template-columns: repeat(2, 1fr);
+                width: fit-content;
+                height: auto;
+                display: grid;
+                margin: auto;
+                grid-gap: 2vw;
+
+                .item {
+                    padding: 2vw;
+                    width: 30vw;
+                    background-color: var(--body-darkest);
+                    display: flex;
+                    flex-direction: column;
+                    gap:2vw;
+
+                    &__header {
+                        height: 6vw;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                    }
+
+                    &__body {
+                        gap: 2vw;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        height: 16vw;
+
+                        p,
+                        span {
+                            font-family: $font-primary-light;
+                            line-height: 1.36vw;
+                            color: var(--write-transparent);
+                            font-size: 0.8vw;
+                            text-align: justify;
+                        }
+
+                        span {
+                            color: var(--text-canari);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__header {
+        height: 10vw;
+        @include flex-center-center;
+
+        .section-heading {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width:1600px) {
+
+    .activities {
+        &__body {
+            .grid {
+                &__row {
+                    .item {
+                        width: 32vw;
+
+                        &__body {
+                            p,span {
+                                font-size: 0.92vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:1200px) {
+
+    .activities {
+        &__body {
+            .grid {
+                &__row {
+                    .item {
+                        width: 40vw;
+
+                        &__body {
+                            p,span {
+                                font-size: 0.96vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:800px) {
+
+    .activities {
+        background-color: var(--body-darkest);
+        &__header {
+            height: 28vw;
+
+        }
+
+        &__body {
+            .grid {
+                padding: 0 0 8vw;
+                &__row {
+                    padding: 0 8vw;
+                    grid-template-columns: 1fr;
+                    gap:8vw;
+                    .item {
+                        width: 100%;
+                        padding: 6vw 8vw 8vw;
+                        background-color: var(--body-darker);
+                        &__header {
+                            height: 20vw;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        &__body {
+                            height: auto;
+                            gap:4vw;
+                            &__header{
+                                display: flex;
+                                justify-content: center;
+                                text-align: center;
+                            }
+
+
+                            p,span {
+                                font-size:13px;
+                                line-height: 1.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

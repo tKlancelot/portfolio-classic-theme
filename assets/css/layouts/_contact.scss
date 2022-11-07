@@ -1,9 +1,16 @@
+// global 
+
+::placeholder{
+    color:var(--write-transparent)!important;
+}
+
+
 // use of contact form 7 -> overwriting classes
 
 .contact-form {
     @include border-top;
-    @include textured-background-dark;
-    min-height: $section-height;
+    background-color: var(--body-darkest);
+    min-height: 40vw;
     display: grid;
     place-content: space-evenly;
     place-items: center;
@@ -24,14 +31,16 @@
 
             input,
             textarea {
-                background-color: var(--section-background);
                 font-family: $font-primary-light;
-                border: 1px solid var(--border-color);
                 padding: 0.64rem;
                 font-size: 0.96vw;
                 width: 100%;
                 color: var(--write);
+                background-color: var(--body-darker);
+                @include card-shadow;
+                border-color: var(--border-color);
             }
+
 
         }
 
@@ -148,11 +157,6 @@
             }
             .input-box--double{
                 grid-template-columns: 1fr;
-            }
-            .input-box,.input-box--submit,.input-box--double{
-                input,textarea{
-                    border:unset;
-                }
             }
         }
     }

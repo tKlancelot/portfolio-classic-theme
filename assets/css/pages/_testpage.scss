@@ -238,6 +238,7 @@ $jumbo-height : 44vw;
 
     #test {
         .carousel {
+            background-color: var(--body-darkest);
             z-index: 100;
         }
     }

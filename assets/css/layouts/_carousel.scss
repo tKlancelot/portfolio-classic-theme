@@ -3,7 +3,7 @@
     .carousel {
         display: grid;
         width: auto;
-        background-color: var(--section-background);
+        background-color: var(--body-darker);
         @include border-top;
         padding:2rem;
         padding-top: unset;
@@ -29,7 +29,7 @@
                 border-radius: 48px;
                 width: 8.4vw;
                 height: auto;
-                padding: 1rem;
+                padding: 1vw;
                 margin: 2rem auto;
                 @include flex-around-center;
                 transition: 0.48s ease-in;
@@ -135,6 +135,7 @@
                     bottom: 2rem;
                     height: 6vh;
                     grid-gap: 1rem;
+                    padding: 0.5rem;
                 }
 
                 &__pagination {

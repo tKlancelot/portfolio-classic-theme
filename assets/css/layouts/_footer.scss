@@ -2,7 +2,7 @@
     height: 22.5vw;
     @include border-top;
     @include flex-center-start;
-    background-color: var(--body-darkest);
+    background-color: var(--body-ultra-dark);
 
     &__header {
         position: absolute;
@@ -22,7 +22,7 @@
             transition: 0.32s ease-in;
             cursor: pointer;
             &:hover {
-                background-color: var(--border-color);
+                background-color: var(--section-background);
                 svg {
                     path {
                         stroke: var(--text-canari) !important;

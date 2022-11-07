@@ -137,17 +137,24 @@
 
 @mixin textured-background-subtle {
     background-color: var(--body-darkest);
-    background-image: url('https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/climpek.png');
-    background-blend-mode: exclusion;  
-    background-size: 1%;
+    background-image: url('https://leviathan-pacifique.com/wp-content/themes/leviathan-pacifique/assets/textures/black-twill.png');
+    background-blend-mode: darken;
+    background-size: 2.5%;
 }
 
-@mixin linear-hr{
+@mixin linear-hr {
     border: unset;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--underline-color),var(--underline-color),var(--underline-color), var(--underline-color), transparent);
+    background: var(--border-color);
+    // background: linear-gradient(90deg, transparent, var(--underline-color),var(--underline-color),var(--underline-color), var(--underline-color), transparent);
 }
 
-@mixin theme-gradient{
+@mixin theme-gradient {
     background: linear-gradient(90deg, var(--body-darker) 0%, var(--section-background) 50%, var(--body-darker) 100%);
+}
+
+@mixin card-shadow {
+    border: 1px solid var(--section-background);
+    box-shadow: 0px 0px 0px 1px var(--body-darker);
+    border-radius: 4px;
 }
